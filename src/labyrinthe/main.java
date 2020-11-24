@@ -1,13 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Mini projet de CPO (2A), 2020
+ * Par  Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
  */
 package labyrinthe;
 
 /**
  *
- * @author clara
+ * @author Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
  */
 public class main {
 
