@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labyrinthe_royer_delmotte_theodoly;
+package labyrinthe;
 
 /**
  *
  * @author clara
  */
-public class Labyrinthe_ROYER_DELMOTTE_THEODOLY {
+public class main {
 
     /**
      * @param args the command line arguments
