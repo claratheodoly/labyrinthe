@@ -455,6 +455,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Choix_nmbr_joueur;
