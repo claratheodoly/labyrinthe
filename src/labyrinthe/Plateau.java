@@ -65,41 +65,77 @@ public class Plateau {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param x1
 	 * @param y1
 	 * @param x2
 	 * @param y2
-	 * @return 
+	 * @return
 	 */
 	public boolean cheminPossible(int x1, int y1, int x2, int y2) {
+		// TODO
 		return false;
 	}
 
 	/**
-	 * 
-	 * @param num_col
-	 * @param versHaut
-	 * @return 
+	 * Déplace une colonne dans la direction indiquée, en comblant
+	 * l'espace laissé avec la tuile volante.
+	 *
+	 * @param num_col Le numéro de la colonne
+	 * @param versHaut Si le déplacement se fait vers le haut ou pas
+	 * @return Succès de l'opération
 	 */
 	public boolean deplacerColonne(int num_col, boolean versHaut) {
-		return false;
+		/* Vérification que la colonne est valide */
+		if (num_col < 0 || num_col > 6) {
+			return false;
+		}
+		Tuile temp;
+		int decalage;
+		if (versHaut) {
+			decalage = 1;
+			/* On échange la tuile volante avec la tuile qui sort */
+			temp = tuiles[num_col][6];
+			tuiles[num_col][6] = tuileVolante;
+			tuileVolante = temp;
+		} else {
+			/*
+			Décaler de 6 dans un sens revient à décaler de 1 dans
+			l'autre si on revient au début. Ceci permet d'éviter le
+			bug du modulo en Java si le dividende est négatif.
+			 */
+			decalage = 6;
+			/* On échange la tuile volante avec la tuile qui sort */
+			temp = tuiles[num_col][0];
+			tuiles[num_col][0] = tuileVolante;
+			tuileVolante = temp;
+		}
+		for (int i = 0; i < 7; i++) {
+			/*
+			On utilise le modulo pour faire un cycle avec les tuiles
+			 */
+			int i_pro = (i + decalage) % 7;
+			temp = tuiles[num_col][i_pro];
+			tuiles[num_col][i_pro] = tuiles[num_col][i];
+			tuiles[num_col][i] = temp;
+		}
+		return true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param num_col
 	 * @param versDroite
-	 * @return 
+	 * @return
 	 */
 	public boolean deplacerLigne(int num_col, boolean versDroite) {
 		return false;
 	}
 
 	/**
-	 * 
-	 * @param x La position horizontale de la tuile
-	 * @param y La position verticale de la tuile
+	 *
+	 * @param x    La position horizontale de la tuile
+	 * @param y    La position verticale de la tuile
 	 * @param type Le type de tuile à placer
 	 * @return Succès de l'opération
 	 */
@@ -108,19 +144,19 @@ public class Plateau {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param num_col
 	 * @param dir
-	 * @return 
+	 * @return
 	 */
 	public boolean deplacerPion(int num_col, boolean dir) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param proprietaire
-	 * @return 
+	 * @return
 	 */
 	public int[] positionPion(Joueur proprietaire) {
 		return new int[0];
