@@ -16,6 +16,17 @@ public class FenetreDeJeu extends javax.swing.JFrame {
      */
     public FenetreDeJeu() {
         initComponents();
+        
+        Choix_nmbr_joueur.setVisible(true);
+        Infojeu.setVisible(false);
+        panneauGrille.setVisible(true);
+        panel_tuilevolante.setVisible(false);
+        panel_joueur.setVisible(false);
+        panel_chrono.setVisible(false);
+        PartieAdeux.setVisible(false);
+        PartieAtrois.setVisible(false);
+        PartieAquatre.setVisible(false);
+        
     }
 
     /**
@@ -27,10 +38,41 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        Choix_nmbr_joueur = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        Deuxjoueurs = new javax.swing.JButton();
+        Troisjoueurs = new javax.swing.JButton();
+        Quatresjoueurs = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        PartieAdeux = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        nom_joueur2_2 = new javax.swing.JTextField();
+        nom_joueur1_2 = new javax.swing.JTextField();
+        btn_start = new javax.swing.JButton();
+        PartieAtrois = new javax.swing.JPanel();
+        btn_start2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        nom_joueur1_3 = new javax.swing.JTextField();
+        nom_joueur2_3 = new javax.swing.JTextField();
+        nom_joueur3_3 = new javax.swing.JTextField();
+        PartieAquatre = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        nom_joueur4_4 = new javax.swing.JTextField();
+        nom_joueur1_4 = new javax.swing.JTextField();
+        nom_joueur2_4 = new javax.swing.JTextField();
+        nom_joueur3_4 = new javax.swing.JTextField();
+        btn_start1 = new javax.swing.JButton();
+        panel_tuilevolante = new javax.swing.JPanel();
+        panel_joueur = new javax.swing.JPanel();
         NomJcourant = new javax.swing.JLabel();
         objectif_courant = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,7 +83,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         NomJcourant1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        panel_chrono = new javax.swing.JPanel();
+
+        jTextField2.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,37 +98,171 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Infojeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 330));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 210, 210));
+        Choix_nmbr_joueur.setBackground(new java.awt.Color(204, 204, 255));
+        Choix_nmbr_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel5.setText("A combien de joueur ");
+        Choix_nmbr_joueur.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
+
+        Deuxjoueurs.setText("2");
+        Deuxjoueurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeuxjoueursActionPerformed(evt);
+            }
+        });
+        Choix_nmbr_joueur.add(Deuxjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 40, 30));
+
+        Troisjoueurs.setText("3");
+        Troisjoueurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TroisjoueursActionPerformed(evt);
+            }
+        });
+        Choix_nmbr_joueur.add(Troisjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 40, 30));
+
+        Quatresjoueurs.setText("4");
+        Quatresjoueurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuatresjoueursActionPerformed(evt);
+            }
+        });
+        Choix_nmbr_joueur.add(Quatresjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 40, 30));
+
+        jLabel14.setText("voulez vous jouer ?");
+        Choix_nmbr_joueur.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        getContentPane().add(Choix_nmbr_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 110));
+
+        PartieAdeux.setBackground(new java.awt.Color(255, 102, 204));
+        PartieAdeux.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setText("Nom du joueur 2 :");
+        PartieAdeux.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, -1));
+
+        jLabel6.setText("Nom du joueur 1 :");
+        PartieAdeux.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, -1));
+
+        nom_joueur2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur2_2ActionPerformed(evt);
+            }
+        });
+        PartieAdeux.add(nom_joueur2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 120, -1));
+
+        nom_joueur1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur1_2ActionPerformed(evt);
+            }
+        });
+        PartieAdeux.add(nom_joueur1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, -1));
+
+        btn_start.setText("Démarrer la partie");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
+        PartieAdeux.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+
+        getContentPane().add(PartieAdeux, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, 250, 100));
+
+        PartieAtrois.setBackground(new java.awt.Color(51, 255, 51));
+        PartieAtrois.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_start2.setText("Démarrer la partie");
+        btn_start2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_start2ActionPerformed(evt);
+            }
+        });
+        PartieAtrois.add(btn_start2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        jLabel7.setText("Nom du joueur 3 :");
+        PartieAtrois.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 100, -1));
+
+        jLabel8.setText("Nom du joueur 1 :");
+        PartieAtrois.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
+
+        jLabel9.setText("Nom du joueur 2 :");
+        PartieAtrois.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 100, -1));
+
+        nom_joueur1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur1_3ActionPerformed(evt);
+            }
+        });
+        PartieAtrois.add(nom_joueur1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 20));
+        PartieAtrois.add(nom_joueur2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 90, 20));
+        PartieAtrois.add(nom_joueur3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 90, 20));
+
+        getContentPane().add(PartieAtrois, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 210, 140));
+
+        PartieAquatre.setBackground(new java.awt.Color(255, 204, 102));
+        PartieAquatre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setText("Nom du joueur 3 :");
+        PartieAquatre.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
+
+        jLabel11.setText("Nom du joueur 3 :");
+        PartieAquatre.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
+
+        jLabel12.setText("Nom du joueur 3 :");
+        PartieAquatre.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
+
+        jLabel13.setText("Nom du joueur 3 :");
+        PartieAquatre.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, -1));
+        PartieAquatre.add(nom_joueur4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, -1));
+
+        nom_joueur1_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur1_4ActionPerformed(evt);
+            }
+        });
+        PartieAquatre.add(nom_joueur1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, -1));
+        PartieAquatre.add(nom_joueur2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
+        PartieAquatre.add(nom_joueur3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 120, -1));
+
+        btn_start1.setText("Démarrer la partie");
+        btn_start1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_start1ActionPerformed(evt);
+            }
+        });
+        PartieAquatre.add(btn_start1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
+
+        getContentPane().add(PartieAquatre, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 250, 250));
+
+        panel_tuilevolante.setBackground(new java.awt.Color(204, 204, 204));
+        panel_tuilevolante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(panel_tuilevolante, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 210, 210));
+
+        panel_joueur.setBackground(new java.awt.Color(255, 255, 255));
+        panel_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NomJcourant.setText("Jcourant");
-        jPanel2.add(NomJcourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, 10));
+        panel_joueur.add(NomJcourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, 10));
 
         objectif_courant.setBackground(new java.awt.Color(102, 102, 255));
         objectif_courant.setText("jLabel1");
-        jPanel2.add(objectif_courant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 84, 137));
+        panel_joueur.add(objectif_courant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 84, 137));
 
         jLabel2.setText("Il vous reste encore");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 103, -1));
+        panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 103, -1));
 
         objectif_restants.setText("objectif_restants");
-        jPanel2.add(objectif_restants, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        panel_joueur.add(objectif_restants, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
         jLabel1.setText("objectif(s)");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
+        panel_joueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, 10));
+        panel_joueur.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, 10));
 
         jLabel3.setText("Le joueur courant est :");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        panel_joueur.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         NomJcourant1.setText("Jcourant");
-        jPanel2.add(NomJcourant1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 10));
+        panel_joueur.add(NomJcourant1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 10));
 
         jButton1.setText("Commencer le tour");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +270,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        panel_joueur.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         jButton2.setText("Terminer le tour");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -100,13 +278,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
+        panel_joueur.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 250, 330));
+        getContentPane().add(panel_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 250, 330));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
+        panel_chrono.setBackground(new java.awt.Color(204, 204, 204));
+        panel_chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +296,66 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void DeuxjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeuxjoueursActionPerformed
+        PartieAdeux.setVisible(true);
+        PartieAtrois.setVisible(false);
+        PartieAquatre.setVisible(false);
+        
+    }//GEN-LAST:event_DeuxjoueursActionPerformed
+
+    private void nom_joueur1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur1_2ActionPerformed
+
+    private void nom_joueur1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur1_3ActionPerformed
+
+    private void nom_joueur1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur1_4ActionPerformed
+
+    private void nom_joueur2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur2_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur2_2ActionPerformed
+
+    private void TroisjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TroisjoueursActionPerformed
+        PartieAdeux.setVisible(false);
+        PartieAtrois.setVisible(true);
+        PartieAquatre.setVisible(false);
+        
+    }//GEN-LAST:event_TroisjoueursActionPerformed
+
+    private void QuatresjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuatresjoueursActionPerformed
+        PartieAdeux.setVisible(false);
+        PartieAtrois.setVisible(false);
+        PartieAquatre.setVisible(true);
+    }//GEN-LAST:event_QuatresjoueursActionPerformed
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        PartieAdeux.setVisible(false);
+        Infojeu.setVisible(true);
+        panel_tuilevolante.setVisible(true);
+        panel_joueur.setVisible(true);
+        panel_chrono.setVisible(true);
+    }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_start2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start2ActionPerformed
+        PartieAtrois.setVisible(false);
+        Infojeu.setVisible(true);
+        panel_tuilevolante.setVisible(true);
+        panel_joueur.setVisible(true);
+        panel_chrono.setVisible(true);
+    }//GEN-LAST:event_btn_start2ActionPerformed
+
+    private void btn_start1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start1ActionPerformed
+        PartieAquatre.setVisible(false);
+        Infojeu.setVisible(true);
+        panel_tuilevolante.setVisible(true);
+        panel_joueur.setVisible(true);
+        panel_chrono.setVisible(true);
+    }//GEN-LAST:event_btn_start1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,20 +393,51 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Choix_nmbr_joueur;
+    private javax.swing.JButton Deuxjoueurs;
     private javax.swing.JPanel Infojeu;
     private javax.swing.JLabel NomJcourant;
     private javax.swing.JLabel NomJcourant1;
+    private javax.swing.JPanel PartieAdeux;
+    private javax.swing.JPanel PartieAquatre;
+    private javax.swing.JPanel PartieAtrois;
+    private javax.swing.JButton Quatresjoueurs;
+    private javax.swing.JButton Troisjoueurs;
+    private javax.swing.JButton btn_start;
+    private javax.swing.JButton btn_start1;
+    private javax.swing.JButton btn_start2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nom_joueur1_2;
+    private javax.swing.JTextField nom_joueur1_3;
+    private javax.swing.JTextField nom_joueur1_4;
+    private javax.swing.JTextField nom_joueur2_2;
+    private javax.swing.JTextField nom_joueur2_3;
+    private javax.swing.JTextField nom_joueur2_4;
+    private javax.swing.JTextField nom_joueur3_3;
+    private javax.swing.JTextField nom_joueur3_4;
+    private javax.swing.JTextField nom_joueur4_4;
     private javax.swing.JLabel objectif_courant;
     private javax.swing.JLabel objectif_restants;
+    private javax.swing.JPanel panel_chrono;
+    private javax.swing.JPanel panel_joueur;
+    private javax.swing.JPanel panel_tuilevolante;
     private javax.swing.JPanel panneauGrille;
     // End of variables declaration//GEN-END:variables
 }
