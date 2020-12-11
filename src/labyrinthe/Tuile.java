@@ -25,6 +25,7 @@ public class Tuile {
 		type = type_donne;
 		orientation = 0;
 	}
+        /*
 	public RotatingImage(BufferedImage sourceImage){
 		
 		
@@ -62,5 +63,5 @@ public class Tuile {
         return ObjetRecuperer; 
 		
 	}
-
+*/
 }
