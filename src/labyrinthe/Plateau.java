@@ -27,7 +27,32 @@ public class Plateau {
 	}
 
 	public boolean pontEntreTuiles(int x1, int y1, int x2, int y2) {
-		return false;
+		/* Si les tuiles sont sur la même colonne ou ligne */
+		if (x1 == x2) {
+			/* On vérifie si les tuiles sont adjacentes */
+			if (Math.abs(y1 - y2) > 1) {
+				return false;
+			} else if (y1 - y2 >= 0) {
+				return (tuiles[x1][y1].porteSud
+						&& tuiles[x2][y2].porteNord);
+			} else {
+				return (tuiles[x1][y1].porteNord
+						&& tuiles[x2][y2].porteSud);
+			}
+		} else if (y1 == y2) {
+			/* On vérifie si les tuiles sont adjacentes */
+			if (Math.abs(x1 - x2) > 1) {
+				return false;
+			} else if (x1 - x2 >= 0) {
+				return (tuiles[x1][y1].porteOuest
+						&& tuiles[x2][y2].porteEst);
+			} else {
+				return (tuiles[x1][y1].porteEst
+						&& tuiles[x2][y2].porteOuest);
+			}
+		} else {
+			return false;
+		}
 	}
 
 	public boolean cheminPossible(int x1, int y1, int x2, int y2) {
@@ -56,6 +81,7 @@ public class Plateau {
 
 	/**
 	 * Intervertit deux tuiles de coordonnées données
+	 *
 	 * @param x1 Position horizontale de la première tuile
 	 * @param y1 Position verticale de la première tuile
 	 * @param x2 Position horizontale de la deuxième tuile
