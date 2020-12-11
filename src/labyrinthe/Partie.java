@@ -5,6 +5,8 @@
  */
 package labyrinthe;
 
+import java.util.Scanner;
+
 /**
  * Implémente la partie, son initialisation et son déroulement
  *
@@ -25,10 +27,30 @@ public class Partie {
 		listeJoueurs = new Joueur[nbjoueurs];
 	}
 
+	/**
+	 * Crée le bon nombre de joueurs Demande le nom à donner et
+	 * attribue le bon nombre de cartes
+	 *
+	 * @return Succès de la création des joueurs
+	 */
+	public boolean creerJoueurs() {
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < nombreJoueurs; i++) {
+			if (listeJoueurs[i] != null) {
+				System.err.println("Le joueur " + (i + 1) + " existe déjà");
+				return false;
+			}
+			System.out.print("Entrez le nom du joueur " + (i + 1) + " : ");
+			String nomJoueur = sc.nextLine();
+			listeJoueurs[i] = new Joueur(nomJoueur, 24 / nombreJoueurs);
+		}
+		return true;
+	}
+
 	public void initialiserPartie() {
+		creerJoueurs();
 		attribuerCouleurs();
 		distribuerCartes();
-
 	}
 
 	public void debuterPartie() {
