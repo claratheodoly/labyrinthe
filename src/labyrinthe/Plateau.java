@@ -23,7 +23,6 @@ public class Plateau {
 
 	Plateau() {
 		tuiles = new Tuile[7][7];
-		tuileVolante = new Tuile("");
 	}
 
 	/**
@@ -78,10 +77,10 @@ public class Plateau {
 	}
 
 	/**
-	 * Déplace une colonne dans la direction indiquée, en comblant
-	 * l'espace laissé avec la tuile volante.
+	 * Déplace les tuiles d'une colonne dans la direction indiquée, en
+	 * comblant l'espace laissé avec la tuile volante.
 	 *
-	 * @param num_col Le numéro de la colonne
+	 * @param num_col  Le numéro de la colonne
 	 * @param versHaut Si le déplacement se fait vers le haut ou pas
 	 * @return Succès de l'opération
 	 */
@@ -123,24 +122,66 @@ public class Plateau {
 	}
 
 	/**
+	 * Déplace les tuiles d'une ligne dans la direction indiquée, en
+	 * comblant l'espace laissé avec la tuile volante.
 	 *
-	 * @param num_col
-	 * @param versDroite
-	 * @return
+	 * @param num_lig    Le numéro de la colonne
+	 * @param versDroite Si le déplacement se fait vers la droite ou
+	 *                   pas
+	 * @return Succès de l'opération
 	 */
-	public boolean deplacerLigne(int num_col, boolean versDroite) {
-		return false;
+	public boolean deplacerLigne(int num_lig, boolean versDroite) {
+		/* Vérification que la ligne est valide */
+		if (num_lig < 0 || num_lig > 6) {
+			return false;
+		}
+		Tuile temp;
+		int decalage;
+		if (versDroite) {
+			decalage = 1;
+			/* On échange la tuile volante avec la tuile qui sort */
+			temp = tuiles[6][num_lig];
+			tuiles[6][num_lig] = tuileVolante;
+			tuileVolante = temp;
+		} else {
+			/*
+			Décaler de 6 dans un sens revient à décaler de 1 dans
+			l'autre si on revient au début. Ceci permet d'éviter le
+			bug du modulo en Java si le dividende est négatif.
+			 */
+			decalage = 6;
+			/* On échange la tuile volante avec la tuile qui sort */
+			temp = tuiles[0][num_lig];
+			tuiles[0][num_lig] = tuileVolante;
+			tuileVolante = temp;
+		}
+		for (int i = 0; i < 7; i++) {
+			/*
+			On utilise le modulo pour faire un cycle avec les tuiles
+			 */
+			int i_pro = (i + decalage) % 7;
+			temp = tuiles[i_pro][num_lig];
+			tuiles[i_pro][num_lig] = tuiles[i][num_lig];
+			tuiles[i][num_lig] = temp;
+		}
+		return true;
 	}
 
 	/**
+	 * Place une tuile aux coordonnées indiquées si la place est vide
 	 *
-	 * @param x    La position horizontale de la tuile
-	 * @param y    La position verticale de la tuile
-	 * @param type Le type de tuile à placer
+	 * @param x            La position horizontale de la tuile
+	 * @param y            La position verticale de la tuile
+	 * @param tuileAPlacer La tuile à placer
 	 * @return Succès de l'opération
 	 */
-	public boolean placerTuile(int x, int y, String type) {
-		return false;
+	public boolean placerTuile(int x, int y, Tuile tuileAPlacer) {
+		if (tuiles[x][y] != null) {
+			return false;
+		} else {
+			tuiles[x][y] = tuileAPlacer;
+			return true;
+		}
 	}
 
 	/**
@@ -154,9 +195,10 @@ public class Plateau {
 	}
 
 	/**
+	 * Retourne la position du pion du joueur
 	 *
-	 * @param proprietaire
-	 * @return
+	 * @param proprietaire Le propriétaire du pion
+	 * @return Les coordonnées du pion
 	 */
 	public int[] positionPion(Joueur proprietaire) {
 		return new int[0];
