@@ -25,17 +25,42 @@ public class Tuile {
 		type = type_donne;
 		orientation = 0;
 	}
-
+	public RotatingImage(BufferedImage sourceImage){
+		
+		
+	}
 	public boolean tournerTuile(int degres) {
-		return false;
+		if (une_orientation = 90){ // rotation de la tuile de pi/2
+            		rotatingImage.setAngle(Math.PI*1/2);
+      
+        }
+        	if (une_orientation = 180){
+            		rotatingImage.setAngle(Math.PI*2/2);
+      
+        }
+        	if (une_orientation = 270){
+            		rotatingImage.setAngle(Math.PI*3/2);
+      
+        }
+        	if (une_orientation = 0){
+            		rotatingImage.setAngle(Math.PI*4/2);
+      
+        }
 	}
 
 	public boolean placerObjet(String objet) {
-		return false;
+		if (objet == true) { 
+            return false;  
+        } else {
+            objet = true;
+            return true;
 	}
 
 	public boolean recupererObjet(Pion pion_joueur) {
-		return false;
+		Objet ObjetRecuperer = ObjetActuel;
+        ObjetActuel = null;
+        return ObjetRecuperer; 
+		
 	}
 
 }
