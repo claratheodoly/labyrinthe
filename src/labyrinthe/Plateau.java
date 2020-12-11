@@ -14,6 +14,11 @@ package labyrinthe;
 public class Plateau {
 
 	Tuile[][] tuiles;
+	/*
+	La tuile (0,0) se situe en bas à gauche du plateau.
+	Le premier niveau de tableau représente la postion horizontale
+	('x'), et le deuxième la position verticale ('y').
+	 */
 	Tuile tuileVolante;
 
 	Plateau() {
@@ -49,8 +54,31 @@ public class Plateau {
 		return new int[0];
 	}
 
+	/**
+	 * Intervertit deux tuiles de coordonnées données
+	 * @param x1 Position horizontale de la première tuile
+	 * @param y1 Position verticale de la première tuile
+	 * @param x2 Position horizontale de la deuxième tuile
+	 * @param y2 Position verticale de la deuxième tuile
+	 * @return Succès de l'opération
+	 */
 	public boolean intervertirTuiles(int x1, int y1, int x2, int y2) {
-		return false;
+		if (x1 > 6 || x1 < 0) {
+			return false;
+		}
+		if (y1 > 6 || y1 < 0) {
+			return false;
+		}
+		if (x2 > 6 || x2 < 0) {
+			return false;
+		}
+		if (y2 > 6 || y2 < 0) {
+			return false;
+		}
+		Tuile temp = tuiles[x1][y1];
+		tuiles[x1][y1] = tuiles[x2][y2];
+		tuiles[x2][y2] = temp;
+		return true;
 	}
 
 }
