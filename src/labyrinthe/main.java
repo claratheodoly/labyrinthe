@@ -8,7 +8,8 @@ package labyrinthe;
 import java.util.Scanner;
 
 /**
- * Classe principale, qui déclenche les autres
+ * Classe principale, qui déclenche les autres, sera remplacée dans le
+ * futur.
  *
  * @author Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
  */
@@ -22,7 +23,7 @@ public class main {
 		int nb_joueurs;
 
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Combien de joueurs participent ? ");
+		System.out.print("Combien de joueurs participent ? ");
 		nb_joueurs = sc.nextInt();
 
 		Partie partie = new Partie(nb_joueurs);
