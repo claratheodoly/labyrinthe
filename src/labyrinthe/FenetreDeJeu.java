@@ -122,7 +122,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(255, 255, 255));
-        panneauGrille.setLayout(new java.awt.GridLayout(7, 7));
+        panneauGrille.setLayout(new java.awt.GridLayout());
         getContentPane().add(panneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 567, 567));
 
         Infojeu.setBackground(new java.awt.Color(204, 204, 204));
