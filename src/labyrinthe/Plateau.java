@@ -26,7 +26,16 @@ public class Plateau {
 		tuileVolante = new Tuile("");
 	}
 
-	public boolean pontEntreTuiles(int x1, int y1, int x2, int y2) {
+	/**
+	 * Détermine si un passage existe entre deux tuiles adjacentes
+	 *
+	 * @param x1 Position horizontale de la première tuile
+	 * @param y1 Position verticale de la première tuile
+	 * @param x2 Position horizontale de la deuxième tuile
+	 * @param y2 Position verticale de la deuxième tuile
+	 * @return Existance d'un passage entre les tuiles
+	 */
+	public boolean passageEntreTuilesAdjacentes(int x1, int y1, int x2, int y2) {
 		/* Si les tuiles sont sur la même colonne ou ligne */
 		if (x1 == x2) {
 			/* On vérifie si les tuiles sont adjacentes */
@@ -59,11 +68,11 @@ public class Plateau {
 		return false;
 	}
 
-	public boolean deplacerColonne(int num_col, boolean dir) {
+	public boolean deplacerColonne(int num_col, boolean versHaut) {
 		return false;
 	}
 
-	public boolean deplacerLigne(int num_col, boolean dir) {
+	public boolean deplacerLigne(int num_col, boolean versDroite) {
 		return false;
 	}
 
