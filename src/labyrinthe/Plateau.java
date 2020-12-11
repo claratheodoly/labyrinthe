@@ -64,26 +64,64 @@ public class Plateau {
 		}
 	}
 
+	/**
+	 * 
+	 * @param x1
+	 * @param y1
+	 * @param x2
+	 * @param y2
+	 * @return 
+	 */
 	public boolean cheminPossible(int x1, int y1, int x2, int y2) {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @param num_col
+	 * @param versHaut
+	 * @return 
+	 */
 	public boolean deplacerColonne(int num_col, boolean versHaut) {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @param num_col
+	 * @param versDroite
+	 * @return 
+	 */
 	public boolean deplacerLigne(int num_col, boolean versDroite) {
 		return false;
 	}
 
-	public boolean placerTuile(int x, int y) {
+	/**
+	 * 
+	 * @param x La position horizontale de la tuile
+	 * @param y La position verticale de la tuile
+	 * @param type Le type de tuile à placer
+	 * @return Succès de l'opération
+	 */
+	public boolean placerTuile(int x, int y, String type) {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @param num_col
+	 * @param dir
+	 * @return 
+	 */
 	public boolean deplacerPion(int num_col, boolean dir) {
 		return false;
 	}
 
+	/**
+	 * 
+	 * @param proprietaire
+	 * @return 
+	 */
 	public int[] positionPion(Joueur proprietaire) {
 		return new int[0];
 	}
