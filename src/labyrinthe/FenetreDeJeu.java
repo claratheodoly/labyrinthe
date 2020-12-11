@@ -101,8 +101,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Choix_nmbr_joueur.setBackground(new java.awt.Color(204, 204, 255));
         Choix_nmbr_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setText("A combien de joueur ");
-        Choix_nmbr_joueur.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
+        jLabel5.setText("A combien de joueur voulez vous jouer ?");
+        Choix_nmbr_joueur.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 30));
 
         Deuxjoueurs.setText("2");
         Deuxjoueurs.addActionListener(new java.awt.event.ActionListener() {
@@ -127,11 +127,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         Choix_nmbr_joueur.add(Quatresjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 40, 30));
-
-        jLabel14.setText("voulez vous jouer ?");
         Choix_nmbr_joueur.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        getContentPane().add(Choix_nmbr_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 110));
+        getContentPane().add(Choix_nmbr_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 230, 115));
 
         PartieAdeux.setBackground(new java.awt.Color(255, 102, 204));
         PartieAdeux.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,13 +198,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         PartieAquatre.setBackground(new java.awt.Color(255, 204, 102));
         PartieAquatre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setText("Nom du joueur 3 :");
+        jLabel10.setText("Nom du joueur 4 :");
         PartieAquatre.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
 
-        jLabel11.setText("Nom du joueur 3 :");
+        jLabel11.setText("Nom du joueur 1 :");
         PartieAquatre.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
-        jLabel12.setText("Nom du joueur 3 :");
+        jLabel12.setText("Nom du joueur 2 :");
         PartieAquatre.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
 
         jLabel13.setText("Nom du joueur 3 :");
