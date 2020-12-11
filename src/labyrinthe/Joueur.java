@@ -54,6 +54,7 @@ public class Joueur {
 
 	/**
 	 * Ajoute la carte en paramètre à la main du joueur
+	 *
 	 * @param carte La carte à ajouter
 	 * @return Succès de l'opération
 	 */
@@ -85,7 +86,7 @@ public class Joueur {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Vérifie si la main du joueur (son attribut 'listeCartes') est
 	 * pleine.
