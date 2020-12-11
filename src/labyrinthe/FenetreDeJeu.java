@@ -19,6 +19,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // variables utilisées pour le chrono
     int nbSecondes = 0;
     Timer monChrono;
+    Plateau PlateauJeu = new Plateau ();
     
     // insertion de l'image pour notre chrono
     ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png")); 
@@ -397,6 +398,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur.setVisible(true);
         panel_chrono.setVisible(true);
         monChrono.start(); // le chrono est lancé
+        panneauGrille.repaint();
     }//GEN-LAST:event_btn_startActionPerformed
 
     private void btn_start2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start2ActionPerformed
@@ -406,6 +408,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur.setVisible(true);
         panel_chrono.setVisible(true);
         monChrono.start(); // le chrono est lancé
+        panneauGrille.repaint();
     }//GEN-LAST:event_btn_start2ActionPerformed
 
     private void btn_start1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start1ActionPerformed
@@ -415,6 +418,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur.setVisible(true);
         panel_chrono.setVisible(true);
         monChrono.start(); // le chrono est lancé
+        panneauGrille.repaint();
     }//GEN-LAST:event_btn_start1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -456,8 +460,42 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
     }
     
-    
+   /* public final void ajouterTuilesGraphiques() {
+        for (int i = 0; i < PlateauJeu.nb_lignes; i++) {
+            for (int j = 0; j < PlateauJeu.nb_colonnes; j++) {
+                ... A ADAPTER POUR LA CRATION DES TUILE GRAPHIQUE DU LAYOUT
+                CelluleGraphique cellGraph = new CelluleGraphique(grilleJeu.Cellules[i][j]); // création d'une nouvelle cellule graphique appelé cellGraph
 
+                cellGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Cellule c = cellGraph.celluleAssociee;
+                        if (c.jetonCourant == null) {
+                            texte_message.setText("");
+                            return;
+                        }
+                        if (c.jetonCourant.Couleur.equals(joueurCourant.Couleur)) {
+                            texte_message.setText(joueurCourant.Nom + " récupère un de ses jetons");
+                            Jeton j_recup = c.recupererJeton();
+                            c.supprimerJeton();
+                            joueurCourant.ajouterJeton(j_recup);
+                            joueurSuivant();
+                        } else {
+                            if (joueurCourant.nombreDesintegrateurs > 0) {
+                                texte_message.setText(joueurCourant.Nom + " désintègre un jeton adverse");
+                                c.supprimerJeton();
+                                joueurCourant.utiliserDesintegrateur();
+                                joueurSuivant();
+                            }
+                        }
+                        grilleJeu.tasserGrille();
+                        actualiserAffichage();
+                    }
+                });
+                panneau_grille.add(cellGraph); // on ajoute les éléments cellGraph à notre panneau de jeu
+            }
+        }
+    }
+   */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Choix_nmbr_joueur;
     private javax.swing.JButton Deuxjoueurs;
