@@ -23,7 +23,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     // insertion de l'image pour notre chrono
     ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png")); 
-    
+    // insertion de l'image pour les boutons de chaques cotés du plateau
+    ImageIcon img_fleche = new javax.swing.ImageIcon(getClass().getResource("/images/fleche.png")); 
+    ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png")); 
+    ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png")); 
+    ImageIcon img_fleched = new javax.swing.ImageIcon(getClass().getResource("/images/fleched.png")); 
     
     public FenetreDeJeu() {
         initComponents();
@@ -40,6 +44,22 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Instanciation du timer */
        monChrono = new Timer(1000, tache_recurrente);
        iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
+       /* ajout des images aux divers boutons*/
+       jouer_gauche_ligne2.setIcon(img_fleche);
+       jouer_gauche_ligne4.setIcon(img_fleche);
+       jouer_gauche_ligne6.setIcon(img_fleche);
+       
+       jouer_droite_ligne2.setIcon(img_fleched);
+       jouer_droite_ligne4.setIcon(img_fleched);
+       jouer_droite_ligne6.setIcon(img_fleched);
+       
+       jouer_haut_col2.setIcon(img_flecheh);
+       jouer_haut_col4.setIcon(img_flecheh);
+       jouer_haut_col6.setIcon(img_flecheh);
+       
+       jouer_bas_col2.setIcon(img_flecheb);
+       jouer_bas_col4.setIcon(img_flecheb);
+       jouer_bas_col6.setIcon(img_flecheb);
        
         Choix_nmbr_joueur.setVisible(true);
         Infojeu.setVisible(false);
@@ -124,7 +144,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_droite_ligne6 = new javax.swing.JButton();
         jouer_gauche_ligne6 = new javax.swing.JButton();
         jouer_gauche_ligne4 = new javax.swing.JButton();
-        jouer_gauche_ligne3 = new javax.swing.JButton();
+        jouer_gauche_ligne2 = new javax.swing.JButton();
         jouer_droite_ligne2 = new javax.swing.JButton();
         jouer_gauche_ligne7 = new javax.swing.JButton();
         jouer_droite_ligne4 = new javax.swing.JButton();
@@ -417,12 +437,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jouer_gauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 318, 30, 30));
 
-        jouer_gauche_ligne3.addActionListener(new java.awt.event.ActionListener() {
+        jouer_gauche_ligne2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_gauche_ligne3ActionPerformed(evt);
+                jouer_gauche_ligne2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_gauche_ligne3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 30, 30));
+        getContentPane().add(jouer_gauche_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 30, 30));
 
         jouer_droite_ligne2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -565,9 +585,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jouer_gauche_ligne4ActionPerformed
 
-    private void jouer_gauche_ligne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne3ActionPerformed
+    private void jouer_gauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jouer_gauche_ligne3ActionPerformed
+    }//GEN-LAST:event_jouer_gauche_ligne2ActionPerformed
 
     private void jouer_droite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne2ActionPerformed
         // TODO add your handling code here:
@@ -696,7 +716,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_droite_ligne2;
     private javax.swing.JButton jouer_droite_ligne4;
     private javax.swing.JButton jouer_droite_ligne6;
-    private javax.swing.JButton jouer_gauche_ligne3;
+    private javax.swing.JButton jouer_gauche_ligne2;
     private javax.swing.JButton jouer_gauche_ligne4;
     private javax.swing.JButton jouer_gauche_ligne6;
     private javax.swing.JButton jouer_gauche_ligne7;
