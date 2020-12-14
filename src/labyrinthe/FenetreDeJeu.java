@@ -115,6 +115,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         texte_temps = new javax.swing.JLabel();
         iconeTimer = new javax.swing.JLabel();
+        jouer_haut_col6 = new javax.swing.JButton();
+        jouer_bas_col2 = new javax.swing.JButton();
+        jouer_bas_col4 = new javax.swing.JButton();
+        jouer_bas_col6 = new javax.swing.JButton();
+        jouer_haut_col2 = new javax.swing.JButton();
+        jouer_haut_col4 = new javax.swing.JButton();
+        jouer_droite_ligne6 = new javax.swing.JButton();
+        jouer_gauche_ligne6 = new javax.swing.JButton();
+        jouer_gauche_ligne4 = new javax.swing.JButton();
+        jouer_gauche_ligne3 = new javax.swing.JButton();
+        jouer_droite_ligne2 = new javax.swing.JButton();
+        jouer_gauche_ligne7 = new javax.swing.JButton();
+        jouer_droite_ligne4 = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
 
@@ -122,7 +135,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(255, 255, 255));
-        panneauGrille.setLayout(new java.awt.GridLayout());
+        panneauGrille.setLayout(new java.awt.GridLayout(1, 0));
         getContentPane().add(panneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 567, 567));
 
         Infojeu.setBackground(new java.awt.Color(204, 204, 204));
@@ -341,6 +354,97 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
+        jouer_haut_col6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_haut_col6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_haut_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 30, 30));
+
+        jouer_bas_col2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_bas_col2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_bas_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 630, 30, 30));
+
+        jouer_bas_col4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_bas_col4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_bas_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 630, 30, 30));
+
+        jouer_bas_col6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_bas_col6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_bas_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 630, 30, 30));
+
+        jouer_haut_col2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_haut_col2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_haut_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 10, 30, 30));
+
+        jouer_haut_col4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_haut_col4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_haut_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 10, 30, 30));
+
+        jouer_droite_ligne6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_droite_ligne6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_droite_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 480, 30, 30));
+
+        jouer_gauche_ligne6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_gauche_ligne6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_gauche_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 30, 30));
+
+        jouer_gauche_ligne4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_gauche_ligne4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_gauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 318, 30, 30));
+
+        jouer_gauche_ligne3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_gauche_ligne3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_gauche_ligne3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 30, 30));
+
+        jouer_droite_ligne2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_droite_ligne2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_droite_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
+
+        jouer_gauche_ligne7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_gauche_ligne7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_gauche_ligne7, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
+
+        jouer_droite_ligne4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jouer_droite_ligne4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jouer_droite_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -424,6 +528,58 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jouer_haut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_haut_col6ActionPerformed
+
+    private void jouer_bas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_bas_col2ActionPerformed
+
+    private void jouer_bas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_bas_col4ActionPerformed
+
+    private void jouer_bas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_bas_col6ActionPerformed
+
+    private void jouer_haut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_haut_col2ActionPerformed
+
+    private void jouer_haut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_haut_col4ActionPerformed
+
+    private void jouer_droite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_droite_ligne6ActionPerformed
+
+    private void jouer_gauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_gauche_ligne6ActionPerformed
+
+    private void jouer_gauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_gauche_ligne4ActionPerformed
+
+    private void jouer_gauche_ligne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_gauche_ligne3ActionPerformed
+
+    private void jouer_droite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_droite_ligne2ActionPerformed
+
+    private void jouer_gauche_ligne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_gauche_ligne7ActionPerformed
+
+    private void jouer_droite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jouer_droite_ligne4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,6 +690,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton jouer_bas_col2;
+    private javax.swing.JButton jouer_bas_col4;
+    private javax.swing.JButton jouer_bas_col6;
+    private javax.swing.JButton jouer_droite_ligne2;
+    private javax.swing.JButton jouer_droite_ligne4;
+    private javax.swing.JButton jouer_droite_ligne6;
+    private javax.swing.JButton jouer_gauche_ligne3;
+    private javax.swing.JButton jouer_gauche_ligne4;
+    private javax.swing.JButton jouer_gauche_ligne6;
+    private javax.swing.JButton jouer_gauche_ligne7;
+    private javax.swing.JButton jouer_haut_col2;
+    private javax.swing.JButton jouer_haut_col4;
+    private javax.swing.JButton jouer_haut_col6;
     private javax.swing.JTextField nom_joueur1_2;
     private javax.swing.JTextField nom_joueur1_3;
     private javax.swing.JTextField nom_joueur1_4;
