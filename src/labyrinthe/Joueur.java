@@ -101,5 +101,9 @@ public class Joueur {
 		}
 		return true;
 	}
+	
+	public boolean tousObjetsRamasses() {
+		return false;
+	}
 
 }
