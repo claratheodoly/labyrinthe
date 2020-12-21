@@ -71,6 +71,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		PartieAtrois.setVisible(false);
 		PartieAquatre.setVisible(false);
 
+		/* Dialogue modal du nombre de joueurs */
+		jLabel22.setVisible(false);
+		nom_joueur2_dia.setVisible(false);
+		jLabel23.setVisible(false);
+		nom_joueur3_dia.setVisible(false);
+		jLabel20.setVisible(false);
+		nom_joueur4_dia.setVisible(false);
 	}
 
 	/**
@@ -83,6 +90,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
+        dialogueJoueurs = new javax.swing.JDialog();
+        nbJoueurs_dia = new javax.swing.JSpinner();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        nom_joueur4_dia = new javax.swing.JTextField();
+        nom_joueur1_dia = new javax.swing.JTextField();
+        nom_joueur2_dia = new javax.swing.JTextField();
+        nom_joueur3_dia = new javax.swing.JTextField();
+        btn_start3 = new javax.swing.JButton();
+        texterandom = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
         Choix_nmbr_joueur = new javax.swing.JPanel();
@@ -148,8 +168,53 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_droite_ligne2 = new javax.swing.JButton();
         jouer_gauche_ligne7 = new javax.swing.JButton();
         jouer_droite_ligne4 = new javax.swing.JButton();
+        affDialogueJoueurs = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
+
+        dialogueJoueurs.setMinimumSize(new java.awt.Dimension(500, 500));
+        dialogueJoueurs.setModal(true);
+        dialogueJoueurs.setPreferredSize(new java.awt.Dimension(500, 500));
+        dialogueJoueurs.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nbJoueurs_dia.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
+        nbJoueurs_dia.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                nbJoueurs_diaStateChanged(evt);
+            }
+        });
+        dialogueJoueurs.getContentPane().add(nbJoueurs_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 60, -1));
+
+        jLabel19.setText("Combien de personnes jouent ?");
+        dialogueJoueurs.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel20.setText("Nom du joueur 4 :");
+        dialogueJoueurs.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
+
+        jLabel21.setText("Nom du joueur 1 :");
+        dialogueJoueurs.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 130, -1));
+
+        jLabel22.setText("Nom du joueur 2 :");
+        dialogueJoueurs.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 130, -1));
+
+        jLabel23.setText("Nom du joueur 3 :");
+        dialogueJoueurs.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 130, -1));
+        dialogueJoueurs.getContentPane().add(nom_joueur4_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 120, -1));
+        dialogueJoueurs.getContentPane().add(nom_joueur1_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 120, -1));
+        dialogueJoueurs.getContentPane().add(nom_joueur2_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, -1));
+        dialogueJoueurs.getContentPane().add(nom_joueur3_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 120, -1));
+
+        btn_start3.setText("Démarrer la partie");
+        btn_start3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_start3ActionPerformed(evt);
+            }
+        });
+        dialogueJoueurs.getContentPane().add(btn_start3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
+
+        texterandom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        texterandom.setText("1 joueur jouera");
+        dialogueJoueurs.getContentPane().add(texterandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1170, 715));
@@ -467,6 +532,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jouer_droite_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
 
+        affDialogueJoueurs.setText("Afficher le dialogue");
+        affDialogueJoueurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                affDialogueJoueursActionPerformed(evt);
+            }
+        });
+        getContentPane().add(affDialogueJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -483,7 +556,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		PartieAtrois.setVisible(false);
 		PartieAquatre.setVisible(false);
 		Choix_nmbr_joueur.setVisible(false);
-
     }//GEN-LAST:event_DeuxjoueursActionPerformed
 
     private void nom_joueur1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_2ActionPerformed
@@ -603,6 +675,64 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// TODO add your handling code here:
     }//GEN-LAST:event_jouer_droite_ligne4ActionPerformed
 
+    private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
+		dialogueJoueurs.dispose();
+    }//GEN-LAST:event_btn_start3ActionPerformed
+
+    private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
+		int nbJoueurs = (int) nbJoueurs_dia.getValue();
+		switch (nbJoueurs) {
+			case 1:
+				texterandom.setText("1 joueur jouera");
+				jLabel21.setVisible(true);
+				nom_joueur1_dia.setVisible(true);
+				jLabel22.setVisible(false);
+				nom_joueur2_dia.setVisible(false);
+				jLabel23.setVisible(false);
+				nom_joueur3_dia.setVisible(false);
+				jLabel20.setVisible(false);
+				nom_joueur4_dia.setVisible(false);
+				break;
+			case 2:
+				texterandom.setText("2 joueurs joueront");
+				jLabel21.setVisible(true);
+				nom_joueur1_dia.setVisible(true);
+				jLabel22.setVisible(true);
+				nom_joueur2_dia.setVisible(true);
+				jLabel23.setVisible(false);
+				nom_joueur3_dia.setVisible(false);
+				jLabel20.setVisible(false);
+				nom_joueur4_dia.setVisible(false);
+				break;
+			case 3:
+				texterandom.setText("3 joueurs joueront");
+				jLabel21.setVisible(true);
+				nom_joueur1_dia.setVisible(true);
+				jLabel22.setVisible(true);
+				nom_joueur2_dia.setVisible(true);
+				jLabel23.setVisible(true);
+				nom_joueur3_dia.setVisible(true);
+				jLabel20.setVisible(false);
+				nom_joueur4_dia.setVisible(false);
+				break;
+			case 4:
+				texterandom.setText("4 joueurs joueront");
+				jLabel21.setVisible(true);
+				nom_joueur1_dia.setVisible(true);
+				jLabel22.setVisible(true);
+				nom_joueur2_dia.setVisible(true);
+				jLabel23.setVisible(true);
+				nom_joueur3_dia.setVisible(true);
+				jLabel20.setVisible(true);
+				nom_joueur4_dia.setVisible(true);
+				break;
+		}
+    }//GEN-LAST:event_nbJoueurs_diaStateChanged
+
+    private void affDialogueJoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_affDialogueJoueursActionPerformed
+		dialogueJoueurs.setVisible(true);
+    }//GEN-LAST:event_affDialogueJoueursActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -685,9 +815,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel PartieAtrois;
     private javax.swing.JButton Quatresjoueurs;
     private javax.swing.JButton Troisjoueurs;
+    private javax.swing.JButton affDialogueJoueurs;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_start1;
     private javax.swing.JButton btn_start2;
+    private javax.swing.JButton btn_start3;
+    private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -702,7 +835,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -725,15 +863,20 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_haut_col2;
     private javax.swing.JButton jouer_haut_col4;
     private javax.swing.JButton jouer_haut_col6;
+    private javax.swing.JSpinner nbJoueurs_dia;
     private javax.swing.JTextField nom_joueur1_2;
     private javax.swing.JTextField nom_joueur1_3;
     private javax.swing.JTextField nom_joueur1_4;
+    private javax.swing.JTextField nom_joueur1_dia;
     private javax.swing.JTextField nom_joueur2_2;
     private javax.swing.JTextField nom_joueur2_3;
     private javax.swing.JTextField nom_joueur2_4;
+    private javax.swing.JTextField nom_joueur2_dia;
     private javax.swing.JTextField nom_joueur3_3;
     private javax.swing.JTextField nom_joueur3_4;
+    private javax.swing.JTextField nom_joueur3_dia;
     private javax.swing.JTextField nom_joueur4_4;
+    private javax.swing.JTextField nom_joueur4_dia;
     private javax.swing.JLabel objectif_courant;
     private javax.swing.JLabel objectif_restants;
     private javax.swing.JPanel panel_chrono;
@@ -741,5 +884,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel panel_tuilevolante;
     private javax.swing.JPanel panneauGrille;
     private javax.swing.JLabel texte_temps;
+    private javax.swing.JLabel texterandom;
     // End of variables declaration//GEN-END:variables
 }
