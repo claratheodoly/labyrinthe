@@ -41,7 +41,7 @@ public class Joueur {
 			return false;
 		}
 		/* On ne peut pas ajouter d'objet qui n'existe pas */
-		if (tuile.objet == null) {
+		if (!tuile.presenceObjet()) {
 			return false;
 		}
 		int i = 0;

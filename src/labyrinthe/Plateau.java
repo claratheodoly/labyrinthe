@@ -195,13 +195,25 @@ public class Plateau {
 	}
 
 	/**
-	 * Retourne la position du pion du joueur
+	 * Cherche le pion du joueur dans la grille et retourne sa
+	 * position
 	 *
-	 * @param proprietaire Le propriétaire du pion
+	 * @param proprietaireRecherche Le propriétaire du pion
 	 * @return Les coordonnées du pion
 	 */
-	public int[] positionPion(Joueur proprietaire) {
-		return new int[0];
+	public int[] positionPion(Joueur proprietaireRecherche) {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+				if (tuiles[i][j].presencePion()) {
+					for (Pion pionPresent : tuiles[i][j].pionsPresents) {
+						if (pionPresent.propriétaire == proprietaireRecherche) {
+							return new int[]{i, j};
+						}
+					}
+				}
+			}
+		}
+		return null;
 	}
 
 	/**

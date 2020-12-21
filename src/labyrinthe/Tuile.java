@@ -70,11 +70,11 @@ public class Tuile {
 	}
 	
 	public boolean presenceObjet() {
-		return false;
+		return !(objet == null);
 	}
 	
 	public boolean presencePion() {
-		return false;
+		return !(pionsPresents == null);
 	}
 
 }
