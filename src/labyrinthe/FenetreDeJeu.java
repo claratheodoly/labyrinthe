@@ -152,6 +152,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jTextField2.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1170, 715));
+        setPreferredSize(new java.awt.Dimension(1170, 715));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(255, 255, 255));
