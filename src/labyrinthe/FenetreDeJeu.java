@@ -24,10 +24,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	// insertion de l'image pour notre chrono
 	ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png"));
 	// insertion de l'image pour les boutons de chaques cotés du plateau
-	ImageIcon img_fleche = new javax.swing.ImageIcon(getClass().getResource("/images/fleche.png"));
-	ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
-	ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
 	ImageIcon img_fleched = new javax.swing.ImageIcon(getClass().getResource("/images/fleched.png"));
+	ImageIcon img_flecheg = new javax.swing.ImageIcon(getClass().getResource("/images/flecheg.png"));
+	ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
+	ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
 
 	public FenetreDeJeu() {
 		initComponents();
@@ -37,30 +37,29 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 			public void actionPerformed(ActionEvent e1) {
 				nbSecondes++; // incrémentation du nombres de seconde
 				texte_temps.setText(nbSecondes + "");
-			}
-		;
+			};
 		};
 
         /* Instanciation du timer */
-       monChrono = new Timer(1000, tache_recurrente);
+		monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
 		/* ajout des images aux divers boutons*/
-		jouer_versdroite_ligne2.setIcon(img_fleche);
-		jouer_versdroite_ligne4.setIcon(img_fleche);
-		jouer_versdroite_ligne6.setIcon(img_fleche);
+		jouer_versdroite_ligne2.setIcon(img_fleched);
+		jouer_versdroite_ligne4.setIcon(img_fleched);
+		jouer_versdroite_ligne6.setIcon(img_fleched);
 
-		jouer_versgauche_ligne2.setIcon(img_fleched);
-		jouer_versgauche_ligne4.setIcon(img_fleched);
-		jouer_versgauche_ligne6.setIcon(img_fleched);
+		jouer_versgauche_ligne2.setIcon(img_flecheg);
+		jouer_versgauche_ligne4.setIcon(img_flecheg);
+		jouer_versgauche_ligne6.setIcon(img_flecheg);
 
-		jouer_versbas_col2.setIcon(img_flecheh);
-		jouer_versbas_col4.setIcon(img_flecheh);
-		jouer_versbas_col6.setIcon(img_flecheh);
+		jouer_versbas_col2.setIcon(img_flecheb);
+		jouer_versbas_col4.setIcon(img_flecheb);
+		jouer_versbas_col6.setIcon(img_flecheb);
 
-		jouer_vershaut_col2.setIcon(img_flecheb);
-		jouer_vershaut_col4.setIcon(img_flecheb);
-		jouer_vershaut_col6.setIcon(img_flecheb);
-                
+		jouer_vershaut_col2.setIcon(img_flecheh);
+		jouer_vershaut_col4.setIcon(img_flecheh);
+		jouer_vershaut_col6.setIcon(img_flecheh);
+
 		Infojeu.setVisible(false);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(false);
