@@ -37,13 +37,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 			public void actionPerformed(ActionEvent e1) {
 				nbSecondes++; // incrémentation du nombres de seconde
 				texte_temps.setText(nbSecondes + "");
-			};
+			}
+		;
 		};
 
         /* Instanciation du timer */
 		monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
-		/* ajout des images aux divers boutons*/
+		
+		/* ajout des images aux divers boutons */
 		jouer_versdroite_ligne2.setIcon(img_fleched);
 		jouer_versdroite_ligne4.setIcon(img_fleched);
 		jouer_versdroite_ligne6.setIcon(img_fleched);
@@ -131,7 +133,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_versdroite_ligne4 = new javax.swing.JButton();
         jouer_versdroite_ligne2 = new javax.swing.JButton();
         jouer_versgauche_ligne2 = new javax.swing.JButton();
-        jouer_gauche_ligne7 = new javax.swing.JButton();
         jouer_versgauche_ligne4 = new javax.swing.JButton();
         affDialogueJoueurs = new javax.swing.JButton();
 
@@ -186,7 +187,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(255, 255, 255));
-        panneauGrille.setLayout(new java.awt.GridLayout(1, 0));
+        panneauGrille.setLayout(new java.awt.GridLayout(7, 7));
         getContentPane().add(panneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 567, 567));
 
         Infojeu.setBackground(new java.awt.Color(204, 204, 204));
@@ -348,13 +349,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jouer_versgauche_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
 
-        jouer_gauche_ligne7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_gauche_ligne7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jouer_gauche_ligne7, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
-
         jouer_versgauche_ligne4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jouer_versgauche_ligne4ActionPerformed(evt);
@@ -429,22 +423,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// TODO add your handling code here:
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
-    private void jouer_gauche_ligne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne7ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_gauche_ligne7ActionPerformed
-
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
 		// TODO add your handling code here:
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
 		dialogueJoueurs.dispose();
-                Infojeu.setVisible(true);
+		Infojeu.setVisible(true);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(true);
 		panel_joueur.setVisible(true);
 		panel_chrono.setVisible(true);
-         
+
     }//GEN-LAST:event_btn_start3ActionPerformed
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
@@ -597,7 +587,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JButton jouer_gauche_ligne7;
     private javax.swing.JButton jouer_versbas_col2;
     private javax.swing.JButton jouer_versbas_col4;
     private javax.swing.JButton jouer_versbas_col6;

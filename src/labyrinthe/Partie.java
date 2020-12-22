@@ -65,6 +65,10 @@ public class Partie {
 
 	}
 
+	public boolean placerTuiles() {
+		return false;
+	}
+	
 	public boolean attribuerCouleurs() {
 		return false;
 	}
