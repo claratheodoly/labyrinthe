@@ -45,31 +45,27 @@ public class FenetreDeJeu extends javax.swing.JFrame {
        monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
 		/* ajout des images aux divers boutons*/
-		jouer_gauche_ligne2.setIcon(img_fleche);
-		jouer_gauche_ligne4.setIcon(img_fleche);
-		jouer_gauche_ligne6.setIcon(img_fleche);
+		jouer_versdroite_ligne2.setIcon(img_fleche);
+		jouer_versdroite_ligne4.setIcon(img_fleche);
+		jouer_versdroite_ligne6.setIcon(img_fleche);
 
-		jouer_droite_ligne2.setIcon(img_fleched);
-		jouer_droite_ligne4.setIcon(img_fleched);
-		jouer_droite_ligne6.setIcon(img_fleched);
+		jouer_versgauche_ligne2.setIcon(img_fleched);
+		jouer_versgauche_ligne4.setIcon(img_fleched);
+		jouer_versgauche_ligne6.setIcon(img_fleched);
 
-		jouer_haut_col2.setIcon(img_flecheh);
-		jouer_haut_col4.setIcon(img_flecheh);
-		jouer_haut_col6.setIcon(img_flecheh);
+		jouer_versbas_col2.setIcon(img_flecheh);
+		jouer_versbas_col4.setIcon(img_flecheh);
+		jouer_versbas_col6.setIcon(img_flecheh);
 
-		jouer_bas_col2.setIcon(img_flecheb);
-		jouer_bas_col4.setIcon(img_flecheb);
-		jouer_bas_col6.setIcon(img_flecheb);
-
-		Choix_nmbr_joueur.setVisible(true);
+		jouer_vershaut_col2.setIcon(img_flecheb);
+		jouer_vershaut_col4.setIcon(img_flecheb);
+		jouer_vershaut_col6.setIcon(img_flecheb);
+                
 		Infojeu.setVisible(false);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(false);
 		panel_joueur.setVisible(false);
 		panel_chrono.setVisible(false);
-		PartieAdeux.setVisible(false);
-		PartieAtrois.setVisible(false);
-		PartieAquatre.setVisible(false);
 
 		/* Dialogue modal du nombre de joueurs */
 		jLabel22.setVisible(false);
@@ -105,36 +101,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         texterandom = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
-        Choix_nmbr_joueur = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        Deuxjoueurs = new javax.swing.JButton();
-        Troisjoueurs = new javax.swing.JButton();
-        Quatresjoueurs = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        PartieAdeux = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        nom_joueur2_2 = new javax.swing.JTextField();
-        nom_joueur1_2 = new javax.swing.JTextField();
-        btn_start = new javax.swing.JButton();
-        PartieAtrois = new javax.swing.JPanel();
-        btn_start2 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        nom_joueur1_3 = new javax.swing.JTextField();
-        nom_joueur2_3 = new javax.swing.JTextField();
-        nom_joueur3_3 = new javax.swing.JTextField();
-        PartieAquatre = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        nom_joueur4_4 = new javax.swing.JTextField();
-        nom_joueur1_4 = new javax.swing.JTextField();
-        nom_joueur2_4 = new javax.swing.JTextField();
-        nom_joueur3_4 = new javax.swing.JTextField();
-        btn_start1 = new javax.swing.JButton();
         panel_tuilevolante = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -155,26 +121,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         texte_temps = new javax.swing.JLabel();
         iconeTimer = new javax.swing.JLabel();
-        jouer_haut_col6 = new javax.swing.JButton();
-        jouer_bas_col2 = new javax.swing.JButton();
-        jouer_bas_col4 = new javax.swing.JButton();
-        jouer_bas_col6 = new javax.swing.JButton();
-        jouer_haut_col2 = new javax.swing.JButton();
-        jouer_haut_col4 = new javax.swing.JButton();
-        jouer_droite_ligne6 = new javax.swing.JButton();
-        jouer_gauche_ligne6 = new javax.swing.JButton();
-        jouer_gauche_ligne4 = new javax.swing.JButton();
-        jouer_gauche_ligne2 = new javax.swing.JButton();
-        jouer_droite_ligne2 = new javax.swing.JButton();
+        jouer_versbas_col6 = new javax.swing.JButton();
+        jouer_vershaut_col2 = new javax.swing.JButton();
+        jouer_vershaut_col4 = new javax.swing.JButton();
+        jouer_vershaut_col6 = new javax.swing.JButton();
+        jouer_versbas_col2 = new javax.swing.JButton();
+        jouer_versbas_col4 = new javax.swing.JButton();
+        jouer_versgauche_ligne6 = new javax.swing.JButton();
+        jouer_versdroite_ligne6 = new javax.swing.JButton();
+        jouer_versdroite_ligne4 = new javax.swing.JButton();
+        jouer_versdroite_ligne2 = new javax.swing.JButton();
+        jouer_versgauche_ligne2 = new javax.swing.JButton();
         jouer_gauche_ligne7 = new javax.swing.JButton();
-        jouer_droite_ligne4 = new javax.swing.JButton();
+        jouer_versgauche_ligne4 = new javax.swing.JButton();
         affDialogueJoueurs = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
 
         dialogueJoueurs.setMinimumSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.setModal(true);
-        dialogueJoueurs.setPreferredSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nbJoueurs_dia.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
@@ -229,138 +194,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Infojeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 330));
 
-        Choix_nmbr_joueur.setBackground(new java.awt.Color(204, 204, 255));
-        Choix_nmbr_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("A combien de joueur voulez vous jouer ?");
-        Choix_nmbr_joueur.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 30));
-
-        Deuxjoueurs.setText("2");
-        Deuxjoueurs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeuxjoueursActionPerformed(evt);
-            }
-        });
-        Choix_nmbr_joueur.add(Deuxjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 40, 30));
-
-        Troisjoueurs.setText("3");
-        Troisjoueurs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TroisjoueursActionPerformed(evt);
-            }
-        });
-        Choix_nmbr_joueur.add(Troisjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 40, 30));
-
-        Quatresjoueurs.setText("4");
-        Quatresjoueurs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QuatresjoueursActionPerformed(evt);
-            }
-        });
-        Choix_nmbr_joueur.add(Quatresjoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 40, 30));
-        Choix_nmbr_joueur.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-
-        getContentPane().add(Choix_nmbr_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 230, 115));
-
-        PartieAdeux.setBackground(new java.awt.Color(255, 102, 204));
-        PartieAdeux.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setText("Nom du joueur 2 :");
-        PartieAdeux.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, -1));
-
-        jLabel6.setText("Nom du joueur 1 :");
-        PartieAdeux.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, -1));
-
-        nom_joueur2_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur2_2ActionPerformed(evt);
-            }
-        });
-        PartieAdeux.add(nom_joueur2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 120, -1));
-
-        nom_joueur1_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur1_2ActionPerformed(evt);
-            }
-        });
-        PartieAdeux.add(nom_joueur1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, -1));
-
-        btn_start.setText("Démarrer la partie");
-        btn_start.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_startActionPerformed(evt);
-            }
-        });
-        PartieAdeux.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        getContentPane().add(PartieAdeux, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, 250, 100));
-
-        PartieAtrois.setBackground(new java.awt.Color(51, 255, 51));
-        PartieAtrois.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_start2.setText("Démarrer la partie");
-        btn_start2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_start2ActionPerformed(evt);
-            }
-        });
-        PartieAtrois.add(btn_start2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
-
-        jLabel7.setText("Nom du joueur 3 :");
-        PartieAtrois.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 100, -1));
-
-        jLabel8.setText("Nom du joueur 1 :");
-        PartieAtrois.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
-
-        jLabel9.setText("Nom du joueur 2 :");
-        PartieAtrois.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 100, -1));
-
-        nom_joueur1_3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur1_3ActionPerformed(evt);
-            }
-        });
-        PartieAtrois.add(nom_joueur1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 20));
-        PartieAtrois.add(nom_joueur2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 90, 20));
-        PartieAtrois.add(nom_joueur3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 90, 20));
-
-        getContentPane().add(PartieAtrois, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 210, 140));
-
-        PartieAquatre.setBackground(new java.awt.Color(255, 204, 102));
-        PartieAquatre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setText("Nom du joueur 4 :");
-        PartieAquatre.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
-
-        jLabel11.setText("Nom du joueur 1 :");
-        PartieAquatre.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
-
-        jLabel12.setText("Nom du joueur 2 :");
-        PartieAquatre.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
-
-        jLabel13.setText("Nom du joueur 3 :");
-        PartieAquatre.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, -1));
-        PartieAquatre.add(nom_joueur4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, -1));
-
-        nom_joueur1_4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur1_4ActionPerformed(evt);
-            }
-        });
-        PartieAquatre.add(nom_joueur1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, -1));
-        PartieAquatre.add(nom_joueur2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
-        PartieAquatre.add(nom_joueur3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 120, -1));
-
-        btn_start1.setText("Démarrer la partie");
-        btn_start1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_start1ActionPerformed(evt);
-            }
-        });
-        PartieAquatre.add(btn_start1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-
-        getContentPane().add(PartieAquatre, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 250, 250));
-
         panel_tuilevolante.setBackground(new java.awt.Color(204, 204, 204));
         panel_tuilevolante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -376,10 +209,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_tuilevolante.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 80, 30));
 
         jLabel16.setText("Cliquez sur le bouton de rotation");
-        panel_tuilevolante.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
+        panel_tuilevolante.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 30));
 
         jLabel17.setText("pour faire pivoter la tuile de 90°");
-        panel_tuilevolante.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        panel_tuilevolante.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         getContentPane().add(panel_tuilevolante, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 210, 210));
 
@@ -441,82 +274,82 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
-        jouer_haut_col6.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versbas_col6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_haut_col6ActionPerformed(evt);
+                jouer_versbas_col6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_haut_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 30, 30));
+        getContentPane().add(jouer_versbas_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 30, 30));
 
-        jouer_bas_col2.addActionListener(new java.awt.event.ActionListener() {
+        jouer_vershaut_col2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_bas_col2ActionPerformed(evt);
+                jouer_vershaut_col2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_bas_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 630, 30, 30));
+        getContentPane().add(jouer_vershaut_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 630, 30, 30));
 
-        jouer_bas_col4.addActionListener(new java.awt.event.ActionListener() {
+        jouer_vershaut_col4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_bas_col4ActionPerformed(evt);
+                jouer_vershaut_col4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_bas_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 630, 30, 30));
+        getContentPane().add(jouer_vershaut_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 630, 30, 30));
 
-        jouer_bas_col6.addActionListener(new java.awt.event.ActionListener() {
+        jouer_vershaut_col6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_bas_col6ActionPerformed(evt);
+                jouer_vershaut_col6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_bas_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 630, 30, 30));
+        getContentPane().add(jouer_vershaut_col6, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 630, 30, 30));
 
-        jouer_haut_col2.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versbas_col2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_haut_col2ActionPerformed(evt);
+                jouer_versbas_col2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_haut_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 10, 30, 30));
+        getContentPane().add(jouer_versbas_col2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 10, 30, 30));
 
-        jouer_haut_col4.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versbas_col4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_haut_col4ActionPerformed(evt);
+                jouer_versbas_col4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_haut_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 10, 30, 30));
+        getContentPane().add(jouer_versbas_col4, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 10, 30, 30));
 
-        jouer_droite_ligne6.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versgauche_ligne6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_droite_ligne6ActionPerformed(evt);
+                jouer_versgauche_ligne6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_droite_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 480, 30, 30));
+        getContentPane().add(jouer_versgauche_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 480, 30, 30));
 
-        jouer_gauche_ligne6.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versdroite_ligne6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_gauche_ligne6ActionPerformed(evt);
+                jouer_versdroite_ligne6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_gauche_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 30, 30));
+        getContentPane().add(jouer_versdroite_ligne6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 30, 30));
 
-        jouer_gauche_ligne4.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versdroite_ligne4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_gauche_ligne4ActionPerformed(evt);
+                jouer_versdroite_ligne4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_gauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 318, 30, 30));
+        getContentPane().add(jouer_versdroite_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 318, 30, 30));
 
-        jouer_gauche_ligne2.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versdroite_ligne2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_gauche_ligne2ActionPerformed(evt);
+                jouer_versdroite_ligne2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_gauche_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 30, 30));
+        getContentPane().add(jouer_versdroite_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 30, 30));
 
-        jouer_droite_ligne2.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versgauche_ligne2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_droite_ligne2ActionPerformed(evt);
+                jouer_versgauche_ligne2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_droite_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
+        getContentPane().add(jouer_versgauche_ligne2, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
 
         jouer_gauche_ligne7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -525,12 +358,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jouer_gauche_ligne7, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 156, 30, 30));
 
-        jouer_droite_ligne4.addActionListener(new java.awt.event.ActionListener() {
+        jouer_versgauche_ligne4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jouer_droite_ligne4ActionPerformed(evt);
+                jouer_versgauche_ligne4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jouer_droite_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
+        getContentPane().add(jouer_versgauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
 
         affDialogueJoueurs.setText("Afficher le dialogue");
         affDialogueJoueurs.addActionListener(new java.awt.event.ActionListener() {
@@ -551,129 +384,61 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void DeuxjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeuxjoueursActionPerformed
-		PartieAdeux.setVisible(true);
-		PartieAtrois.setVisible(false);
-		PartieAquatre.setVisible(false);
-		Choix_nmbr_joueur.setVisible(false);
-    }//GEN-LAST:event_DeuxjoueursActionPerformed
-
-    private void nom_joueur1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_2ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur1_2ActionPerformed
-
-    private void nom_joueur1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_3ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur1_3ActionPerformed
-
-    private void nom_joueur1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_4ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur1_4ActionPerformed
-
-    private void nom_joueur2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur2_2ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur2_2ActionPerformed
-
-    private void TroisjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TroisjoueursActionPerformed
-		PartieAdeux.setVisible(false);
-		PartieAtrois.setVisible(true);
-		PartieAquatre.setVisible(false);
-		Choix_nmbr_joueur.setVisible(false);
-
-    }//GEN-LAST:event_TroisjoueursActionPerformed
-
-    private void QuatresjoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuatresjoueursActionPerformed
-		PartieAdeux.setVisible(false);
-		PartieAtrois.setVisible(false);
-		PartieAquatre.setVisible(true);
-		Choix_nmbr_joueur.setVisible(false);
-    }//GEN-LAST:event_QuatresjoueursActionPerformed
-
-    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
-		PartieAdeux.setVisible(false);
-		Infojeu.setVisible(true);
-		panel_tuilevolante.setVisible(true);
-		panel_joueur.setVisible(true);
-		panel_chrono.setVisible(true);
-		monChrono.start(); // le chrono est lancé
-		panneauGrille.repaint();
-    }//GEN-LAST:event_btn_startActionPerformed
-
-    private void btn_start2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start2ActionPerformed
-		PartieAtrois.setVisible(false);
-		Infojeu.setVisible(true);
-		panel_tuilevolante.setVisible(true);
-		panel_joueur.setVisible(true);
-		panel_chrono.setVisible(true);
-		monChrono.start(); // le chrono est lancé
-		panneauGrille.repaint();
-    }//GEN-LAST:event_btn_start2ActionPerformed
-
-    private void btn_start1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start1ActionPerformed
-		PartieAquatre.setVisible(false);
-		Infojeu.setVisible(true);
-		panel_tuilevolante.setVisible(true);
-		panel_joueur.setVisible(true);
-		panel_chrono.setVisible(true);
-		monChrono.start(); // le chrono est lancé
-		panneauGrille.repaint();
-    }//GEN-LAST:event_btn_start1ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 		// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jouer_haut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col6ActionPerformed
+    private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_haut_col6ActionPerformed
+    }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
-    private void jouer_bas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col2ActionPerformed
+    private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_bas_col2ActionPerformed
+    }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
-    private void jouer_bas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col4ActionPerformed
+    private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_bas_col4ActionPerformed
+    }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
-    private void jouer_bas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_bas_col6ActionPerformed
+    private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_bas_col6ActionPerformed
+    }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
-    private void jouer_haut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col2ActionPerformed
+    private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_haut_col2ActionPerformed
+    }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
-    private void jouer_haut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_haut_col4ActionPerformed
+    private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_haut_col4ActionPerformed
+    }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
-    private void jouer_droite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne6ActionPerformed
+    private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_droite_ligne6ActionPerformed
+    }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
-    private void jouer_gauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne6ActionPerformed
+    private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_gauche_ligne6ActionPerformed
+    }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
-    private void jouer_gauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne4ActionPerformed
+    private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_gauche_ligne4ActionPerformed
+    }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
-    private void jouer_gauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne2ActionPerformed
+    private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_gauche_ligne2ActionPerformed
+    }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
-    private void jouer_droite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne2ActionPerformed
+    private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_droite_ligne2ActionPerformed
+    }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_gauche_ligne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_gauche_ligne7ActionPerformed
 		// TODO add your handling code here:
     }//GEN-LAST:event_jouer_gauche_ligne7ActionPerformed
 
-    private void jouer_droite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_droite_ligne4ActionPerformed
+    private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jouer_droite_ligne4ActionPerformed
+    }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
 		dialogueJoueurs.dispose();
@@ -805,20 +570,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }
 	 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Choix_nmbr_joueur;
-    private javax.swing.JButton Deuxjoueurs;
     private javax.swing.JPanel Infojeu;
     private javax.swing.JLabel NomJcourant;
     private javax.swing.JLabel NomJcourant1;
-    private javax.swing.JPanel PartieAdeux;
-    private javax.swing.JPanel PartieAquatre;
-    private javax.swing.JPanel PartieAtrois;
-    private javax.swing.JButton Quatresjoueurs;
-    private javax.swing.JButton Troisjoueurs;
     private javax.swing.JButton affDialogueJoueurs;
-    private javax.swing.JButton btn_start;
-    private javax.swing.JButton btn_start1;
-    private javax.swing.JButton btn_start2;
     private javax.swing.JButton btn_start3;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
@@ -826,11 +581,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -842,40 +592,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JButton jouer_bas_col2;
-    private javax.swing.JButton jouer_bas_col4;
-    private javax.swing.JButton jouer_bas_col6;
-    private javax.swing.JButton jouer_droite_ligne2;
-    private javax.swing.JButton jouer_droite_ligne4;
-    private javax.swing.JButton jouer_droite_ligne6;
-    private javax.swing.JButton jouer_gauche_ligne2;
-    private javax.swing.JButton jouer_gauche_ligne4;
-    private javax.swing.JButton jouer_gauche_ligne6;
     private javax.swing.JButton jouer_gauche_ligne7;
-    private javax.swing.JButton jouer_haut_col2;
-    private javax.swing.JButton jouer_haut_col4;
-    private javax.swing.JButton jouer_haut_col6;
+    private javax.swing.JButton jouer_versbas_col2;
+    private javax.swing.JButton jouer_versbas_col4;
+    private javax.swing.JButton jouer_versbas_col6;
+    private javax.swing.JButton jouer_versdroite_ligne2;
+    private javax.swing.JButton jouer_versdroite_ligne4;
+    private javax.swing.JButton jouer_versdroite_ligne6;
+    private javax.swing.JButton jouer_versgauche_ligne2;
+    private javax.swing.JButton jouer_versgauche_ligne4;
+    private javax.swing.JButton jouer_versgauche_ligne6;
+    private javax.swing.JButton jouer_vershaut_col2;
+    private javax.swing.JButton jouer_vershaut_col4;
+    private javax.swing.JButton jouer_vershaut_col6;
     private javax.swing.JSpinner nbJoueurs_dia;
-    private javax.swing.JTextField nom_joueur1_2;
-    private javax.swing.JTextField nom_joueur1_3;
-    private javax.swing.JTextField nom_joueur1_4;
     private javax.swing.JTextField nom_joueur1_dia;
-    private javax.swing.JTextField nom_joueur2_2;
-    private javax.swing.JTextField nom_joueur2_3;
-    private javax.swing.JTextField nom_joueur2_4;
     private javax.swing.JTextField nom_joueur2_dia;
-    private javax.swing.JTextField nom_joueur3_3;
-    private javax.swing.JTextField nom_joueur3_4;
     private javax.swing.JTextField nom_joueur3_dia;
-    private javax.swing.JTextField nom_joueur4_4;
     private javax.swing.JTextField nom_joueur4_dia;
     private javax.swing.JLabel objectif_courant;
     private javax.swing.JLabel objectif_restants;
