@@ -102,7 +102,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
         panel_tuilevolante = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
+        imgTuileVolante = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -196,9 +196,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         panel_tuilevolante.setBackground(new java.awt.Color(204, 204, 204));
         panel_tuilevolante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel15.setText("jLabel15");
-        panel_tuilevolante.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 81, 81));
+        panel_tuilevolante.add(imgTuileVolante, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 81, 81));
 
         jButton3.setText("rotation");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +248,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        panel_joueur.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        panel_joueur.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 130, -1));
 
         jButton2.setText("Terminer le tour");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -442,6 +440,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
 		dialogueJoueurs.dispose();
+                Infojeu.setVisible(true);
+		panneauGrille.setVisible(true);
+		panel_tuilevolante.setVisible(true);
+		panel_joueur.setVisible(true);
+		panel_chrono.setVisible(true);
+         
     }//GEN-LAST:event_btn_start3ActionPerformed
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
@@ -577,11 +581,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton btn_start3;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
+    private javax.swing.JLabel imgTuileVolante;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
