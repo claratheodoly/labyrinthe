@@ -7,13 +7,14 @@ package labyrinthe;
 
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.JButton;
+
 
 /**
  *
  * @author Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
  */
-public class TuileGraphique extends JLabel {
+public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
 	Tuile TuileAssociee;
