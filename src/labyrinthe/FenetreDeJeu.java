@@ -240,7 +240,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Labyrinthe");
         setMinimumSize(new java.awt.Dimension(1170, 715));
-        setPreferredSize(new java.awt.Dimension(1170, 715));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(255, 255, 255));
@@ -279,7 +278,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         lbl_objectifCourantJCourant.setBackground(new java.awt.Color(102, 102, 255));
         lbl_objectifCourantJCourant.setText("jLabel1");
-        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 84, 137));
+        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 81, 81));
 
         jLabel2.setText("Il vous reste encore");
         panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
@@ -322,7 +321,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         texte_temps.setText("0");
         panel_chrono.add(texte_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 30, -1));
-        panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 36, 40));
+        panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 36, 40));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
@@ -476,7 +475,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
-		int nb_joueurs = (int) nbJoueurs_dia.getValue();
+		monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
+                int nb_joueurs = (int) nbJoueurs_dia.getValue();
 		partieJeu = new Partie(nb_joueurs);
 		/*
 		 * Petit bidouillage : le programme commence la pile au cas le plus haut
