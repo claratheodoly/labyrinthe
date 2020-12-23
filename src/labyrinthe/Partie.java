@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -22,7 +23,7 @@ public class Partie {
 
 	int nombreJoueurs;
 	Plateau plateauJeu;
-	Joueur[] listeJoueurs;
+	Joueur[] listeJoueurs ;
 	int joueurCourant;
 	Tuile[] listeTuiles;
 
@@ -85,9 +86,24 @@ public class Partie {
 	}
 
 	public void debuterPartie() {
-		joueurCourant = 0;
-		tourDeJeu();
-	}
+            Random rnd = new Random ();
+            boolean finDePartie = false ;
+            
+            initialiserPartie();
+            
+            joueurCourant = rnd.nextInt(nombreJoueurs);
+           
+            System.out.println("Le joueur " + listeJoueurs[joueurCourant]+ " commence la partie !");
+            tourDeJeu(joueurCourant);
+            
+            while (!finDePartie) {
+			finDePartie = tourDeJeu(joueurCourant);
+			if (!finDePartie) {
+                            joueurCourant = ++joueurCourant % 2;
+				}
+			}
+		}
+	
 
 	/**
 	 * Incrémente l'indice correspondant au joueur courant, ce faisant passant
@@ -97,8 +113,10 @@ public class Partie {
 		joueurCourant = ++joueurCourant % nombreJoueurs;
 	}
 
-	public void tourDeJeu() {
-
+	public boolean tourDeJeu(int joueur) {
+            boolean partieGagnee = false;
+            // TODO
+        return partieGagnee ;
 	}
 
 	/**
