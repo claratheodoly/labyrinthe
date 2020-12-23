@@ -164,6 +164,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur = new javax.swing.JPanel();
         lbl_nomJCourant = new javax.swing.JLabel();
         lbl_objectifCourantJCourant = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lbl_objectifRestantsJCourant = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -238,7 +239,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Labyrinthe");
         setMinimumSize(new java.awt.Dimension(1170, 715));
-        setPreferredSize(new java.awt.Dimension(1170, 715));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneauGrille.setBackground(new java.awt.Color(231, 193, 127));
@@ -279,7 +279,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_objectifCourantJCourant.setMaximumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setMinimumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setPreferredSize(new java.awt.Dimension(30, 30));
-        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 84, 80));
+        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 81, 81));
+
+        jLabel2.setText("Il vous reste encore");
+        panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
 
         lbl_objectifRestantsJCourant.setText("objectif_restants");
         panel_joueur.add(lbl_objectifRestantsJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 120, -1));
@@ -319,7 +322,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         texte_temps.setText("0");
         panel_chrono.add(texte_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 30, -1));
-        panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 36, 40));
+        panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 36, 40));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
@@ -483,7 +486,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
-    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+	private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
+		monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
 		int nb_joueurs = (int) nbJoueurs_dia.getValue();
 		partieJeu = new Partie(nb_joueurs);
 		/*
@@ -512,7 +516,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panel_joueur.setVisible(true);
 		panel_chrono.setVisible(true);
 		actualiserAffichage();
-    }//GEN-LAST:event_btn_startActionPerformed
+	}
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
 		int nbJoueurs = (int) nbJoueurs_dia.getValue();
@@ -708,6 +712,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;

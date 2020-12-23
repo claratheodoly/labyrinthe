@@ -28,8 +28,8 @@ public class Joueur {
 	}
 
 	/**
-	 * Ajoute l'objet présent sur la tuile à la liste des objets
-	 * possédés par le joueur.
+	 * Ajoute l'objet présent sur la tuile à la liste des objets possédés par le
+	 * joueur.
 	 *
 	 * @param tuile La tuile sur laquelle le joueur est
 	 * @return Succès de l'opération
@@ -73,8 +73,7 @@ public class Joueur {
 	}
 
 	/**
-	 * Vérifie si le sac du joueur (son attribut 'listeObjets') est
-	 * plein.
+	 * Vérifie si le sac du joueur (son attribut 'listeObjets') est plein.
 	 *
 	 * @return Le remplissage du sac
 	 */
@@ -88,8 +87,7 @@ public class Joueur {
 	}
 
 	/**
-	 * Vérifie si la main du joueur (son attribut 'listeCartes') est
-	 * pleine.
+	 * Vérifie si la main du joueur (son attribut 'listeCartes') est pleine.
 	 *
 	 * @return Le remplissage de la main
 	 */
@@ -101,7 +99,7 @@ public class Joueur {
 		}
 		return true;
 	}
-	
+
 	public boolean tousObjetsRamasses() {
 		return false;
 	}

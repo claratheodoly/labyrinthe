@@ -6,8 +6,7 @@
 package labyrinthe;
 
 /**
- * Implémente les plateau et une grande partie de l'intelligence du
- * jeu
+ * Implémente les plateau et une grande partie de l'intelligence du jeu
  *
  * @author Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
  */
@@ -41,10 +40,10 @@ public class Plateau {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * Place la tuile volante
-	 * 
+	 *
 	 * @param nouvelleTuileVolante La tuile qui devient volante
 	 * @return Succès de l'opération
 	 */
@@ -55,7 +54,7 @@ public class Plateau {
 		tuileVolante = nouvelleTuileVolante;
 		return true;
 	}
-	
+
 	/**
 	 * Détermine si un passage existe entre deux tuiles adjacentes
 	 *
@@ -108,8 +107,8 @@ public class Plateau {
 	}
 
 	/**
-	 * Déplace les tuiles d'une colonne dans la direction indiquée, en
-	 * comblant l'espace laissé avec la tuile volante.
+	 * Déplace les tuiles d'une colonne dans la direction indiquée, en comblant
+	 * l'espace laissé avec la tuile volante.
 	 *
 	 * @param num_col  Le numéro de la colonne
 	 * @param versHaut Si le déplacement se fait vers le haut ou pas
@@ -153,12 +152,11 @@ public class Plateau {
 	}
 
 	/**
-	 * Déplace les tuiles d'une ligne dans la direction indiquée, en
-	 * comblant l'espace laissé avec la tuile volante.
+	 * Déplace les tuiles d'une ligne dans la direction indiquée, en comblant
+	 * l'espace laissé avec la tuile volante.
 	 *
 	 * @param num_lig    Le numéro de la colonne
-	 * @param versDroite Si le déplacement se fait vers la droite ou
-	 *                   pas
+	 * @param versDroite Si le déplacement se fait vers la droite ou pas
 	 * @return Succès de l'opération
 	 */
 	public boolean deplacerLigne(int num_lig, boolean versDroite) {
@@ -209,8 +207,7 @@ public class Plateau {
 	}
 
 	/**
-	 * Cherche le pion du joueur dans la grille et retourne sa
-	 * position
+	 * Cherche le pion du joueur dans la grille et retourne sa position
 	 *
 	 * @param proprietaireRecherche Le propriétaire du pion
 	 * @return Les coordonnées du pion

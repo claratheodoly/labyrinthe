@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -23,7 +24,7 @@ public class Partie {
 	int nombreJoueurs;
 	Plateau plateauJeu;
 	Joueur[] listeJoueurs;
-	int joueurCourant;
+	int joueurCourant = 0;
 	Tuile[] listeTuiles;
 
 	Partie(int nbjoueurs) {
@@ -77,7 +78,7 @@ public class Partie {
 		distribuerCartes();
 		placerTuiles();
 	}
-	
+
 	public void initialiserPartieGraphique() {
 		attribuerCouleurs();
 		distribuerCartes();
@@ -85,8 +86,18 @@ public class Partie {
 	}
 
 	public void debuterPartie() {
-		joueurCourant = 0;
-		tourDeJeu();
+		Random rnd = new Random();
+		boolean finDePartie = false;
+
+		initialiserPartie();
+
+		joueurCourant = rnd.nextInt(nombreJoueurs);
+
+		System.out.println("Le joueur " + listeJoueurs[joueurCourant] + " commence la partie !");
+		do {
+			finDePartie = tourDeJeu(joueurCourant);
+			joueurSuivant();
+		} while (!finDePartie);
 	}
 
 	/**
@@ -97,8 +108,10 @@ public class Partie {
 		joueurCourant = ++joueurCourant % nombreJoueurs;
 	}
 
-	public void tourDeJeu() {
-
+	public boolean tourDeJeu(int joueur) {
+		boolean partieGagnee = false;
+		// TODO
+		return partieGagnee;
 	}
 
 	/**
@@ -201,17 +214,17 @@ public class Partie {
 				iter.remove();
 			}
 		}
-		
+
 		if (listeTypes.size() != 24) {
 			return false;
 		}
-		
+
 		/* On mélange la liste avec la méthode de Collections */
 		Collections.shuffle(listeTypes);
-		
+
 		/* Distribution des cartes */
 		int j = 0;
-		int nbCartesPJ = 24/nombreJoueurs;
+		int nbCartesPJ = 24 / nombreJoueurs;
 		for (int i = 0; i < listeTypes.size(); i++) {
 			if (i % nbCartesPJ == 0 && i != 0) {
 				j++;

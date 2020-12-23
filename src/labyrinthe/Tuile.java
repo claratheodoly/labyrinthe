@@ -62,11 +62,11 @@ public class Tuile {
 		return true;
 
 	}
-	
+
 	public boolean presenceObjet() {
 		return !(objet == null);
 	}
-	
+
 	public boolean presencePion() {
 		return !(pionsPresents == null);
 	}

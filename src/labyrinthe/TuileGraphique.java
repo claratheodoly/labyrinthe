@@ -26,7 +26,7 @@ public class TuileGraphique extends JButton {
 	Tuile tuileAssociee;
 
 	/* On charge les images ? */
-	/*ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
+ /*ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
 	ImageIcon bague = new javax.swing.ImageIcon(getClass().getResource("/images/bague.png"));
 	ImageIcon bourse = new javax.swing.ImageIcon(getClass().getResource("/images/bourse.png"));
 	ImageIcon carteTresor = new javax.swing.ImageIcon(getClass().getResource("/images/carte.png"));
@@ -56,7 +56,6 @@ public class TuileGraphique extends JButton {
 	ImageIcon tresor = new javax.swing.ImageIcon(getClass().getResource("/images/tresor.png"));
 	ImageIcon droit = new javax.swing.ImageIcon(getClass().getResource("/images/droit.png"));
 	ImageIcon coin = new javax.swing.ImageIcon(getClass().getResource("/images/coin.png"));*/
-
 	public TuileGraphique(Tuile laTuile) {
 		tuileAssociee = laTuile;
 	}
@@ -72,10 +71,10 @@ public class TuileGraphique extends JButton {
 		}
 		//setIcon(new ImageIcon(getClass().getResource("/images/" + tuileAssociee.type + ".png")));
 		Graphics2D g = (Graphics2D) G;
-		g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth()/2, image.getHeight()/2);
+		g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);
 		g.drawImage(image, null, 0, 0);
 	}
-	
+
 	public void tournerImage(int nouvAngle) {
 		tuileAssociee.tournerTuile(nouvAngle);
 	}
