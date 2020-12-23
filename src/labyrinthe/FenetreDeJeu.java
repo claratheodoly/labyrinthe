@@ -79,7 +79,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
 
-		// TODO à enlever quand fonctionnel
+		/*// TODO à enlever quand fonctionnel
 		// Exemple le temps d'ajouter le reste de la fonctionnalité
 		panneauGrille.add(new TuileGraphique(new Tuile("departB")));
 		panneauGrille.add(new TuileGraphique(new Tuile("lezard")));
@@ -129,7 +129,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
 		panneauGrille.add(new TuileGraphique(new Tuile("livre")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departR")));
+		panneauGrille.add(new TuileGraphique(new Tuile("departR")));*/
 	}
 
 	/**
@@ -435,7 +435,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		// TODO add your handling code here:
 		partieJeu.plateauJeu.deplacerColonne(4, true);
-		actualiserAffichege();
+		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
@@ -495,6 +495,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				partieJeu.creerJoueur(0, nom_joueur1_dia.getText());
 				break;
 		}
+		partieJeu.initialiserPartieGraphique();
 		dialogueJoueurs.dispose();
 		ajouterTuilesGraphiques();
 		Infojeu.setVisible(true);
@@ -502,7 +503,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panel_tuilevolante.setVisible(true);
 		panel_joueur.setVisible(true);
 		panel_chrono.setVisible(true);
-		actualiserAffichege();
+		actualiserAffichage();
     }//GEN-LAST:event_btn_start3ActionPerformed
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
@@ -566,13 +567,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	/**
 	 *
 	 */
-	public void actualiserAffichege() {
+	public void actualiserAffichage() {
+		Joueur joueurCourant = partieJeu.listeJoueurs[partieJeu.joueurCourant];
 		panneauGrille.repaint();
 
 		/* On met à jour les labels d'information à partir des données de la partie */
-		lbl_nomJCourant.setText(partieJeu.listeJoueurs[partieJeu.joueurCourant].nom);
-		lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + partieJeu.listeJoueurs[partieJeu.joueurCourant].listeCartes[partieJeu.listeJoueurs[partieJeu.joueurCourant].indexCarteRetournee] + ".png")));
-		lbl_objectifRestantsJCourant.setText("" + (partieJeu.listeJoueurs[partieJeu.joueurCourant].listeCartes.length - partieJeu.listeJoueurs[partieJeu.joueurCourant].indexCarteRetournee));
+		lbl_nomJCourant.setText(joueurCourant.nom);
+		lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + joueurCourant.listeCartes[joueurCourant.indexCarteRetournee].nomObjet + ".png")));
+		lbl_objectifRestantsJCourant.setText("" + (joueurCourant.listeCartes.length - joueurCourant.indexCarteRetournee));
 	}
 
 	/**
