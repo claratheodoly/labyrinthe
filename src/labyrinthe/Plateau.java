@@ -26,6 +26,37 @@ public class Plateau {
 	}
 
 	/**
+	 * Place une tuile aux coordonnées indiquées si la place est vide
+	 *
+	 * @param x            La position horizontale de la tuile
+	 * @param y            La position verticale de la tuile
+	 * @param tuileAPlacer La tuile à placer
+	 * @return Succès de l'opération
+	 */
+	public boolean placerTuile(int x, int y, Tuile tuileAPlacer) {
+		if (tuiles[x][y] != null) {
+			return false;
+		} else {
+			tuiles[x][y] = tuileAPlacer;
+			return true;
+		}
+	}
+	
+	/**
+	 * Place la tuile volante
+	 * 
+	 * @param nouvelleTuileVolante La tuile qui devient volante
+	 * @return Succès de l'opération
+	 */
+	public boolean declarerTuileVolante(Tuile nouvelleTuileVolante) {
+		if (tuileVolante != null) {
+			return false;
+		}
+		tuileVolante = nouvelleTuileVolante;
+		return true;
+	}
+	
+	/**
 	 * Détermine si un passage existe entre deux tuiles adjacentes
 	 *
 	 * @param x1 Position horizontale de la première tuile
@@ -165,23 +196,6 @@ public class Plateau {
 			tuiles[i][num_lig] = temp;
 		}
 		return true;
-	}
-
-	/**
-	 * Place une tuile aux coordonnées indiquées si la place est vide
-	 *
-	 * @param x            La position horizontale de la tuile
-	 * @param y            La position verticale de la tuile
-	 * @param tuileAPlacer La tuile à placer
-	 * @return Succès de l'opération
-	 */
-	public boolean placerTuile(int x, int y, Tuile tuileAPlacer) {
-		if (tuiles[x][y] != null) {
-			return false;
-		} else {
-			tuiles[x][y] = tuileAPlacer;
-			return true;
-		}
 	}
 
 	/**

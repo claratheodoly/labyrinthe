@@ -5,7 +5,14 @@
  */
 package labyrinthe;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Implémente la partie, son initialisation et son déroulement
@@ -18,13 +25,15 @@ public class Partie {
 	Plateau plateauJeu;
 	Joueur[] listeJoueurs;
 	Joueur joueurCourant;
-	Carte[] listeCartes = new Carte[24];
-	Tuile[] listeTuiles = new Tuile[50];
+	Carte[] listeCartes;
+	Tuile[] listeTuiles;
 
 	Partie(int nbjoueurs) {
 		nombreJoueurs = nbjoueurs;
 		plateauJeu = new Plateau();
 		listeJoueurs = new Joueur[nbjoueurs];
+		listeCartes = new Carte[24];
+		listeTuiles = new Tuile[50];
 	}
 
 	/**
@@ -64,11 +73,47 @@ public class Partie {
 	public void tourDeJeu() {
 
 	}
-
-	public boolean placerTuiles() {
-		return false;
-	}
 	
+	/**
+	 * Crée la liste des tuiles à partir du fichier 'listeTuilesOrdonnees.txt',
+	 * et place les tuiles de la liste sur le plateau.
+	 * 
+	 * @return Succès de l'opération
+	 */
+	public boolean placerTuiles() {
+		/* Création de la liste des tuiles */
+		Path cheminFichierListe = Paths.get("/labyrinthe/listeTuilesOrdonnees.txt");
+		List<String> listeTypes;
+		/* Ajout d'un try-catch pour gérer une exception */
+		try {
+			listeTypes = Files.readAllLines​(cheminFichierListe);
+		} catch (IOException ex) {
+			Logger.getLogger(Partie.class.getName()).log(Level.SEVERE, null, ex);
+			return false;
+		}
+		if (listeTypes.size() != listeTuiles.length) {
+			return false;
+		}
+		for (int i = 0; i < listeTypes.size(); i++) {
+			listeTuiles[i] = new Tuile(listeTypes.get(i));
+		}
+		
+		/* Placemnt des tuiles sur le plateau */
+		int indiceListe;
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+				indiceListe = 7 * i + j;
+				if (!plateauJeu.placerTuile(i, j, listeTuiles[indiceListe])) {
+					return false;
+				}
+			}
+		}
+		if (!plateauJeu.declarerTuileVolante(listeTuiles[49])) {
+			return false;
+		}
+		return true;
+	}
+
 	public boolean attribuerCouleurs() {
 		return false;
 	}
