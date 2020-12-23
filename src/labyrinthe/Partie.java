@@ -24,14 +24,12 @@ public class Partie {
 	Plateau plateauJeu;
 	Joueur[] listeJoueurs;
 	int joueurCourant;
-	Carte[] listeCartes;
 	Tuile[] listeTuiles;
 
 	Partie(int nbjoueurs) {
 		nombreJoueurs = nbjoueurs;
 		plateauJeu = new Plateau();
 		listeJoueurs = new Joueur[nbjoueurs];
-		listeCartes = new Carte[24];
 		listeTuiles = new Tuile[50];
 	}
 
@@ -75,6 +73,12 @@ public class Partie {
 
 	public void initialiserPartie() {
 		creerJoueurs();
+		attribuerCouleurs();
+		distribuerCartes();
+		placerTuiles();
+	}
+	
+	public void initialiserPartieGraphique() {
 		attribuerCouleurs();
 		distribuerCartes();
 		placerTuiles();
