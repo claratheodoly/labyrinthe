@@ -19,7 +19,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	// variables utilisées pour le chrono
 	int nbSecondes = 0;
 	Timer monChrono;
-	Plateau PlateauJeu = new Plateau();
+	Partie partieJeu;
 
 	// insertion de l'image pour notre chrono
 	ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png"));
@@ -44,7 +44,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Instanciation du timer */
 		monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
-		
+
 		/* ajout des images aux divers boutons */
 		jouer_versdroite_ligne2.setIcon(img_fleched);
 		jouer_versdroite_ligne4.setIcon(img_fleched);
@@ -75,12 +75,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
+
+		/* On  affiche le panneau de création des joueurs */
+		afficherDialogueCreationJoueurs();
 		
-		/* On remplit la grille */
-		ajouterTuilesGraphiques();
-		
-		// TODO à enlever
-		/* Exemple le temps d'ajouter le reste de la fonctionnalité */
+		// TODO à enlever quand fonctionnel
+		// Exemple le temps d'ajouter le reste de la fonctionnalité
 		panneauGrille.add(new TuileGraphique(new Tuile("departB")));
 		panneauGrille.add(new TuileGraphique(new Tuile("lezard")));
 		panneauGrille.add(new TuileGraphique(new Tuile("heaume")));
@@ -88,55 +88,54 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panneauGrille.add(new TuileGraphique(new Tuile("chandelier")));
 		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
 		panneauGrille.add(new TuileGraphique(new Tuile("departV")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("fantome")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("araignee")));
+		panneauGrille.add(new TuileGraphique(new Tuile("chouette")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("epee")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("saphir")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("tresor")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("bague")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("scarabee")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("rat")));
+		panneauGrille.add(new TuileGraphique(new Tuile("papillon")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("fee")));
+		panneauGrille.add(new TuileGraphique(new Tuile("crane")));
+		panneauGrille.add(new TuileGraphique(new Tuile("dragon")));
+		panneauGrille.add(new TuileGraphique(new Tuile("cle")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("couronne")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("carte")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("chauvesouris")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("fantome")));
+		panneauGrille.add(new TuileGraphique(new Tuile("departR")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("bourse")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("livre")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		
+		panneauGrille.add(new TuileGraphique(new Tuile("departJ")));
 	}
 
 	/**
-	 * This method is called from within the constructor to initialize
-	 * the form. WARNING: Do NOT modify this code. The content of this
-	 * method is always regenerated by the Form Editor.
+	 * This method is called from within the constructor to initialize the form.
+	 * WARNING: Do NOT modify this code. The content of this method is always
+	 * regenerated by the Form Editor.
 	 */
 	@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -190,12 +189,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_versdroite_ligne2 = new javax.swing.JButton();
         jouer_versgauche_ligne2 = new javax.swing.JButton();
         jouer_versgauche_ligne4 = new javax.swing.JButton();
-        affDialogueJoueurs = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
 
+        dialogueJoueurs.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         dialogueJoueurs.setMinimumSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.setModal(true);
+        dialogueJoueurs.setSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nbJoueurs_dia.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
@@ -412,14 +412,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jouer_versgauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
 
-        affDialogueJoueurs.setText("Afficher le dialogue");
-        affDialogueJoueurs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                affDialogueJoueursActionPerformed(evt);
-            }
-        });
-        getContentPane().add(affDialogueJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -445,6 +437,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		// TODO add your handling code here:
+		partieJeu.plateauJeu.deplacerColonne(4, true);
+		panneauGrille.repaint();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
@@ -484,13 +478,26 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
+		int nb_joueurs = (int) nbJoueurs_dia.getValue();
+		partieJeu = new Partie(nb_joueurs);
+		switch (nb_joueurs) {
+			case 4:
+				partieJeu.creerJoueur(3, nom_joueur4_dia.getText());
+			case 3:
+				partieJeu.creerJoueur(2, nom_joueur3_dia.getText());
+			case 2:
+				partieJeu.creerJoueur(1, nom_joueur2_dia.getText());
+			case 1:
+				partieJeu.creerJoueur(0, nom_joueur1_dia.getText());
+				break;
+		}
 		dialogueJoueurs.dispose();
+		ajouterTuilesGraphiques();
 		Infojeu.setVisible(true);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(true);
 		panel_joueur.setVisible(true);
 		panel_chrono.setVisible(true);
-
     }//GEN-LAST:event_btn_start3ActionPerformed
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
@@ -543,33 +550,33 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
 
-    private void affDialogueJoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_affDialogueJoueursActionPerformed
+	public final void afficherDialogueCreationJoueurs() {
 		dialogueJoueurs.setVisible(true);
-    }//GEN-LAST:event_affDialogueJoueursActionPerformed
-
+	}
+	
 	/**
 	 * Crée une tuile pour chaque tuile de la grille
 	 */
 	public final void ajouterTuilesGraphiques() {
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
-				if (PlateauJeu.tuiles[i][j] == null) {
+				if (partieJeu.plateauJeu.tuiles[i][j] == null) {
 					break;
 				}
-				TuileGraphique tuileGraph = new TuileGraphique(PlateauJeu.tuiles[i][j]);
-				
+				TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j]);
+
 				/* On ajoute l'action à effectuer qua d on clique sur la case */
 				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        Tuile t = tuileGraph.tuileAssociee;
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						Tuile t = tuileGraph.tuileAssociee;
 					}
 				});
-				
+
 				panneauGrille.add(tuileGraph);
 			}
 		}
 	}
-	
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -645,7 +652,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel Infojeu;
     private javax.swing.JLabel NomJcourant;
     private javax.swing.JLabel NomJcourant1;
-    private javax.swing.JButton affDialogueJoueurs;
     private javax.swing.JButton btn_start3;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;

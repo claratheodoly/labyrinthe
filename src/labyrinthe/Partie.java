@@ -50,8 +50,26 @@ public class Partie {
 			}
 			System.out.print("Entrez le nom du joueur " + (i + 1) + " : ");
 			String nomJoueur = sc.nextLine();
-			listeJoueurs[i] = new Joueur(nomJoueur, 24 / nombreJoueurs);
+			creerJoueur(i, nomJoueur);
 		}
+		return true;
+	}
+
+	/**
+	 * Crée un joueur de la liste à parir de son numéro et de son nom.
+	 *
+	 * @param indice la position du joueur
+	 * @param nom    le nom du joueur
+	 * @return Succès de l'opération
+	 */
+	public boolean creerJoueur(int indice, String nom) {
+		if (indice >= nombreJoueurs) {
+			return false;
+		}
+		if (listeJoueurs[indice] != null) {
+			return false;
+		}
+		listeJoueurs[indice] = new Joueur(nom, 24 / nombreJoueurs);
 		return true;
 	}
 
@@ -83,6 +101,14 @@ public class Partie {
 		/* Création de la liste des tuiles */
 		Path cheminFichierListe = Path.of("src/labyrinthe/listeTuilesOrdonee.txt");
 		List<String> listeTypes;
+		if (Files.notExists(cheminFichierListe)) {
+			System.err.println("Le fichier listeTuilesOrdonee.txt n'existe pas");
+			return false;
+		}
+		if (!Files.isReadable(cheminFichierListe)) {
+			System.err.println("Impossible de lire le fichier listeTuilesOrdonee.txt");
+			return false;
+		}
 		/* Ajout d'un try-catch pour gérer une exception */
 		try {
 			listeTypes = Files.readAllLines​(cheminFichierListe);

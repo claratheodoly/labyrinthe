@@ -19,7 +19,7 @@ public class TuileGraphique extends JButton {
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
 	Tuile tuileAssociee;
 	
-	/* On charge les images */
+	/* On charge les images ? */
 	ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
 	ImageIcon bague = new javax.swing.ImageIcon(getClass().getResource("/images/bague.png"));
 	ImageIcon bourse = new javax.swing.ImageIcon(getClass().getResource("/images/bourse.png"));
