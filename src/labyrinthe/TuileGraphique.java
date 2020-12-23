@@ -6,9 +6,14 @@
 package labyrinthe;
 
 import java.awt.Graphics;
-import javax.swing.ImageIcon;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
-
 
 /**
  *
@@ -17,10 +22,11 @@ import javax.swing.JButton;
 public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
+	BufferedImage image;
 	Tuile tuileAssociee;
-	
+
 	/* On charge les images ? */
-	ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
+	/*ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
 	ImageIcon bague = new javax.swing.ImageIcon(getClass().getResource("/images/bague.png"));
 	ImageIcon bourse = new javax.swing.ImageIcon(getClass().getResource("/images/bourse.png"));
 	ImageIcon carteTresor = new javax.swing.ImageIcon(getClass().getResource("/images/carte.png"));
@@ -49,7 +55,7 @@ public class TuileGraphique extends JButton {
 	ImageIcon scarabee = new javax.swing.ImageIcon(getClass().getResource("/images/scarabee.png"));
 	ImageIcon tresor = new javax.swing.ImageIcon(getClass().getResource("/images/tresor.png"));
 	ImageIcon droit = new javax.swing.ImageIcon(getClass().getResource("/images/droit.png"));
-	ImageIcon coin = new javax.swing.ImageIcon(getClass().getResource("/images/coin.png"));
+	ImageIcon coin = new javax.swing.ImageIcon(getClass().getResource("/images/coin.png"));*/
 
 	public TuileGraphique(Tuile laTuile) {
 		tuileAssociee = laTuile;
@@ -58,10 +64,20 @@ public class TuileGraphique extends JButton {
 	@Override
 	public void paintComponent(Graphics G) {
 		super.paintComponent(G);
-	//mettre les images fixes ici en fonction d'une possible méthode tuilefixe()
+		//mettre les images fixes ici en fonction d'une possible méthode tuilefixe()
+		try {
+			image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
+		} catch (IOException ex) {
+			Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		//setIcon(new ImageIcon(getClass().getResource("/images/" + tuileAssociee.type + ".png")));
+		Graphics2D g = (Graphics2D) G;
+		g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth()/2, image.getHeight()/2);
+		g.drawImage(image, null, 0, 0);
+	}
 	
-	setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + tuileAssociee.type + ".png")));
-
+	public void tournerImage(int nouvAngle) {
+		tuileAssociee.tournerTuile(nouvAngle);
 	}
 
 }

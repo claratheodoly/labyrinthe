@@ -30,22 +30,16 @@ public class Tuile {
 	}
 
 	public boolean tournerTuile(int degres) {
-		/*
-		if (orientation != 90) { // rotation de la tuile de pi/2
-			RotatingImage("a").setAngle(Math.PI * 1 / 2);
-
+		if (degres % 90 != 0) {
+			return false;
 		}
-		if (une_orientation = 180) {
-			rotatingImage.setAngle(Math.PI * 2 / 2);
-
+		int angle = degres % 360;
+		if (angle < 0) {
+			angle = (angle + 360) % 360;
 		}
-		if (une_orientation = 270) {
-			rotatingImage.setAngle(Math.PI * 3 / 2);
-
-		}
-		if (une_orientation = 0) {
-			rotatingImage.setAngle(Math.PI * 4 / 2);
-
+		orientation = (orientation + angle) % 360;
+		/*switch (angle) {
+			case 0:
 		}*/
 		return true;
 	}
