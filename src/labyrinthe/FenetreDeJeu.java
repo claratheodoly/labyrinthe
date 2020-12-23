@@ -78,6 +78,59 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		
 		/* On remplit la grille */
 		ajouterTuilesGraphiques();
+		
+		// TODO à enlever
+		/* Exemple le temps d'ajouter le reste de la fonctionnalité */
+		panneauGrille.add(new TuileGraphique(new Tuile("departB")));
+		panneauGrille.add(new TuileGraphique(new Tuile("lezard")));
+		panneauGrille.add(new TuileGraphique(new Tuile("heaume")));
+		panneauGrille.add(new TuileGraphique(new Tuile("gobelin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("chandelier")));
+		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
+		panneauGrille.add(new TuileGraphique(new Tuile("departV")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
+		
 	}
 
 	/**

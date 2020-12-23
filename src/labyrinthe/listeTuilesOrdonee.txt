@@ -4,7 +4,7 @@ heaume
 gobelin
 chandelier
 coin
-deparV
+departV
 coin
 fantome
 droit
@@ -40,11 +40,11 @@ coin
 coin
 droit
 fantome
-deparR
+departR
 droit
 bourse
 coin
 livre
 droit
-deparJ
+departJ
 droit
