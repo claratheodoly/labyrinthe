@@ -17,12 +17,13 @@ import javax.swing.JButton;
 public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
-	Tuile TuileAssociee;
-	// on charge les 5 images
+	Tuile tuileAssociee;
+	
+	/* On charge les images */
 	ImageIcon araignee = new javax.swing.ImageIcon(getClass().getResource("/images/araignee.png"));
 	ImageIcon bague = new javax.swing.ImageIcon(getClass().getResource("/images/bague.png"));
 	ImageIcon bourse = new javax.swing.ImageIcon(getClass().getResource("/images/bourse.png"));
-	ImageIcon carteTresor = new javax.swing.ImageIcon(getClass().getResource("/images/carteTresor.png"));
+	ImageIcon carteTresor = new javax.swing.ImageIcon(getClass().getResource("/images/carte.png"));
 	ImageIcon chandelier = new javax.swing.ImageIcon(getClass().getResource("/images/chandelier.png"));
 	ImageIcon chauvesouris = new javax.swing.ImageIcon(getClass().getResource("/images/chauvesouris.png"));
 	ImageIcon chouette = new javax.swing.ImageIcon(getClass().getResource("/images/chouette.png"));
@@ -47,17 +48,19 @@ public class TuileGraphique extends JButton {
 	ImageIcon saphir = new javax.swing.ImageIcon(getClass().getResource("/images/saphir.png"));
 	ImageIcon scarabee = new javax.swing.ImageIcon(getClass().getResource("/images/scarabee.png"));
 	ImageIcon tresor = new javax.swing.ImageIcon(getClass().getResource("/images/tresor.png"));
-	ImageIcon tuile1 = new javax.swing.ImageIcon(getClass().getResource("/images/tuile1.png"));
-	ImageIcon tuile2 = new javax.swing.ImageIcon(getClass().getResource("/images/tuile2.png"));
+	ImageIcon droit = new javax.swing.ImageIcon(getClass().getResource("/images/droit.png"));
+	ImageIcon coin = new javax.swing.ImageIcon(getClass().getResource("/images/coin.png"));
 
 	public TuileGraphique(Tuile laTuile) {
-		TuileAssociee = laTuile;
+		tuileAssociee = laTuile;
 	}
 
 	@Override
 	public void paintComponent(Graphics G) {
 		super.paintComponent(G);
-//mettre les images fixes ici en fonction d'une possible méthode tuilefixe()
+	//mettre les images fixes ici en fonction d'une possible méthode tuilefixe()
+	
+	setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + tuileAssociee.type + ".png")));
 
 	}
 

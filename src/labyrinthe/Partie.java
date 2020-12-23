@@ -8,7 +8,6 @@ package labyrinthe;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -37,8 +36,8 @@ public class Partie {
 	}
 
 	/**
-	 * Crée le bon nombre de joueurs Demande le nom à donner et
-	 * attribue le bon nombre de cartes
+	 * Crée le bon nombre de joueurs Demande le nom à donner et attribue le bon
+	 * nombre de cartes
 	 *
 	 * @return Succès de la création des joueurs
 	 */
@@ -73,16 +72,16 @@ public class Partie {
 	public void tourDeJeu() {
 
 	}
-	
+
 	/**
 	 * Crée la liste des tuiles à partir du fichier 'listeTuilesOrdonnees.txt',
 	 * et place les tuiles de la liste sur le plateau.
-	 * 
+	 *
 	 * @return Succès de l'opération
 	 */
 	public boolean placerTuiles() {
 		/* Création de la liste des tuiles */
-		Path cheminFichierListe = Paths.get("/labyrinthe/listeTuilesOrdonnees.txt");
+		Path cheminFichierListe = Path.of("src/labyrinthe/listeTuilesOrdonee.txt");
 		List<String> listeTypes;
 		/* Ajout d'un try-catch pour gérer une exception */
 		try {
@@ -97,7 +96,7 @@ public class Partie {
 		for (int i = 0; i < listeTypes.size(); i++) {
 			listeTuiles[i] = new Tuile(listeTypes.get(i));
 		}
-		
+
 		/* Placemnt des tuiles sur le plateau */
 		int indiceListe;
 		for (int i = 0; i < 7; i++) {
@@ -108,10 +107,7 @@ public class Partie {
 				}
 			}
 		}
-		if (!plateauJeu.declarerTuileVolante(listeTuiles[49])) {
-			return false;
-		}
-		return true;
+		return plateauJeu.declarerTuileVolante(listeTuiles[49]);
 	}
 
 	public boolean attribuerCouleurs() {

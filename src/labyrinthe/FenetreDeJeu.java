@@ -75,6 +75,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
+		
+		/* On remplit la grille */
+		ajouterTuilesGraphiques();
 	}
 
 	/**
@@ -491,6 +494,29 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		dialogueJoueurs.setVisible(true);
     }//GEN-LAST:event_affDialogueJoueursActionPerformed
 
+	/**
+	 * Crée une tuile pour chaque tuile de la grille
+	 */
+	public final void ajouterTuilesGraphiques() {
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+				if (PlateauJeu.tuiles[i][j] == null) {
+					break;
+				}
+				TuileGraphique tuileGraph = new TuileGraphique(PlateauJeu.tuiles[i][j]);
+				
+				/* On ajoute l'action à effectuer qua d on clique sur la case */
+				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Tuile t = tuileGraph.tuileAssociee;
+					}
+				});
+				
+				panneauGrille.add(tuileGraph);
+			}
+		}
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */
