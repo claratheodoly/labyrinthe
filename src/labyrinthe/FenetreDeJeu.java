@@ -78,7 +78,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
-		
+
 		// TODO à enlever quand fonctionnel
 		// Exemple le temps d'ajouter le reste de la fonctionnalité
 		panneauGrille.add(new TuileGraphique(new Tuile("departB")));
@@ -123,13 +123,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
 		panneauGrille.add(new TuileGraphique(new Tuile("fantome")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departR")));
+		panneauGrille.add(new TuileGraphique(new Tuile("departJ")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
 		panneauGrille.add(new TuileGraphique(new Tuile("bourse")));
 		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
 		panneauGrille.add(new TuileGraphique(new Tuile("livre")));
 		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departJ")));
+		panneauGrille.add(new TuileGraphique(new Tuile("departR")));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         nom_joueur2_dia = new javax.swing.JTextField();
         nom_joueur3_dia = new javax.swing.JTextField();
         btn_start3 = new javax.swing.JButton();
-        texterandom = new javax.swing.JLabel();
+        lbl_texteNbJoueurs = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
         panel_tuilevolante = new javax.swing.JPanel();
@@ -163,14 +163,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         panel_joueur = new javax.swing.JPanel();
-        NomJcourant = new javax.swing.JLabel();
-        objectif_courant = new javax.swing.JLabel();
+        lbl_nomJCourant = new javax.swing.JLabel();
+        lbl_objectifCourantJCourant = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        objectif_restants = new javax.swing.JLabel();
+        lbl_objectifRestantsJCourant = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        NomJcourant1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         panel_chrono = new javax.swing.JPanel();
@@ -193,6 +192,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jTextField2.setText("jTextField1");
 
         dialogueJoueurs.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogueJoueurs.setTitle("Création des joueurs");
         dialogueJoueurs.setMinimumSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.setModal(true);
         dialogueJoueurs.setSize(new java.awt.Dimension(500, 500));
@@ -233,11 +233,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         dialogueJoueurs.getContentPane().add(btn_start3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
 
-        texterandom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        texterandom.setText("1 joueur jouera");
-        dialogueJoueurs.getContentPane().add(texterandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        lbl_texteNbJoueurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_texteNbJoueurs.setText("1 joueur jouera");
+        dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Labyrinthe");
         setMinimumSize(new java.awt.Dimension(1170, 715));
         setPreferredSize(new java.awt.Dimension(1170, 715));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -273,18 +274,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur.setBackground(new java.awt.Color(255, 255, 255));
         panel_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        NomJcourant.setText("Jcourant");
-        panel_joueur.add(NomJcourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, 10));
+        lbl_nomJCourant.setText("Jcourant");
+        panel_joueur.add(lbl_nomJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, 20));
 
-        objectif_courant.setBackground(new java.awt.Color(102, 102, 255));
-        objectif_courant.setText("jLabel1");
-        panel_joueur.add(objectif_courant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 84, 137));
+        lbl_objectifCourantJCourant.setBackground(new java.awt.Color(102, 102, 255));
+        lbl_objectifCourantJCourant.setText("jLabel1");
+        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 84, 137));
 
         jLabel2.setText("Il vous reste encore");
         panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
 
-        objectif_restants.setText("objectif_restants");
-        panel_joueur.add(objectif_restants, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 120, -1));
+        lbl_objectifRestantsJCourant.setText("objectif_restants");
+        panel_joueur.add(lbl_objectifRestantsJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 120, -1));
 
         jLabel1.setText("objectif(s)");
         panel_joueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 80, -1));
@@ -294,9 +295,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         jLabel3.setText("Le joueur courant est :");
         panel_joueur.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        NomJcourant1.setText("Jcourant");
-        panel_joueur.add(NomJcourant1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 10));
 
         jButton1.setText("Commencer le tour");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -438,7 +436,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		// TODO add your handling code here:
 		partieJeu.plateauJeu.deplacerColonne(4, true);
-		panneauGrille.repaint();
+		actualiserAffichege();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
@@ -480,6 +478,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void btn_start3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start3ActionPerformed
 		int nb_joueurs = (int) nbJoueurs_dia.getValue();
 		partieJeu = new Partie(nb_joueurs);
+		/*
+		 * Petit bidouillage : le programme commence la pile au cas le plus haut
+		 * qui lui correspond, c-à-d le nombre de joueurs.
+		 * Comme il n'y a pas de 'break', il exécute ensuite tous ceux qui sont
+		 * en-dessous.
+		 */
 		switch (nb_joueurs) {
 			case 4:
 				partieJeu.creerJoueur(3, nom_joueur4_dia.getText());
@@ -498,13 +502,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panel_tuilevolante.setVisible(true);
 		panel_joueur.setVisible(true);
 		panel_chrono.setVisible(true);
+		actualiserAffichege();
     }//GEN-LAST:event_btn_start3ActionPerformed
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
 		int nbJoueurs = (int) nbJoueurs_dia.getValue();
 		switch (nbJoueurs) {
 			case 1:
-				texterandom.setText("1 joueur jouera");
+				lbl_texteNbJoueurs.setText("1 joueur jouera");
 				jLabel21.setVisible(true);
 				nom_joueur1_dia.setVisible(true);
 				jLabel22.setVisible(false);
@@ -515,7 +520,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur4_dia.setVisible(false);
 				break;
 			case 2:
-				texterandom.setText("2 joueurs joueront");
+				lbl_texteNbJoueurs.setText("2 joueurs joueront");
 				jLabel21.setVisible(true);
 				nom_joueur1_dia.setVisible(true);
 				jLabel22.setVisible(true);
@@ -526,7 +531,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur4_dia.setVisible(false);
 				break;
 			case 3:
-				texterandom.setText("3 joueurs joueront");
+				lbl_texteNbJoueurs.setText("3 joueurs joueront");
 				jLabel21.setVisible(true);
 				nom_joueur1_dia.setVisible(true);
 				jLabel22.setVisible(true);
@@ -537,7 +542,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur4_dia.setVisible(false);
 				break;
 			case 4:
-				texterandom.setText("4 joueurs joueront");
+				lbl_texteNbJoueurs.setText("4 joueurs joueront");
 				jLabel21.setVisible(true);
 				nom_joueur1_dia.setVisible(true);
 				jLabel22.setVisible(true);
@@ -550,10 +555,26 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
 
+	/**
+	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
+	 * des joueurs (et de la partie).
+	 */
 	public final void afficherDialogueCreationJoueurs() {
 		dialogueJoueurs.setVisible(true);
 	}
-	
+
+	/**
+	 *
+	 */
+	public void actualiserAffichege() {
+		panneauGrille.repaint();
+
+		/* On met à jour les labels d'information à partir des données de la partie */
+		lbl_nomJCourant.setText(partieJeu.listeJoueurs[partieJeu.joueurCourant].nom);
+		lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + partieJeu.listeJoueurs[partieJeu.joueurCourant].listeCartes[partieJeu.listeJoueurs[partieJeu.joueurCourant].indexCarteRetournee] + ".png")));
+		lbl_objectifRestantsJCourant.setText("" + (partieJeu.listeJoueurs[partieJeu.joueurCourant].listeCartes.length - partieJeu.listeJoueurs[partieJeu.joueurCourant].indexCarteRetournee));
+	}
+
 	/**
 	 * Crée une tuile pour chaque tuile de la grille
 	 */
@@ -650,8 +671,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
-    private javax.swing.JLabel NomJcourant;
-    private javax.swing.JLabel NomJcourant1;
     private javax.swing.JButton btn_start3;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
@@ -684,18 +703,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_vershaut_col2;
     private javax.swing.JButton jouer_vershaut_col4;
     private javax.swing.JButton jouer_vershaut_col6;
+    private javax.swing.JLabel lbl_nomJCourant;
+    private javax.swing.JLabel lbl_objectifCourantJCourant;
+    private javax.swing.JLabel lbl_objectifRestantsJCourant;
+    private javax.swing.JLabel lbl_texteNbJoueurs;
     private javax.swing.JSpinner nbJoueurs_dia;
     private javax.swing.JTextField nom_joueur1_dia;
     private javax.swing.JTextField nom_joueur2_dia;
     private javax.swing.JTextField nom_joueur3_dia;
     private javax.swing.JTextField nom_joueur4_dia;
-    private javax.swing.JLabel objectif_courant;
-    private javax.swing.JLabel objectif_restants;
     private javax.swing.JPanel panel_chrono;
     private javax.swing.JPanel panel_joueur;
     private javax.swing.JPanel panel_tuilevolante;
     private javax.swing.JPanel panneauGrille;
     private javax.swing.JLabel texte_temps;
-    private javax.swing.JLabel texterandom;
     // End of variables declaration//GEN-END:variables
 }

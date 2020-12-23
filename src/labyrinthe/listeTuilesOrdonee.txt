@@ -40,11 +40,11 @@ coin
 coin
 droit
 fantome
-departR
+departJ
 droit
 bourse
 coin
 livre
 droit
-departJ
+departR
 droit

@@ -8,10 +8,10 @@ package labyrinthe;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Implémente la partie, son initialisation et son déroulement
@@ -23,7 +23,7 @@ public class Partie {
 	int nombreJoueurs;
 	Plateau plateauJeu;
 	Joueur[] listeJoueurs;
-	Joueur joueurCourant;
+	int joueurCourant;
 	Carte[] listeCartes;
 	Tuile[] listeTuiles;
 
@@ -77,14 +77,20 @@ public class Partie {
 		creerJoueurs();
 		attribuerCouleurs();
 		distribuerCartes();
+		placerTuiles();
 	}
 
 	public void debuterPartie() {
-
+		joueurCourant = 0;
+		tourDeJeu();
 	}
 
+	/**
+	 * Incrémente l'indice correspondant au joueur courant, ce faisant passant
+	 * au joueur suivant.
+	 */
 	public void joueurSuivant() {
-
+		joueurCourant = ++joueurCourant % nombreJoueurs;
 	}
 
 	public void tourDeJeu() {
@@ -113,17 +119,18 @@ public class Partie {
 		try {
 			listeTypes = Files.readAllLines​(cheminFichierListe);
 		} catch (IOException ex) {
-			Logger.getLogger(Partie.class.getName()).log(Level.SEVERE, null, ex);
 			return false;
 		}
 		if (listeTypes.size() != listeTuiles.length) {
 			return false;
 		}
+
+		/* On remplit le tableau listeTuiles à partir de la liste listeTypes */
 		for (int i = 0; i < listeTypes.size(); i++) {
 			listeTuiles[i] = new Tuile(listeTypes.get(i));
 		}
 
-		/* Placemnt des tuiles sur le plateau */
+		/* Placement des tuiles sur le plateau */
 		int indiceListe;
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
@@ -136,12 +143,78 @@ public class Partie {
 		return plateauJeu.declarerTuileVolante(listeTuiles[49]);
 	}
 
+	/**
+	 * Attribue des couleurs aux joueurs, de façon non aléatoire.
+	 *
+	 * @return Succès de l'opération
+	 */
 	public boolean attribuerCouleurs() {
-		return false;
+		if (nombreJoueurs > 4 || nombreJoueurs < 1) {
+			return false;
+		}
+		switch (nombreJoueurs) {
+			case 4:
+				listeJoueurs[3].couleur = "rouge";
+			case 3:
+				listeJoueurs[2].couleur = "jaune";
+			case 2:
+				listeJoueurs[1].couleur = "vert";
+			case 1:
+				listeJoueurs[0].couleur = "bleu";
+		}
+		return true;
 	}
 
+	/**
+	 * Crée la liste des cartes, les mélange et les distribue.
+	 *
+	 * @return Succès de l'opération
+	 */
 	public boolean distribuerCartes() {
-		return false;
-	}
+		/* Création de la liste des tuiles */
+		Path cheminFichierListe = Path.of("src/labyrinthe/listeTuilesOrdonee.txt");
+		List<String> listeTypes;
+		if (Files.notExists(cheminFichierListe)) {
+			System.err.println("Le fichier listeTuilesOrdonee.txt n'existe pas");
+			return false;
+		}
+		if (!Files.isReadable(cheminFichierListe)) {
+			System.err.println("Impossible de lire le fichier listeTuilesOrdonee.txt");
+			return false;
+		}
+		try {
+			listeTypes = Files.readAllLines​(cheminFichierListe);
+		} catch (IOException ex) {
+			return false;
+		}
 
+		/* On supprime de la liste listeTypes ce qui n'est pas un objet de quête */
+		Iterator iter = listeTypes.iterator();
+		while (iter.hasNext()) {
+			String elem = (String) iter.next();
+			/* Comparaison avec les chaînes à ne pas garder */
+			if (elem.equals("droit") || elem.equals("coin") || elem.equals("departB") || elem.equals("departV") || elem.equals("departJ") || elem.equals("departR")) {
+				iter.remove();
+			}
+		}
+		
+		if (listeTypes.size() != 24) {
+			return false;
+		}
+		
+		/* On mélange la liste avec la méthode de Collections */
+		Collections.shuffle(listeTypes);
+		
+		/* Distribution des cartes */
+		int j = 0;
+		int nbCartesPJ = 24/nombreJoueurs;
+		for (int i = 0; i < listeTypes.size(); i++) {
+			if (i % nbCartesPJ == 0 && i != 0) {
+				j++;
+			}
+			listeJoueurs[j].listeCartes[i % nbCartesPJ] = new Carte(listeTypes.get(i));
+		}
+
+		return true;
+	}
 }
