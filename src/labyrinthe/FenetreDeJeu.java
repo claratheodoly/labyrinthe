@@ -279,7 +279,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_objectifCourantJCourant.setMaximumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setMinimumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setPreferredSize(new java.awt.Dimension(30, 30));
-        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 81, 81));
+        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 81, 81));
 
         jLabel2.setText("Il vous reste encore");
         panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
