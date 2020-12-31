@@ -50,7 +50,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne4.setIcon(img_fleched);
 		jouer_versdroite_ligne6.setIcon(img_fleched);
 
-		jouer_versgauche_ligne2.setIcon(img_flecheg);
+		//jouer_versgauche_ligne2.setIcon(img_flecheg);
 		jouer_versgauche_ligne4.setIcon(img_flecheg);
 		jouer_versgauche_ligne6.setIcon(img_flecheg);
 
@@ -62,11 +62,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_vershaut_col4.setIcon(img_flecheh);
 		jouer_vershaut_col6.setIcon(img_flecheh);
 
-		Infojeu.setVisible(false);
+		/* Pas besoin de ces instruction il semble, le paneau n'est pas encore affiché */
+		/*Infojeu.setVisible(false);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(false);
 		panel_joueur.setVisible(false);
-		panel_chrono.setVisible(false);
+		panel_chrono.setVisible(false);*/
 
 		/* Dialogue modal du nombre de joueurs */
 		jLabel22.setVisible(false);
@@ -78,58 +79,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
-
-		/*// TODO à enlever quand fonctionnel
-		// Exemple le temps d'ajouter le reste de la fonctionnalité
-		panneauGrille.add(new TuileGraphique(new Tuile("departB")));
-		panneauGrille.add(new TuileGraphique(new Tuile("lezard")));
-		panneauGrille.add(new TuileGraphique(new Tuile("heaume")));
-		panneauGrille.add(new TuileGraphique(new Tuile("gobelin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("chandelier")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departV")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("fantome")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("araignee")));
-		panneauGrille.add(new TuileGraphique(new Tuile("chouette")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("epee")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("saphir")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("tresor")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("bague")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("scarabee")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("rat")));
-		panneauGrille.add(new TuileGraphique(new Tuile("papillon")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("fee")));
-		panneauGrille.add(new TuileGraphique(new Tuile("crane")));
-		panneauGrille.add(new TuileGraphique(new Tuile("dragon")));
-		panneauGrille.add(new TuileGraphique(new Tuile("cle")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("couronne")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("carte")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("chauvesouris")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("fantome")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departJ")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("bourse")));
-		panneauGrille.add(new TuileGraphique(new Tuile("coin")));
-		panneauGrille.add(new TuileGraphique(new Tuile("livre")));
-		panneauGrille.add(new TuileGraphique(new Tuile("droit")));
-		panneauGrille.add(new TuileGraphique(new Tuile("departR")));*/
 	}
 
 	/**
@@ -164,7 +113,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_joueur = new javax.swing.JPanel();
         lbl_nomJCourant = new javax.swing.JLabel();
         lbl_objectifCourantJCourant = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         lbl_objectifRestantsJCourant = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -279,10 +227,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_objectifCourantJCourant.setMaximumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setMinimumSize(new java.awt.Dimension(30, 30));
         lbl_objectifCourantJCourant.setPreferredSize(new java.awt.Dimension(30, 30));
-        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 81, 81));
-
-        jLabel2.setText("Il vous reste encore");
-        panel_joueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
+        panel_joueur.add(lbl_objectifCourantJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 81, 81));
 
         lbl_objectifRestantsJCourant.setText("objectif_restants");
         panel_joueur.add(lbl_objectifRestantsJCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 120, -1));
@@ -318,10 +263,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panel_chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setText("temps écoulé");
-        panel_chrono.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 20));
+        panel_chrono.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         texte_temps.setText("0");
-        panel_chrono.add(texte_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 30, -1));
+        panel_chrono.add(texte_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+
+        iconeTimer.setText("Label");
         panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 36, 40));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
@@ -427,62 +374,88 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_tournerTuileVolanteActionPerformed
 
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(6, false);
+		if (!partieJeu.plateauJeu.deplacerColonne(5, false)) {
+			System.err.println("Erreur col 6 bas");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(2, true);
+		if (!partieJeu.plateauJeu.deplacerColonne(1, true)) {
+			System.err.println("Erreur col 2 haur");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(4, true);
+		if (!partieJeu.plateauJeu.deplacerColonne(3, true)) {
+			System.err.println("Erreur col 4 haut");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(6, true);
+		if (!partieJeu.plateauJeu.deplacerColonne(5, true)) {
+			System.err.println("Erreur col 6 haut");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(2, false);
+		if (!partieJeu.plateauJeu.deplacerColonne(1, false)) {
+			System.err.println("Erreur col 2 bas");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(4, false);
+		if (!partieJeu.plateauJeu.deplacerColonne(3, false)) {
+			System.err.println("Erreur col 4 bas");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(6, false);
+		if (!partieJeu.plateauJeu.deplacerLigne(5, false)) {
+			System.err.println("Erreur lig 6 gauche");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(6, true);
+		if (!partieJeu.plateauJeu.deplacerLigne(5, true)) {
+			System.err.println("Erreur lig 6 droite");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(4, true);
+		if (!partieJeu.plateauJeu.deplacerLigne(3, true)) {
+			System.err.println("Erreur lig 4 droite");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(2, true);
+		if (!partieJeu.plateauJeu.deplacerLigne(1, true)) {
+			System.err.println("Erreur lig 2 droite");
+		} else {
+			System.err.println("Pas de problème lig 2 droite");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(2, false);
+		if (!partieJeu.plateauJeu.deplacerLigne(1, false)) {
+			System.err.println("Erreur lig 2 gauche");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(4, false);
+		if (!partieJeu.plateauJeu.deplacerLigne(3, false)) {
+			System.err.println("Erreur lig 4 gauche");
+		}
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
@@ -603,7 +576,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				break;
 		}
 	}
-
+	
+	// TODO ajouter une variable de stockage des tuiles graphiques
 	/**
 	 * Crée une tuile pour chaque tuile de la grille
 	 */
@@ -624,7 +598,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				panneauGrille.add(tuileGraph);
 			}
 		}
-		javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
+		//javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
 		panel_tuilevolante.add(new TuileGraphique(partieJeu.plateauJeu.tuileVolante), new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
 	}
 
@@ -712,7 +686,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
