@@ -177,7 +177,7 @@ public class Plateau {
 			Décaler de 6 dans un sens revient à décaler de 1 dans
 			l'autre si on revient au début. Ceci permet d'éviter le
 			bogue du modulo en Java si le dividende est négatif.
-			 */
+			*/
 			decalage = 6;
 			/* On échange la tuile volante avec la tuile qui sort */
 			temp = tuiles[0][num_lig];

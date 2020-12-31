@@ -20,6 +20,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	int nbSecondes = 0;
 	Timer monChrono;
 	Partie partieJeu;
+	
+	// TODO : à enlever quand fini
+	// Variables de débogage
+	TuileGraphique [][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
+	TuileGraphique tuileGraphVol;
 
 	// insertion de l'image pour notre chrono
 	ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png"));
@@ -50,7 +55,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne4.setIcon(img_fleched);
 		jouer_versdroite_ligne6.setIcon(img_fleched);
 
-		//jouer_versgauche_ligne2.setIcon(img_flecheg);
+		jouer_versgauche_ligne2.setIcon(img_flecheg);
 		jouer_versgauche_ligne4.setIcon(img_flecheg);
 		jouer_versgauche_ligne6.setIcon(img_flecheg);
 
@@ -374,88 +379,62 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_tournerTuileVolanteActionPerformed
 
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(5, false)) {
-			System.err.println("Erreur col 6 bas");
-		}
+		partieJeu.plateauJeu.deplacerColonne(5, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(1, true)) {
-			System.err.println("Erreur col 2 haur");
-		}
+		partieJeu.plateauJeu.deplacerColonne(1, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(3, true)) {
-			System.err.println("Erreur col 4 haut");
-		}
+		partieJeu.plateauJeu.deplacerColonne(3, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(5, true)) {
-			System.err.println("Erreur col 6 haut");
-		}
+		partieJeu.plateauJeu.deplacerColonne(5, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(1, false)) {
-			System.err.println("Erreur col 2 bas");
-		}
+		partieJeu.plateauJeu.deplacerColonne(1, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerColonne(3, false)) {
-			System.err.println("Erreur col 4 bas");
-		}
+		partieJeu.plateauJeu.deplacerColonne(3, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(5, false)) {
-			System.err.println("Erreur lig 6 gauche");
-		}
+		partieJeu.plateauJeu.deplacerLigne(5, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(5, true)) {
-			System.err.println("Erreur lig 6 droite");
-		}
+		partieJeu.plateauJeu.deplacerLigne(5, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(3, true)) {
-			System.err.println("Erreur lig 4 droite");
-		}
+		partieJeu.plateauJeu.deplacerLigne(3, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(1, true)) {
-			System.err.println("Erreur lig 2 droite");
-		} else {
-			System.err.println("Pas de problème lig 2 droite");
-		}
+		partieJeu.plateauJeu.deplacerLigne(1, true);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(1, false)) {
-			System.err.println("Erreur lig 2 gauche");
-		}
+		partieJeu.plateauJeu.deplacerLigne(1, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
-		if (!partieJeu.plateauJeu.deplacerLigne(3, false)) {
-			System.err.println("Erreur lig 4 gauche");
-		}
+		partieJeu.plateauJeu.deplacerLigne(3, false);
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
@@ -550,12 +529,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	}
 
 	/**
-	 *
+	 * Actualise les textes  et les tuiles graphiques
 	 */
 	public void actualiserAffichage() {
 		/* Pour faciliter l'écriture */
 		Joueur joueurCourant = partieJeu.listeJoueurs[partieJeu.joueurCourant];
 		/* Actualisation des affichages */
+		actualiserTuileGraphiques();
 		panneauGrille.repaint();
 		panel_tuilevolante.repaint();
 
@@ -577,7 +557,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		}
 	}
 	
-	// TODO ajouter une variable de stockage des tuiles graphiques
 	/**
 	 * Crée une tuile pour chaque tuile de la grille
 	 */
@@ -589,19 +568,33 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				}
 				TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j]);
 
-				/* On ajoute l'action à effectuer qua d on clique sur la case */
+				/* On ajoute l'action à effectuer quand on clique sur la case */
 				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
 						Tuile t = tuileGraph.tuileAssociee;
 					}
 				});
 				panneauGrille.add(tuileGraph);
+				tabStockTuilesGraphiques[i][j] = tuileGraph;
 			}
 		}
 		//javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
-		panel_tuilevolante.add(new TuileGraphique(partieJeu.plateauJeu.tuileVolante), new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
+		tuileGraphVol = new TuileGraphique(partieJeu.plateauJeu.tuileVolante);
+		panel_tuilevolante.add(tuileGraphVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
 	}
 
+	/**
+	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au plateu.
+	 */
+	public void actualiserTuileGraphiques() {
+		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+				tabStockTuilesGraphiques[i][j].tuileAssociee = partieJeu.plateauJeu.tuiles[i][j];
+			}
+		}
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */

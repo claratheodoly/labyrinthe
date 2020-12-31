@@ -22,7 +22,7 @@ import javax.swing.JButton;
 public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
-	BufferedImage image;
+	//BufferedImage image;
 	Tuile tuileAssociee;
 
 	public TuileGraphique(Tuile laTuile) {
@@ -32,8 +32,10 @@ public class TuileGraphique extends JButton {
 	@Override
 	public void paintComponent(Graphics G) {
 		super.paintComponent(G);
+		BufferedImage image = null;
 		/* Lecture de l'image correspondante (attention aux exeptions) */
 		try {
+			//image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
 			image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
 		} catch (IOException ex) {
 			Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
