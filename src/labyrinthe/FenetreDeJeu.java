@@ -594,7 +594,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 	/**
 	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au
-	 * plateu.
+	 * plateau (c'est moche, mais c'est le mieux de ce à quoi j'ai pensé).
 	 */
 	public void actualiserTuileGraphiques() {
 		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;

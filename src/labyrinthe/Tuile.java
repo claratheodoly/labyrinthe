@@ -25,10 +25,6 @@ public class Tuile {
 		orientation = 0;
 	}
 
-	public void RotatingImage(String sourceImage) {
-		// TODO
-	}
-
 	public boolean tournerTuile(int degres) {
 		if (degres % 90 != 0) {
 			return false;
