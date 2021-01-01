@@ -22,7 +22,6 @@ import javax.swing.JButton;
 public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
-	//BufferedImage image;
 	Tuile tuileAssociee;
 
 	public TuileGraphique(Tuile laTuile) {
@@ -35,7 +34,6 @@ public class TuileGraphique extends JButton {
 		BufferedImage image = null;
 		/* Lecture de l'image correspondante (attention aux exeptions) */
 		try {
-			//image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
 			image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
 		} catch (IOException ex) {
 			Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
@@ -44,6 +42,17 @@ public class TuileGraphique extends JButton {
 		/* Rotation de l'image de l'angle indiqué autour de son centre */
 		g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);
 		/* Affichage de l'image transformée précedement sur place */
-		g.drawImage(image, null, 0, 0);
+		g.drawImage(image, 0, 0, null);
+		if (tuileAssociee.presencePion()) {
+			for (Pion pion : tuileAssociee.pionsPresents) {
+				BufferedImage imagePion = null;
+				try {
+					imagePion = ImageIO.read(new File("src/images/pion" + pion.couleur + ".png"));
+				} catch (IOException ex) {
+					Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
+				}
+				g.drawImage(imagePion, 0, 0, null);
+			}
+		}
 	}
 }
