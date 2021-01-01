@@ -1,50 +1,50 @@
-departB
-lezard
-heaume
-gobelin
-chandelier
-coin
-departV
-coin
-fantome
-droit
-droit
-araignee
-chouette
-droit
-epee
-droit
-saphir
-droit
-tresor
-coin
-bague
-coin
-scarabee
-droit
-rat
-papillon
-droit
-fee
-crane
-dragon
-cle
-coin
-couronne
-coin
-carte
-coin
-chauvesouris
-droit
-coin
-coin
-droit
-genie
-departJ
-droit
-bourse
-coin
-livre
-droit
-departR
-droit
+departB false true true false
+lezard true false false true
+heaume false true true true
+gobelin true true false true
+chandelier false true true true
+coin false true true false
+departV false false true true
+coin false true true false
+fantome true true false true
+droit true false true false
+droit true false true false
+araignee true false false true
+chouette false true true false
+droit true false true false
+epee true true true false
+droit true false true false
+saphir true true true false
+droit true false true false
+tresor false true true true
+coin false true true false
+bague true false true true
+coin false true true false
+scarabee true true false false
+droit true false true false
+rat false false true true
+papillon true false false true
+droit true false true false
+fee true true false true
+crane true true true false
+dragon true true false true
+cle true true false true
+coin false true true false
+couronne true false true true
+coin false true true false
+carte true false true true
+coin false true true false
+chauvesouris true true false true
+droit true false true false
+coin false true true false
+coin false true true false
+droit true false true false
+genie true true false true
+departJ true true false false
+droit true false true false
+bourse true true false true
+coin false true true false
+livre true true false true
+droit true false true false
+departR true false false true
+droit true false true false

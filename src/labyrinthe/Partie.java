@@ -144,7 +144,12 @@ public class Partie {
 
 		/* On remplit le tableau listeTuiles à partir de la liste listeTypes */
 		for (int i = 0; i < listeTypes.size(); i++) {
-			listeTuiles[i] = new Tuile(listeTypes.get(i));
+			String[] subString = listeTypes.get(i).split(" ");
+			listeTuiles[i] = new Tuile(subString[0]);
+			listeTuiles[i].porteNord = Boolean.parseBoolean​(subString[1]);
+			listeTuiles[i].porteEst = Boolean.parseBoolean​(subString[2]);
+			listeTuiles[i].porteSud = Boolean.parseBoolean​(subString[3]);
+			listeTuiles[i].porteOuest = Boolean.parseBoolean​(subString[4]);
 		}
 
 		/* Placement des tuiles sur le plateau */
@@ -208,13 +213,13 @@ public class Partie {
 		/* On supprime de la liste listeTypes ce qui n'est pas un objet de quête */
 		Iterator iter = listeTypes.iterator();
 		while (iter.hasNext()) {
-			String elem = (String) iter.next();
+			String[] elem = ((String) iter.next()).split(" ");
+			String subelem = elem[0];
 			/* Comparaison avec les chaînes à ne pas garder */
-			if (elem.equals("droit") || elem.equals("coin") || elem.equals("departB") || elem.equals("departV") || elem.equals("departJ") || elem.equals("departR")) {
+			if (subelem.equals("droit") || subelem.equals("coin") || subelem.equals("departB") || subelem.equals("departV") || subelem.equals("departJ") || subelem.equals("departR")) {
 				iter.remove();
 			}
 		}
-
 		if (listeTypes.size() != 24) {
 			return false;
 		}
@@ -229,7 +234,7 @@ public class Partie {
 			if (i % nbCartesPJ == 0 && i != 0) {
 				j++;
 			}
-			listeJoueurs[j].listeCartes[i % nbCartesPJ] = new Carte(listeTypes.get(i));
+			listeJoueurs[j].listeCartes[i % nbCartesPJ] = new Carte(listeTypes.get(i).split(" ")[0]);
 		}
 
 		return true;
