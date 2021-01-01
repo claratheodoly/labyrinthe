@@ -87,6 +87,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		//partieJeu.plateauJeu.tuiles[0][1].pionsPresents = new Pion[]{new Pion(partieJeu.listeJoueurs[0])};
 		//System.err.println(partieJeu.plateauJeu.tuiles[0][2].type);
 		//System.err.println(partieJeu.plateauJeu.tuiles[4][2].type);
+		//System.err.println(partieJeu.plateauJeu.passageEntreTuilesAdjacentes(0, 2, 1, 2));
+		//ArrayList<int[]> testArrayList = new ArrayList<>();
+		//testArrayList.add(new int[]{1,2});
+		//System.err.println(testArrayList.contains(new int[]{1,2}));
 		//System.err.println(partieJeu.plateauJeu.cheminPossible(0, 2, 4, 2, null));
 	}
 

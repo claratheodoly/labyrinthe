@@ -60,10 +60,10 @@ public class Plateau {
 	/**
 	 * Détermine si un passage existe entre deux tuiles adjacentes
 	 *
-	 * @param x1 Position horizontale de la première tuile
-	 * @param y1 Position verticale de la première tuile
-	 * @param x2 Position horizontale de la deuxième tuile
-	 * @param y2 Position verticale de la deuxième tuile
+	 * @param x1 Position verticale de la première tuile
+	 * @param y1 Position horizontale de la première tuile
+	 * @param x2 Position verticale de la deuxième tuile
+	 * @param y2 Position horizontale de la deuxième tuile
 	 * @return Existance d'un passage entre les tuiles
 	 */
 	public boolean passageEntreTuilesAdjacentes(int x1, int y1, int x2, int y2) {
@@ -86,22 +86,22 @@ public class Plateau {
 			if (Math.abs(y1 - y2) > 1) {
 				return false;
 			} else if (y1 - y2 >= 0) {
-				return (tuiles[x1][y1].porteSud
-						&& tuiles[x2][y2].porteNord);
+				return (tuiles[x1][y1].porteOuest
+						&& tuiles[x2][y2].porteEst);
 			} else {
-				return (tuiles[x1][y1].porteNord
-						&& tuiles[x2][y2].porteSud);
+				return (tuiles[x1][y1].porteEst
+						&& tuiles[x2][y2].porteOuest);
 			}
 		} else if (y1 == y2) {
 			/* On vérifie si les tuiles sont adjacentes */
 			if (Math.abs(x1 - x2) > 1) {
 				return false;
 			} else if (x1 - x2 >= 0) {
-				return (tuiles[x1][y1].porteOuest
-						&& tuiles[x2][y2].porteEst);
+				return (tuiles[x1][y1].porteNord
+						&& tuiles[x2][y2].porteSud);
 			} else {
-				return (tuiles[x1][y1].porteEst
-						&& tuiles[x2][y2].porteOuest);
+				return (tuiles[x1][y1].porteSud
+						&& tuiles[x2][y2].porteNord);
 			}
 		} else {
 			return false;
@@ -124,10 +124,10 @@ public class Plateau {
 		ArrayList<Tuile> tuilesCouloir;
 		if (tuilesConnues == null) {
 			tuilesCouloir = new ArrayList<>();
+			tuilesCouloir.add(tuiles[x1][y1]);
 		} else {
 			tuilesCouloir = tuilesConnues;
 		}
-		tuilesCouloir.add(tuiles[x1][y1]);
 		ArrayList<int[]> tuilesPart = tuilesAccessibles(x1, y1);
 		if (tuilesPart.contains(new int[]{x2, y2})) {
 			return true;
