@@ -122,7 +122,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_objectifRestantsJCourant = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_commencerTour = new javax.swing.JButton();
         btn_terminerTour = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         panel_chrono = new javax.swing.JPanel();
@@ -244,13 +244,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel3.setText("C'est le tour de  ");
         panel_joueur.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
-        jButton1.setText("Commencer le tour");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_commencerTour.setText("Commencer le tour");
+        btn_commencerTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_commencerTourActionPerformed(evt);
             }
         });
-        panel_joueur.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 170, -1));
+        panel_joueur.add(btn_commencerTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 170, -1));
 
         btn_terminerTour.setText("Terminer le tour");
         btn_terminerTour.addActionListener(new java.awt.event.ActionListener() {
@@ -366,9 +366,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_commencerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencerTourActionPerformed
 		// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
 		partieJeu.joueurSuivant();
@@ -671,12 +671,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
+    private javax.swing.JButton btn_commencerTour;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_terminerTour;
     private javax.swing.JButton btn_tournerTuileVolante;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
