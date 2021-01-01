@@ -38,9 +38,33 @@ public class Tuile {
 			angle = (angle + 360) % 360;
 		}
 		orientation = (orientation + angle) % 360;
-		/*switch (angle) {
+		boolean tmp;
+		switch (angle) {
 			case 0:
-		}*/
+				break;
+			case 90:
+				tmp = porteNord;
+				porteNord = porteOuest;
+				porteOuest = porteSud;
+				porteSud = porteEst;
+				porteEst = tmp;
+				break;
+			case 180:
+				tmp = porteNord;
+				porteNord = porteSud;
+				porteSud = tmp;
+				tmp = porteEst;
+				porteEst = porteOuest;
+				porteOuest = tmp;
+				break;
+			case 270:
+				tmp = porteNord;
+				porteNord = porteEst;
+				porteEst = porteSud;
+				porteSud = porteOuest;
+				porteOuest = tmp;
+				break;
+		}
 		return true;
 	}
 

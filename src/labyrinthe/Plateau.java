@@ -142,11 +142,11 @@ public class Plateau {
 		for (int i = 0; i < 7; i++) {
 			/*
 			On utilise le modulo pour faire un cycle avec les tuiles
-			 */
+			*/
 			int i_pro = (i + decalage) % 7;
-			temp = tuiles[num_col][i_pro];
-			tuiles[num_col][i_pro] = tuiles[num_col][i];
-			tuiles[num_col][i] = temp;
+			temp = tuiles[i_pro][num_col];
+			tuiles[i_pro][num_col] = tuiles[i][num_col];
+			tuiles[i][num_col] = temp;
 		}
 		return true;
 	}
@@ -167,10 +167,10 @@ public class Plateau {
 		Tuile temp;
 		int decalage;
 		if (versDroite) {
-			decalage = 1;
+			decalage = 6;
 			/* On échange la tuile volante avec la tuile qui sort */
-			temp = tuiles[6][num_lig];
-			tuiles[6][num_lig] = tuileVolante;
+			temp = tuiles[num_lig][6];
+			tuiles[num_lig][6] = tuileVolante;
 			tuileVolante = temp;
 		} else {
 			/*
@@ -178,10 +178,10 @@ public class Plateau {
 			l'autre si on revient au début. Ceci permet d'éviter le
 			bogue du modulo en Java si le dividende est négatif.
 			*/
-			decalage = 6;
+			decalage = 1;
 			/* On échange la tuile volante avec la tuile qui sort */
-			temp = tuiles[0][num_lig];
-			tuiles[0][num_lig] = tuileVolante;
+			temp = tuiles[num_lig][0];
+			tuiles[num_lig][0] = tuileVolante;
 			tuileVolante = temp;
 		}
 		for (int i = 0; i < 7; i++) {
@@ -189,9 +189,9 @@ public class Plateau {
 			On utilise le modulo pour faire un cycle avec les tuiles
 			 */
 			int i_pro = (i + decalage) % 7;
-			temp = tuiles[i_pro][num_lig];
-			tuiles[i_pro][num_lig] = tuiles[i][num_lig];
-			tuiles[i][num_lig] = temp;
+			temp = tuiles[num_lig][i_pro];
+			tuiles[num_lig][i_pro] = tuiles[num_lig][i];
+			tuiles[num_lig][i] = temp;
 		}
 		return true;
 	}

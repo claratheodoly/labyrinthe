@@ -21,8 +21,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	Timer monChrono;
 	Partie partieJeu;
 	
-	// TODO : à enlever quand fini
-	// Variables de débogage
 	TuileGraphique [][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
 	TuileGraphique tuileGraphVol;
 
