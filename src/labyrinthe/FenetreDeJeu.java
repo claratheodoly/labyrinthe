@@ -123,7 +123,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_terminerTour = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         panel_chrono = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -252,13 +252,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         panel_joueur.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 170, -1));
 
-        jButton2.setText("Terminer le tour");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_terminerTour.setText("Terminer le tour");
+        btn_terminerTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_terminerTourActionPerformed(evt);
             }
         });
-        panel_joueur.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 170, -1));
+        panel_joueur.add(btn_terminerTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 170, -1));
 
         jLabel1.setText("Votre objectif :");
         panel_joueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
@@ -370,9 +370,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
+		partieJeu.joueurSuivant();
+		actualiserAffichage();
+    }//GEN-LAST:event_btn_terminerTourActionPerformed
 
     private void btn_tournerTuileVolanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tournerTuileVolanteActionPerformed
 		partieJeu.plateauJeu.tuileVolante.tournerTuile(90);
@@ -671,11 +672,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
     private javax.swing.JButton btn_start;
+    private javax.swing.JButton btn_terminerTour;
     private javax.swing.JButton btn_tournerTuileVolante;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JLabel iconeTimer;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
