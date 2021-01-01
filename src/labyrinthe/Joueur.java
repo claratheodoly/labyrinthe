@@ -34,7 +34,7 @@ public class Joueur {
 	 * @param tuile La tuile sur laquelle le joueur est
 	 * @return Succès de l'opération
 	 */
-	public boolean rammaserObjet(Tuile tuile) {
+	public boolean rammasserObjet(Tuile tuile) {
 		/* Si l'invetaire est plein, on ne peut pas ajouter d'objet
 		dedans. */
 		if (sacEstPlein()) {

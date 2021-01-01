@@ -20,8 +20,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	int nbSecondes = 0;
 	Timer monChrono;
 	Partie partieJeu;
-	
-	TuileGraphique [][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
+
+	TuileGraphique[][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
 	TuileGraphique tuileGraphVol;
 
 	// insertion de l'image pour notre chrono
@@ -66,13 +66,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_vershaut_col6.setIcon(img_flecheh);
 
 		/* Pas besoin de ces instruction il semble, le paneau n'est pas encore affiché */
-		/*Infojeu.setVisible(false);
+ /*Infojeu.setVisible(false);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(false);
 		panel_joueur.setVisible(false);
 		panel_chrono.setVisible(false);*/
 
-		/* Dialogue modal du nombre de joueurs */
+ /* Dialogue modal du nombre de joueurs */
 		jLabel22.setVisible(false);
 		nom_joueur2_dia.setVisible(false);
 		jLabel23.setVisible(false);
@@ -527,7 +527,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	}
 
 	/**
-	 * Actualise les textes  et les tuiles graphiques
+	 * Actualise les textes et les tuiles graphiques
 	 */
 	public void actualiserAffichage() {
 		/* Pour faciliter l'écriture */
@@ -554,7 +554,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				break;
 		}
 	}
-	
+
 	/**
 	 * Crée une tuile pour chaque tuile de la grille
 	 */
@@ -582,7 +582,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	}
 
 	/**
-	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au plateu.
+	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au
+	 * plateu.
 	 */
 	public void actualiserTuileGraphiques() {
 		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
@@ -592,7 +593,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 			}
 		}
 	}
-	
+
 	/**
 	 * @param args the command line arguments
 	 */

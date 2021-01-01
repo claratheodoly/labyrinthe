@@ -123,30 +123,31 @@ public class Plateau {
 		int decalage;
 		if (versHaut) {
 			decalage = 1;
-			/* On échange la tuile volante avec la tuile qui sort */
-			temp = tuiles[num_col][6];
-			tuiles[num_col][6] = tuileVolante;
-			tuileVolante = temp;
+			temp = tuiles[0][num_col];
 		} else {
-			/*
-			Décaler de 6 dans un sens revient à décaler de 1 dans
-			l'autre si on revient au début. Ceci permet d'éviter le
-			bogue du modulo en Java si le dividende est négatif.
-			 */
-			decalage = 6;
-			/* On échange la tuile volante avec la tuile qui sort */
-			temp = tuiles[num_col][0];
-			tuiles[num_col][0] = tuileVolante;
-			tuileVolante = temp;
+			decalage = -1;
+			temp = tuiles[6][num_col];
 		}
 		for (int i = 0; i < 7; i++) {
-			/*
-			On utilise le modulo pour faire un cycle avec les tuiles
-			*/
-			int i_pro = (i + decalage) % 7;
-			temp = tuiles[i_pro][num_col];
-			tuiles[i_pro][num_col] = tuiles[i][num_col];
-			tuiles[i][num_col] = temp;
+			int j;
+			if (!versHaut) {
+				j = 6 - i;
+			} else {
+				j = i;
+			}
+			if (i == 6) {
+				/*
+				Échange de la tuile volante et gestion des pions.
+				Les pions qui étaient sur le tuile déplacée vont sur la nouvelle.
+				La tuile volante n'a pas de pions.
+				 */
+				tuiles[j][num_col] = tuileVolante;
+				tuiles[j][num_col].pionsPresents = temp.pionsPresents;
+				temp.pionsPresents = null;
+				tuileVolante = temp;
+			} else {
+				tuiles[j][num_col] = tuiles[j + decalage][num_col];
+			}
 		}
 		return true;
 	}
@@ -167,31 +168,32 @@ public class Plateau {
 		Tuile temp;
 		int decalage;
 		if (versDroite) {
-			decalage = 6;
-			/* On échange la tuile volante avec la tuile qui sort */
+			decalage = -1;
 			temp = tuiles[num_lig][6];
-			tuiles[num_lig][6] = tuileVolante;
-			tuileVolante = temp;
 		} else {
-			/*
-			Décaler de 6 dans un sens revient à décaler de 1 dans
-			l'autre si on revient au début. Ceci permet d'éviter le
-			bogue du modulo en Java si le dividende est négatif.
-			*/
 			decalage = 1;
-			/* On échange la tuile volante avec la tuile qui sort */
 			temp = tuiles[num_lig][0];
-			tuiles[num_lig][0] = tuileVolante;
-			tuileVolante = temp;
 		}
 		for (int i = 0; i < 7; i++) {
-			/*
-			On utilise le modulo pour faire un cycle avec les tuiles
-			 */
-			int i_pro = (i + decalage) % 7;
-			temp = tuiles[num_lig][i_pro];
-			tuiles[num_lig][i_pro] = tuiles[num_lig][i];
-			tuiles[num_lig][i] = temp;
+			int j;
+			if (versDroite) {
+				j = 6 - i;
+			} else {
+				j = i;
+			}
+			if (i == 6) {
+				/*
+				Échange de la tuile volante et gestion des pions.
+				Les pions qui étaient sur le tuile déplacée vont sur la nouvelle.
+				La tuile volante n'a pas de pions.
+				 */
+				tuiles[num_lig][j] = tuileVolante;
+				tuiles[num_lig][j].pionsPresents = temp.pionsPresents;
+				temp.pionsPresents = null;
+				tuileVolante = temp;
+			} else {
+				tuiles[num_lig][j] = tuiles[num_lig][j + decalage];
+			}
 		}
 		return true;
 	}
