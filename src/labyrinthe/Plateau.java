@@ -128,14 +128,17 @@ public class Plateau {
 		} else {
 			tuilesCouloir = tuilesConnues;
 		}
-		ArrayList<int[]> tuilesPart = tuilesAccessibles(x1, y1);
-		if (tuilesPart.contains(new int[]{x2, y2})) {
+		ArrayList<ArrayList<Integer>> tuilesPart = tuilesAccessibles(x1, y1);
+		ArrayList<Integer> listeVerif = new ArrayList<>();
+		listeVerif.add(x2);
+		listeVerif.add(y2);
+		if (tuilesPart.contains(listeVerif)) {
 			return true;
 		} else if (!tuilesPart.isEmpty()) {
-			for (int[] coordsTuileListees : tuilesPart) {
-				if (!tuilesCouloir.contains(tuiles[coordsTuileListees[0]][coordsTuileListees[1]])) {
-					tuilesCouloir.add(tuiles[coordsTuileListees[0]][coordsTuileListees[1]]);
-					if (cheminPossible(coordsTuileListees[0], coordsTuileListees[1], x2, y2, tuilesCouloir)) {
+			for (ArrayList<Integer> coordsTuileListees : tuilesPart) {
+				if (!tuilesCouloir.contains(tuiles[coordsTuileListees.get(0)][coordsTuileListees.get(1)])) {
+					tuilesCouloir.add(tuiles[coordsTuileListees.get(0)][coordsTuileListees.get(1)]);
+					if (cheminPossible(coordsTuileListees.get(0), coordsTuileListees.get(1), x2, y2, tuilesCouloir)) {
 						return true;
 					}
 				} else {
@@ -154,19 +157,31 @@ public class Plateau {
 	 * @param y Position horizontale de la tuile
 	 * @return Liste des coordonnées des tuiles accessibles depuis la tuile
 	 */
-	public ArrayList<int[]> tuilesAccessibles(int x, int y) {
-		ArrayList<int[]> tuilesAccessibles = new ArrayList<>();
+	public ArrayList<ArrayList<Integer>> tuilesAccessibles(int x, int y) {
+		ArrayList<ArrayList<Integer>> tuilesAccessibles = new ArrayList<>();
 		if (passageEntreTuilesAdjacentes(x, y, x + 1, y)) {
-			tuilesAccessibles.add(new int[]{x + 1, y});
+			ArrayList<Integer> listeInter = new ArrayList<>();
+			listeInter.add(x + 1);
+			listeInter.add(y);
+			tuilesAccessibles.add(listeInter);
 		}
 		if (passageEntreTuilesAdjacentes(x, y, x - 1, y)) {
-			tuilesAccessibles.add(new int[]{x - 1, y});
+			ArrayList<Integer> listeInter = new ArrayList<>();
+			listeInter.add(x - 1);
+			listeInter.add(y);
+			tuilesAccessibles.add(listeInter);
 		}
 		if (passageEntreTuilesAdjacentes(x, y, x, y + 1)) {
-			tuilesAccessibles.add(new int[]{x, y + 1});
+			ArrayList<Integer> listeInter = new ArrayList<>();
+			listeInter.add(x);
+			listeInter.add(y + 1);
+			tuilesAccessibles.add(listeInter);
 		}
 		if (passageEntreTuilesAdjacentes(x, y, x, y - 1)) {
-			tuilesAccessibles.add(new int[]{x, y - 1});
+			ArrayList<Integer> listeInter = new ArrayList<>();
+			listeInter.add(x);
+			listeInter.add(y - 1);
+			tuilesAccessibles.add(listeInter);
 		}
 		return tuilesAccessibles;
 	}
@@ -321,5 +336,4 @@ public class Plateau {
 		tuiles[x2][y2] = temp;
 		return true;
 	}
-
 }
