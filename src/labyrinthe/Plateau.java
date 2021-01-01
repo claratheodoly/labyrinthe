@@ -5,6 +5,8 @@
  */
 package labyrinthe;
 
+import java.util.ArrayList;
+
 /**
  * Implémente les plateau et une grande partie de l'intelligence du jeu
  *
@@ -15,8 +17,8 @@ public class Plateau {
 	Tuile[][] tuiles;
 	/*
 	La tuile (0,0) se situe en bas à gauche du plateau.
-	Le premier niveau de tableau représente la postion horizontale
-	('x'), et le deuxième la position verticale ('y').
+	Le premier niveau de tableau représente la postion verticale, et le deuxième
+	la position horizontale.
 	 */
 	Tuile tuileVolante;
 
@@ -65,6 +67,19 @@ public class Plateau {
 	 * @return Existance d'un passage entre les tuiles
 	 */
 	public boolean passageEntreTuilesAdjacentes(int x1, int y1, int x2, int y2) {
+		/* Si les coordonnées sont valides */
+		if (x1 > 6 || x1 < 0) {
+			return false;
+		}
+		if (y1 > 6 || y1 < 0) {
+			return false;
+		}
+		if (x2 > 6 || x2 < 0) {
+			return false;
+		}
+		if (y2 > 6 || y2 < 0) {
+			return false;
+		}
 		/* Si les tuiles sont sur la même colonne ou ligne */
 		if (x1 == x2) {
 			/* On vérifie si les tuiles sont adjacentes */
@@ -94,16 +109,66 @@ public class Plateau {
 	}
 
 	/**
+	 * Détermine si il existe un chemin (de plusieurs tuiles si besoin) entre
+	 * deux tuiles.
 	 *
-	 * @param x1
-	 * @param y1
-	 * @param x2
-	 * @param y2
-	 * @return
+	 * @param x1            Position verticale de la première tuile
+	 * @param y1            Position horizontale de la première tuile
+	 * @param x2            Position verticale de la deuxième tuile
+	 * @param y2            Position horizontale de la deuxième tuile
+	 * @param tuilesConnues Tableau des tuiles connues (null pour un appel
+	 *                      manuel)
+	 * @return Existance du chemin
 	 */
-	public boolean cheminPossible(int x1, int y1, int x2, int y2) {
-		// TODO
+	public boolean cheminPossible(int x1, int y1, int x2, int y2, ArrayList<Tuile> tuilesConnues) {
+		ArrayList<Tuile> tuilesCouloir;
+		if (tuilesConnues == null) {
+			tuilesCouloir = new ArrayList<>();
+		} else {
+			tuilesCouloir = tuilesConnues;
+		}
+		tuilesCouloir.add(tuiles[x1][y1]);
+		ArrayList<int[]> tuilesPart = tuilesAccessibles(x1, y1);
+		if (tuilesPart.contains(new int[]{x2, y2})) {
+			return true;
+		} else if (!tuilesPart.isEmpty()) {
+			for (int[] coordsTuileListees : tuilesPart) {
+				if (!tuilesCouloir.contains(tuiles[coordsTuileListees[0]][coordsTuileListees[1]])) {
+					tuilesCouloir.add(tuiles[coordsTuileListees[0]][coordsTuileListees[1]]);
+					if (cheminPossible(coordsTuileListees[0], coordsTuileListees[1], x2, y2, tuilesCouloir)) {
+						return true;
+					}
+				} else {
+					tuilesPart.remove(coordsTuileListees);
+				}
+			}
+		}
 		return false;
+	}
+
+	/**
+	 * Donne la liste des tuiles accessibles depuis une tuile de coordonnées
+	 * précisées
+	 *
+	 * @param x Position verticale de la tuile
+	 * @param y Position horizontale de la tuile
+	 * @return Liste des coordonnées des tuiles accessibles depuis la tuile
+	 */
+	public ArrayList<int[]> tuilesAccessibles(int x, int y) {
+		ArrayList<int[]> tuilesAccessibles = new ArrayList<>();
+		if (passageEntreTuilesAdjacentes(x, y, x + 1, y)) {
+			tuilesAccessibles.add(new int[]{x + 1, y});
+		}
+		if (passageEntreTuilesAdjacentes(x, y, x - 1, y)) {
+			tuilesAccessibles.add(new int[]{x - 1, y});
+		}
+		if (passageEntreTuilesAdjacentes(x, y, x, y + 1)) {
+			tuilesAccessibles.add(new int[]{x, y + 1});
+		}
+		if (passageEntreTuilesAdjacentes(x, y, x, y - 1)) {
+			tuilesAccessibles.add(new int[]{x, y - 1});
+		}
+		return tuilesAccessibles;
 	}
 
 	/**

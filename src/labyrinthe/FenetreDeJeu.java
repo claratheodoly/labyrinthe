@@ -83,8 +83,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
 		
-		// Test d'affichage des pions
-		//partieJeu.plateauJeu.tuiles[0][0].pionsPresents = new Pion[]{new Pion(partieJeu.listeJoueurs[0])};
+		// Tests (TODO : à enlever)
+		//partieJeu.plateauJeu.tuiles[0][1].pionsPresents = new Pion[]{new Pion(partieJeu.listeJoueurs[0])};
+		//System.err.println(partieJeu.plateauJeu.tuiles[0][2].type);
+		//System.err.println(partieJeu.plateauJeu.tuiles[4][2].type);
+		//System.err.println(partieJeu.plateauJeu.cheminPossible(0, 2, 4, 2, null));
 	}
 
 	/**
