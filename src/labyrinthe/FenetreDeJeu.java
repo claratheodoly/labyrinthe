@@ -79,6 +79,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
+               jLabel1.setVisible(false);
+               lbl_objectifCourantJCourant.setVisible(false);
+               lbl_objectifRestantsJCourant.setVisible(false);
+               
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
@@ -364,11 +368,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_commencerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencerTourActionPerformed
-		// TODO add your handling code here:
+		jLabel1.setVisible(true);
+                lbl_objectifCourantJCourant.setVisible(true);
+                lbl_objectifRestantsJCourant.setVisible(true);
     }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
 		partieJeu.joueurSuivant();
+                jLabel1.setVisible(false);
+                lbl_objectifCourantJCourant.setVisible(false);
+                lbl_objectifRestantsJCourant.setVisible(false);
 		actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
