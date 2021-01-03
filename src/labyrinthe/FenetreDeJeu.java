@@ -160,8 +160,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         bleu = new javax.swing.JLabel();
         vert = new javax.swing.JLabel();
         jaune = new javax.swing.JLabel();
+        fenetre_info_jeu = new javax.swing.JFrame();
+        btn_fermer_les_infos = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         panel_tuilevolante = new javax.swing.JPanel();
         btn_tournerTuileVolante = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -191,6 +199,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_versdroite_ligne2 = new javax.swing.JButton();
         jouer_versgauche_ligne2 = new javax.swing.JButton();
         jouer_versgauche_ligne4 = new javax.swing.JButton();
+        btn_ouvrir_les_infos = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
 
@@ -277,6 +286,44 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jaune.setBackground(new java.awt.Color(252, 210, 29));
         dialogueJoueurs.getContentPane().add(jaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 40, 30));
 
+        fenetre_info_jeu.setTitle("Légende");
+        fenetre_info_jeu.setAlwaysOnTop(true);
+        fenetre_info_jeu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        fenetre_info_jeu.setLocation(new java.awt.Point(450, 80));
+        fenetre_info_jeu.setMinimumSize(new java.awt.Dimension(400, 620));
+        fenetre_info_jeu.setUndecorated(true);
+        fenetre_info_jeu.setResizable(false);
+        fenetre_info_jeu.setSize(new java.awt.Dimension(395, 566));
+        fenetre_info_jeu.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_fermer_les_infos.setText("Fermer la fenêtre d'information");
+        btn_fermer_les_infos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_fermer_les_infosActionPerformed(evt);
+            }
+        });
+        fenetre_info_jeu.getContentPane().add(btn_fermer_les_infos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 210, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel5.setText("Auteurs :");
+        fenetre_info_jeu.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 150, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel6.setText("Règles du jeu :");
+        fenetre_info_jeu.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel7.setText("<html>Ce projet scolaire de Conception Programmation Objet a été créé par Émile ROYER, Lucas DELMOTTE, et Clara THEODOLY. \n\n\n\n\nLe dépôt (git) du projet est disponible à l'adresse suivante : https://github.com/claratheodoly/labyrinthe.");
+        jLabel7.setToolTipText("");
+        fenetre_info_jeu.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 380, 130));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel8.setText("<html>Ce jeu se joue de 1 à 4 joueurs. Sur un plateau représentant un labyrinthe, les joueurs doivent atteindre des objets dessinés sur les tuiles. La disposition des tuiles évolue à chaque tour de jeu. Le plateau de jeu comprend des tuiles fixes, et des rangées de tuiles mobiles. Il y a toujours une tuile hors du plateau. À son tour, le joueur utilise la tuile libre pour pousser une rangée de tuile du plateau, faisant ainsi évoluer le labyrinthe. Il dégage ainsi une tuile pour le joueur suivant, et peut éventuellement faire progresser son pion dans le labyrinthe. Chaque joueur possède des cartes représentant des objets. Ces objets sont également représentés sur les tuiles (fixes ou mobiles) du labyrinthe. Chaque joueur doit atteindre ses objets avec son pion. Le jeu se termine quand un joueur a atteint tous les objets de sa liste et est revenu à son point de départ.");
+        jLabel8.setToolTipText("");
+        fenetre_info_jeu.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 380, 320));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Labyrinthe");
         setMinimumSize(new java.awt.Dimension(1170, 715));
@@ -288,7 +335,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         Infojeu.setBackground(new java.awt.Color(204, 204, 204));
         Infojeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 330));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gif-bravo.gif"))); // NOI18N
+        Infojeu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 90));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("La partie est remportée ! BRAVO !");
+        Infojeu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, -1));
+
+        getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 210, 160));
 
         panel_tuilevolante.setBackground(new java.awt.Color(204, 204, 204));
         panel_tuilevolante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -449,6 +504,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jouer_versgauche_ligne4, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 318, 30, 30));
+
+        btn_ouvrir_les_infos.setText("Informations du jeu");
+        btn_ouvrir_les_infos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ouvrir_les_infosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_ouvrir_les_infos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 210, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -732,6 +795,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// TODO add your handling code here:
     }//GEN-LAST:event_nom_joueur4_diaActionPerformed
 
+    private void btn_ouvrir_les_infosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ouvrir_les_infosActionPerformed
+        // action lorqu'on clique sur le bouton légende
+        btn_ouvrir_les_infos.setEnabled(false); // on ne peut pas appuyer sur le bouton légende tant qu'on a pas fermer la fentere de légende
+        fenetre_info_jeu.setVisible(true); // la fenetre de légende apparaît et s'affiche
+    }//GEN-LAST:event_btn_ouvrir_les_infosActionPerformed
+
+    private void btn_fermer_les_infosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fermer_les_infosActionPerformed
+          // action lorqu'on clique sur le bouton fermer
+        fenetre_info_jeu.setVisible(false); // fermeture de la fenêtre de légende
+        btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
+    }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
+
 	/**
 	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
 	 * des joueurs (et de la partie).
@@ -857,21 +932,30 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel Infojeu;
     private javax.swing.JLabel bleu;
     private javax.swing.JButton btn_commencerTour;
+    private javax.swing.JButton btn_fermer_les_infos;
+    private javax.swing.JButton btn_ouvrir_les_infos;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_terminerTour;
     private javax.swing.JButton btn_tournerTuileVolante;
     private javax.swing.JDialog dialogueJoueurs;
+    private javax.swing.JFrame fenetre_info_jeu;
     private javax.swing.JLabel iconeTimer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel jaune;
