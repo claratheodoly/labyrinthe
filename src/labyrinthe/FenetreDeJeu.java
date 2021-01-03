@@ -87,6 +87,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                jLabel1.setVisible(false);
                lbl_objectifCourantJCourant.setVisible(false);
                lbl_objectifRestantsJCourant.setVisible(false);
+               btn_tournerTuileVolante.setEnabled(false);
+               jouer_versbas_col6.setEnabled(false);
+               jouer_versbas_col2.setEnabled(false);
+               jouer_versbas_col4.setEnabled(false);
+               jouer_vershaut_col2.setEnabled(false);
+               jouer_vershaut_col4.setEnabled(false);
+               jouer_vershaut_col6.setEnabled(false);
+               jouer_versgauche_ligne6.setEnabled(false);
+               jouer_versgauche_ligne4.setEnabled(false);
+               jouer_versgauche_ligne2.setEnabled(false);
+               jouer_versgauche_ligne4.setEnabled(false);
+               jouer_versgauche_ligne2.setEnabled(false);
+               jouer_versgauche_ligne6.setEnabled(false);
                
 
 		/* On  affiche le panneau de création des joueurs */
@@ -376,6 +389,21 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jLabel1.setVisible(true);
                 lbl_objectifCourantJCourant.setVisible(true);
                 lbl_objectifRestantsJCourant.setVisible(true);
+                // desactivation des divers boutons
+                btn_tournerTuileVolante.setEnabled(true);
+                jouer_versbas_col6.setEnabled(true);
+                jouer_versbas_col2.setEnabled(true);
+                jouer_versbas_col4.setEnabled(true);
+                jouer_vershaut_col2.setEnabled(true);
+                jouer_vershaut_col4.setEnabled(true);
+                jouer_vershaut_col6.setEnabled(true);
+                jouer_versgauche_ligne6.setEnabled(true);
+                jouer_versgauche_ligne4.setEnabled(true);
+                jouer_versgauche_ligne2.setEnabled(true);
+                jouer_versgauche_ligne4.setEnabled(true);
+                jouer_versgauche_ligne2.setEnabled(true);
+                jouer_versgauche_ligne6.setEnabled(true);
+                actualiserAffichage();
     }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
@@ -383,6 +411,20 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jLabel1.setVisible(false);
                 lbl_objectifCourantJCourant.setVisible(false);
                 lbl_objectifRestantsJCourant.setVisible(false);
+                // désactivation des boutons quand le tour est terminé
+                btn_tournerTuileVolante.setEnabled(false);
+                jouer_versbas_col6.setEnabled(false);
+                jouer_versbas_col2.setEnabled(false);
+                jouer_versbas_col4.setEnabled(false);
+                jouer_vershaut_col2.setEnabled(false);
+                jouer_vershaut_col4.setEnabled(false);
+                jouer_vershaut_col6.setEnabled(false);
+                jouer_versgauche_ligne6.setEnabled(false);
+                jouer_versgauche_ligne4.setEnabled(false);
+                jouer_versgauche_ligne2.setEnabled(false);
+                jouer_versgauche_ligne4.setEnabled(false);
+                jouer_versgauche_ligne2.setEnabled(false);
+                jouer_versgauche_ligne6.setEnabled(false);
 		actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
