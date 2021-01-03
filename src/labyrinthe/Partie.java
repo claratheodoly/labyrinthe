@@ -35,7 +35,7 @@ public class Partie {
 	}
 
 	/**
-	 * Crée le bon nombre de joueurs Demande le nom à donner et attribue le bon
+	 * Crée le bon nombre de joueurs. Demande le nom à donner et attribue le bon
 	 * nombre de cartes
 	 *
 	 * @return Succès de la création des joueurs
@@ -83,8 +83,28 @@ public class Partie {
 		attribuerCouleurs();
 		distribuerCartes();
 		placerTuiles();
+		placerPionsDebut();
 	}
 
+	public void placerPionsDebut() {
+		for (int i = 0; i < listeJoueurs.length; i++) {
+			switch (i) {
+				case 0:
+					plateauJeu.tuiles[0][0].pionsPresents.add(listeJoueurs[0].marqueur);
+					break;
+				case 1:
+					plateauJeu.tuiles[0][6].pionsPresents.add(listeJoueurs[1].marqueur);
+					break;
+				case 2:
+					plateauJeu.tuiles[6][6].pionsPresents.add(listeJoueurs[2].marqueur);
+					break;
+				case 3:
+					plateauJeu.tuiles[6][0].pionsPresents.add(listeJoueurs[3].marqueur);
+					break;
+			}
+		}
+	}
+	
 	public void debuterPartie() {
 		Random rnd = new Random();
 		boolean finDePartie = false;
@@ -176,9 +196,9 @@ public class Partie {
 		}
 		switch (nombreJoueurs) {
 			case 4:
-				listeJoueurs[3].attribuerCouleur("rouge");
+				listeJoueurs[3].attribuerCouleur("jaune");
 			case 3:
-				listeJoueurs[2].attribuerCouleur("jaune");
+				listeJoueurs[2].attribuerCouleur("rouge");
 			case 2:
 				listeJoueurs[1].attribuerCouleur("vert");
 			case 1:

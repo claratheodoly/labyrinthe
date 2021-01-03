@@ -220,7 +220,7 @@ public class Plateau {
 				La tuile volante n'a pas de pions.
 				 */
 				tuiles[j][num_col] = tuileVolante;
-				tuiles[j][num_col].pionsPresents = temp.pionsPresents;
+				tuiles[j][num_col].pionsPresents = new ArrayList<>(temp.pionsPresents);
 				temp.pionsPresents.clear();
 				tuileVolante = temp;
 			} else {
@@ -266,7 +266,7 @@ public class Plateau {
 				La tuile volante n'a pas de pions.
 				 */
 				tuiles[num_lig][j] = tuileVolante;
-				tuiles[num_lig][j].pionsPresents = temp.pionsPresents;
+				tuiles[num_lig][j].pionsPresents = new ArrayList<>(temp.pionsPresents);
 				temp.pionsPresents.clear();
 				tuileVolante = temp;
 			} else {
