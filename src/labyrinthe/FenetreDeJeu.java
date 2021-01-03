@@ -43,7 +43,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
     ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
 
-    
     public FenetreDeJeu() {
         initComponents();
 
@@ -119,7 +118,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         gif.setVisible(false);
         bravo.setVisible(false);
-        
+
         /* On  affiche le panneau de création des joueurs */
         afficherDialogueCreationJoueurs();
 
