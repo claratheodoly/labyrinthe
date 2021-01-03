@@ -12,25 +12,25 @@ package labyrinthe;
  */
 public class Joueur {
 
-	String nom;
-	String couleur;
-	String[] listeObjets;
-	Carte[] listeCartes;
-	int indexCarteRetournee;
-	Pion marqueur;
+    String nom;
+    String couleur;
+    String[] listeObjets;
+    Carte[] listeCartes;
+    int indexCarteRetournee;
+    Pion marqueur;
 
-	Joueur(String nom_joueur, int nombre_cartes) {
-		nom = nom_joueur;
-		listeObjets = new String[nombre_cartes];
-		listeCartes = new Carte[nombre_cartes];
-		indexCarteRetournee = 0;
-		marqueur = new Pion(this);
-	}
+    Joueur(String nom_joueur, int nombre_cartes) {
+        nom = nom_joueur;
+        listeObjets = new String[nombre_cartes];
+        listeCartes = new Carte[nombre_cartes];
+        indexCarteRetournee = 0;
+        marqueur = new Pion(this);
+    }
 
-	public void attribuerCouleur(String couleurAttribuee) {
-		couleur = couleurAttribuee;
-		marqueur.coloration = couleurAttribuee;
-	}
+    public void attribuerCouleur(String couleurAttribuee) {
+        couleur = couleurAttribuee;
+        marqueur.coloration = couleurAttribuee;
+    }
 
 	/**
 	 * Détermine quoi faire quand le pion du joueur arrive sur une nouvelle
@@ -57,71 +57,71 @@ public class Joueur {
 	public boolean ramasserObjet(Tuile tuile) {
 		/* Si l'inventaire est plein, on ne peut pas ajouter d'objet
 		dedans. */
-		if (sacEstPlein()) {
-			return false;
-		}
-		/* On ne peut pas ajouter d'objet qui n'existe pas */
-		if (!tuile.presenceObjet()) {
-			return false;
-		}
-		int i = 0;
-		while (listeObjets[i] != null) {
-			i++;
-		}
-		listeObjets[i] = tuile.objet;
-		return true;
-	}
+        if (sacEstPlein()) {
+            return false;
+        }
+        /* On ne peut pas ajouter d'objet qui n'existe pas */
+        if (!tuile.presenceObjet()) {
+            return false;
+        }
+        int i = 0;
+        while (listeObjets[i] != null) {
+            i++;
+        }
+        listeObjets[i] = tuile.objet;
+        return true;
+    }
 
-	/**
-	 * Ajoute la carte en paramètre à la main du joueur
-	 *
-	 * @param carte La carte à ajouter
-	 * @return Succès de l'opération
-	 */
-	public boolean ajouterCarte(Carte carte) {
-		/* Si la main est pleine, on ne peut pas ajouter d'objet
+    /**
+     * Ajoute la carte en paramètre à la main du joueur
+     *
+     * @param carte La carte à ajouter
+     * @return Succès de l'opération
+     */
+    public boolean ajouterCarte(Carte carte) {
+        /* Si la main est pleine, on ne peut pas ajouter d'objet
 		dedans. */
-		if (mainEstPleine()) {
-			return false;
-		}
-		int i = 0;
-		while (listeCartes[i] != null) {
-			i++;
-		}
-		listeCartes[i] = carte;
-		return true;
-	}
+        if (mainEstPleine()) {
+            return false;
+        }
+        int i = 0;
+        while (listeCartes[i] != null) {
+            i++;
+        }
+        listeCartes[i] = carte;
+        return true;
+    }
 
-	/**
-	 * Vérifie si le sac du joueur (son attribut 'listeObjets') est plein.
-	 *
-	 * @return Le remplissage du sac
-	 */
-	public boolean sacEstPlein() {
-		for (int i = 0; i < listeObjets.length; i++) {
-			if (listeObjets[i] == null) {
-				return false;
-			}
-		}
-		return true;
-	}
+    /**
+     * Vérifie si le sac du joueur (son attribut 'listeObjets') est plein.
+     *
+     * @return Le remplissage du sac
+     */
+    public boolean sacEstPlein() {
+        for (int i = 0; i < listeObjets.length; i++) {
+            if (listeObjets[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-	/**
-	 * Vérifie si la main du joueur (son attribut 'listeCartes') est pleine.
-	 *
-	 * @return Le remplissage de la main
-	 */
-	public boolean mainEstPleine() {
-		for (int i = 0; i < listeCartes.length; i++) {
-			if (listeCartes[i] == null) {
-				return false;
-			}
-		}
-		return true;
-	}
+    /**
+     * Vérifie si la main du joueur (son attribut 'listeCartes') est pleine.
+     *
+     * @return Le remplissage de la main
+     */
+    public boolean mainEstPleine() {
+        for (int i = 0; i < listeCartes.length; i++) {
+            if (listeCartes[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-	public boolean tousObjetsRamasses() {
-		return false;
-	}
+    public boolean tousObjetsRamasses() {
+        return false;
+    }
 
 }

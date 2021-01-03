@@ -107,7 +107,7 @@ public class Partie {
 			}
 		}
 	}
-	
+
 	public void debuterPartie() {
 		Random rnd = new Random();
 		boolean finDePartie = false;

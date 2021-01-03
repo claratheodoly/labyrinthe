@@ -22,16 +22,16 @@ import javax.swing.JButton;
  */
 public class TuileGraphique extends JButton {
 
-	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
-	Tuile tuileAssociee;
-	int posX;
-	int posY;
+    // éléments qu'on va pouvoir afficher sur la fenêtre de jeu
+    Tuile tuileAssociee;
+    int posX;
+    int posY;
 
-	public TuileGraphique(Tuile laTuile, int x, int y) {
-		tuileAssociee = laTuile;
-		posX = x;
-		posY = y;
-	}
+    public TuileGraphique(Tuile laTuile, int x, int y) {
+        tuileAssociee = laTuile;
+        posX = x;
+        posY = y;
+    }
 
 	@Override
 	public void paintComponent(Graphics G) {
