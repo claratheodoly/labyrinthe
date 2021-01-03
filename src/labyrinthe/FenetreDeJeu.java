@@ -90,23 +90,23 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
-               jLabel1.setVisible(false);
-               lbl_objectifCourantJCourant.setVisible(false);
-               lbl_objectifRestantsJCourant.setVisible(false);
-               btn_tournerTuileVolante.setEnabled(false);
-               jouer_versbas_col6.setEnabled(false);
-               jouer_versbas_col2.setEnabled(false);
-               jouer_versbas_col4.setEnabled(false);
-               jouer_vershaut_col2.setEnabled(false);
-               jouer_vershaut_col4.setEnabled(false);
-               jouer_vershaut_col6.setEnabled(false);
-               jouer_versgauche_ligne6.setEnabled(false);
-               jouer_versgauche_ligne4.setEnabled(false);
-               jouer_versgauche_ligne2.setEnabled(false);
-               jouer_versdroite_ligne4.setEnabled(false);
-               jouer_versdroite_ligne2.setEnabled(false);
-               jouer_versdroite_ligne6.setEnabled(false);
-               
+		jLabel1.setVisible(false);
+		lbl_objectifCourantJCourant.setVisible(false);
+		lbl_objectifRestantsJCourant.setVisible(false);
+		btn_tournerTuileVolante.setEnabled(false);
+		jouer_versbas_col6.setEnabled(false);
+		jouer_versbas_col2.setEnabled(false);
+		jouer_versbas_col4.setEnabled(false);
+		jouer_vershaut_col2.setEnabled(false);
+		jouer_vershaut_col4.setEnabled(false);
+		jouer_vershaut_col6.setEnabled(false);
+		jouer_versgauche_ligne6.setEnabled(false);
+		jouer_versgauche_ligne4.setEnabled(false);
+		jouer_versgauche_ligne2.setEnabled(false);
+		jouer_versdroite_ligne4.setEnabled(false);
+		jouer_versdroite_ligne2.setEnabled(false);
+		jouer_versdroite_ligne6.setEnabled(false);
+
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
@@ -505,14 +505,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, true);
-                compteur++;
+		compteur++;
 		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, true);
-                compteur++;
+		compteur++;
 		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
@@ -572,23 +572,24 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
-    private void désactiverbouton (){
-        if (compteur == 1){
-        jouer_vershaut_col2.setEnabled(false);
-	jouer_versbas_col6.setEnabled(false);
-	jouer_versbas_col2.setEnabled(false);
-	jouer_versbas_col4.setEnabled(false);
-	jouer_vershaut_col4.setEnabled(false);
-	jouer_vershaut_col6.setEnabled(false);
-	jouer_versgauche_ligne6.setEnabled(false);
-	jouer_versgauche_ligne4.setEnabled(false);
-	jouer_versgauche_ligne2.setEnabled(false);
-	jouer_versdroite_ligne4.setEnabled(false);
-	jouer_versdroite_ligne2.setEnabled(false);
-	jouer_versdroite_ligne6.setEnabled(false);
-	btn_tournerTuileVolante.setEnabled(false);
-        }
-    }
+	private void désactiverbouton() {
+		if (compteur == 1) {
+			jouer_vershaut_col2.setEnabled(false);
+			jouer_versbas_col6.setEnabled(false);
+			jouer_versbas_col2.setEnabled(false);
+			jouer_versbas_col4.setEnabled(false);
+			jouer_vershaut_col4.setEnabled(false);
+			jouer_vershaut_col6.setEnabled(false);
+			jouer_versgauche_ligne6.setEnabled(false);
+			jouer_versgauche_ligne4.setEnabled(false);
+			jouer_versgauche_ligne2.setEnabled(false);
+			jouer_versdroite_ligne4.setEnabled(false);
+			jouer_versdroite_ligne2.setEnabled(false);
+			jouer_versdroite_ligne6.setEnabled(false);
+			btn_tournerTuileVolante.setEnabled(false);
+		}
+	}
+
 	private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
 		monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
 		int nb_joueurs = (int) nbJoueurs_dia.getValue();
@@ -634,15 +635,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(false);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
-                                phrase1.setVisible(true);
-                                phrase2.setVisible(false);
-                                phrase3.setVisible(false);
-                                phrase4.setVisible(false);
-                                vert.setVisible(false);
-                                jaune.setVisible(false);
-                                rouge.setVisible(false);
-                                bleu.setVisible(true);
-                                
+				phrase1.setVisible(true);
+				phrase2.setVisible(false);
+				phrase3.setVisible(false);
+				phrase4.setVisible(false);
+				vert.setVisible(false);
+				jaune.setVisible(false);
+				rouge.setVisible(false);
+				bleu.setVisible(true);
+
 				break;
 			case 2:
 				lbl_texteNbJoueurs.setText("2 joueurs joueront");
@@ -654,15 +655,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(false);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
-                                phrase1.setVisible(true);
-                                phrase2.setVisible(true);
-                                phrase3.setVisible(false);
-                                phrase4.setVisible(false);
-                                vert.setVisible(true);
-                                jaune.setVisible(false);
-                                rouge.setVisible(false);
-                                bleu.setVisible(true);
-                                
+				phrase1.setVisible(true);
+				phrase2.setVisible(true);
+				phrase3.setVisible(false);
+				phrase4.setVisible(false);
+				vert.setVisible(true);
+				jaune.setVisible(false);
+				rouge.setVisible(false);
+				bleu.setVisible(true);
+
 				break;
 			case 3:
 				lbl_texteNbJoueurs.setText("3 joueurs joueront");
@@ -674,15 +675,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(true);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
-                                phrase1.setVisible(true);
-                                phrase2.setVisible(true);
-                                phrase3.setVisible(true);
-                                phrase4.setVisible(false);
-                                vert.setVisible(true);
-                                jaune.setVisible(true);
-                                rouge.setVisible(false);
-                                bleu.setVisible(true);
-                                
+				phrase1.setVisible(true);
+				phrase2.setVisible(true);
+				phrase3.setVisible(true);
+				phrase4.setVisible(false);
+				vert.setVisible(true);
+				jaune.setVisible(true);
+				rouge.setVisible(false);
+				bleu.setVisible(true);
+
 				break;
 			case 4:
 				lbl_texteNbJoueurs.setText("4 joueurs joueront");
@@ -694,25 +695,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(true);
 				jLabel20.setVisible(true);
 				nom_joueur4_dia.setVisible(true);
-                                phrase1.setVisible(true);
-                                phrase2.setVisible(true);
-                                phrase3.setVisible(true);
-                                phrase4.setVisible(true);
-                                vert.setVisible(true);
-                                jaune.setVisible(true);
-                                rouge.setVisible(true);
-                                bleu.setVisible(true);
-                                
+				phrase1.setVisible(true);
+				phrase2.setVisible(true);
+				phrase3.setVisible(true);
+				phrase4.setVisible(true);
+				vert.setVisible(true);
+				jaune.setVisible(true);
+				rouge.setVisible(true);
+				bleu.setVisible(true);
+
 				break;
 		}
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
 
     private void nom_joueur1_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_diaActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
     }//GEN-LAST:event_nom_joueur1_diaActionPerformed
 
     private void nom_joueur4_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur4_diaActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
     }//GEN-LAST:event_nom_joueur4_diaActionPerformed
 
 	/**
@@ -791,7 +792,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	/**
 	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au
 	 * plateau (c'est moche, mais c'est le mieux de ce à quoi j'ai pensé).
-	 * Niveau performances, je pense que cette méthode
 	 */
 	public void actualiserTuilesGraphiques() {
 		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
