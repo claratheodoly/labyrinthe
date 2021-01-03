@@ -902,42 +902,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		});
 	}
 
-	/* public final void ajouterTuilesGraphiques() {
-        for (int i = 0; i < PlateauJeu.nb_lignes; i++) {
-            for (int j = 0; j < PlateauJeu.nb_colonnes; j++) {
-                ... A ADAPTER POUR LA CRATION DES TUILE GRAPHIQUE DU LAYOUT
-                CelluleGraphique cellGraph = new CelluleGraphique(grilleJeu.Cellules[i][j]); // création d'une nouvelle cellule graphique appelé cellGraph
-
-                cellGraph.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        Cellule c = cellGraph.celluleAssociee;
-                        if (c.jetonCourant == null) {
-                            texte_message.setText("");
-                            return;
-                        }
-                        if (c.jetonCourant.Couleur.equals(joueurCourant.Couleur)) {
-                            texte_message.setText(joueurCourant.Nom + " récupère un de ses jetons");
-                            Jeton j_recup = c.recupererJeton();
-                            c.supprimerJeton();
-                            joueurCourant.ajouterJeton(j_recup);
-                            joueurSuivant();
-                        } else {
-                            if (joueurCourant.nombreDesintegrateurs > 0) {
-                                texte_message.setText(joueurCourant.Nom + " désintègre un jeton adverse");
-                                c.supprimerJeton();
-                                joueurCourant.utiliserDesintegrateur();
-                                joueurSuivant();
-                            }
-                        }
-                        grilleJeu.tasserGrille();
-                        actualiserAffichage();
-                    }
-                });
-                panneau_grille.add(cellGraph); // on ajoute les éléments cellGraph à notre panneau de jeu
-            }
-        }
-    }
-	 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
     private javax.swing.JButton btn_commencerTour;
