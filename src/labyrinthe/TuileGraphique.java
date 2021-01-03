@@ -21,42 +21,42 @@ import javax.swing.JButton;
  */
 public class TuileGraphique extends JButton {
 
-    // éléments qu'on va pouvoir afficher sur la fenêtre de jeu
-    Tuile tuileAssociee;
-    int posX;
-    int posY;
+	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
+	Tuile tuileAssociee;
+	int posX;
+	int posY;
 
-    public TuileGraphique(Tuile laTuile, int x, int y) {
-        tuileAssociee = laTuile;
-        posX = x;
-        posY = y;
-    }
+	public TuileGraphique(Tuile laTuile, int x, int y) {
+		tuileAssociee = laTuile;
+		posX = x;
+		posY = y;
+	}
 
-    @Override
-    public void paintComponent(Graphics G) {
-        super.paintComponent(G);
-        BufferedImage image = null;
-        /* Lecture de l'image correspondante (attention aux exeptions) */
-        try {
-            image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
-        } catch (IOException ex) {
-            Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Graphics2D g = (Graphics2D) G;
-        /* Rotation de l'image de l'angle indiqué autour de son centre */
-        g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);
-        /* Affichage de l'image transformée précedement sur place */
-        g.drawImage(image, 0, 0, null);
-        if (tuileAssociee.presencePion()) {
-            for (Pion pion : tuileAssociee.pionsPresents) {
-                BufferedImage imagePion = null;
-                try {
-                    imagePion = ImageIO.read(new File("src/images/pion" + pion.coloration + ".png"));
-                } catch (IOException ex) {
-                    Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                g.drawImage(imagePion, 0, 0, null);
-            }
-        }
-    }
+	@Override
+	public void paintComponent(Graphics G) {
+		super.paintComponent(G);
+		BufferedImage image = null;
+		/* Lecture de l'image correspondante (attention aux exeptions) */
+		try {
+			image = ImageIO.read(new File("src/images/" + tuileAssociee.type + ".png"));
+		} catch (IOException ex) {
+			Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		Graphics2D g = (Graphics2D) G;
+		/* Rotation de l'image de l'angle indiqué autour de son centre */
+		g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);
+		/* Affichage de l'image transformée précedement sur place */
+		g.drawImage(image, 0, 0, null);
+		if (tuileAssociee.presencePion()) {
+			for (Pion pion : tuileAssociee.pionsPresents) {
+				BufferedImage imagePion = null;
+				try {
+					imagePion = ImageIO.read(new File("src/images/pion" + pion.coloration + ".png"));
+				} catch (IOException ex) {
+					Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
+				}
+				g.drawImage(imagePion, 0, 0, null);
+			}
+		}
+	}
 }
