@@ -103,9 +103,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                jouer_versgauche_ligne6.setEnabled(false);
                jouer_versgauche_ligne4.setEnabled(false);
                jouer_versgauche_ligne2.setEnabled(false);
-               jouer_versgauche_ligne4.setEnabled(false);
-               jouer_versgauche_ligne2.setEnabled(false);
-               jouer_versgauche_ligne6.setEnabled(false);
+               jouer_versdroite_ligne4.setEnabled(false);
+               jouer_versdroite_ligne2.setEnabled(false);
+               jouer_versdroite_ligne6.setEnabled(false);
                
 
 		/* On  affiche le panneau de création des joueurs */
@@ -135,6 +135,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         nom_joueur3_dia = new javax.swing.JTextField();
         btn_start = new javax.swing.JButton();
         lbl_texteNbJoueurs = new javax.swing.JLabel();
+        phrase4 = new javax.swing.JLabel();
+        phrase1 = new javax.swing.JLabel();
+        phrase2 = new javax.swing.JLabel();
+        phrase3 = new javax.swing.JLabel();
+        rouge = new javax.swing.JLabel();
+        bleu = new javax.swing.JLabel();
+        vert = new javax.swing.JLabel();
+        jaune = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
         panel_tuilevolante = new javax.swing.JPanel();
@@ -198,7 +206,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         jLabel23.setText("Nom du joueur 3 :");
         dialogueJoueurs.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 130, -1));
+
+        nom_joueur4_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur4_diaActionPerformed(evt);
+            }
+        });
         dialogueJoueurs.getContentPane().add(nom_joueur4_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 120, -1));
+
+        nom_joueur1_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueur1_diaActionPerformed(evt);
+            }
+        });
         dialogueJoueurs.getContentPane().add(nom_joueur1_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 120, -1));
         dialogueJoueurs.getContentPane().add(nom_joueur2_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, -1));
         dialogueJoueurs.getContentPane().add(nom_joueur3_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 120, -1));
@@ -214,6 +234,31 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_texteNbJoueurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_texteNbJoueurs.setText("1 joueur jouera");
         dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+
+        phrase4.setText("dont le pion sera de la couleur suivante");
+        dialogueJoueurs.getContentPane().add(phrase4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 220, 20));
+
+        phrase1.setText("dont le pion sera de la couleur suivante");
+        dialogueJoueurs.getContentPane().add(phrase1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 220, 20));
+
+        phrase2.setText("dont le pion sera de la couleur suivante");
+        dialogueJoueurs.getContentPane().add(phrase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 220, 20));
+
+        phrase3.setText("dont le pion sera de la couleur suivante");
+        dialogueJoueurs.getContentPane().add(phrase3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 220, 20));
+
+        rouge.setBackground(new java.awt.Color(214, 90, 57));
+        dialogueJoueurs.getContentPane().add(rouge, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 40, 30));
+
+        bleu.setBackground(new java.awt.Color(77, 132, 187));
+        bleu.setForeground(new java.awt.Color(77, 132, 187));
+        dialogueJoueurs.getContentPane().add(bleu, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 40, 30));
+
+        vert.setBackground(new java.awt.Color(58, 171, 83));
+        dialogueJoueurs.getContentPane().add(vert, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 40, 30));
+
+        jaune.setBackground(new java.awt.Color(252, 210, 29));
+        dialogueJoueurs.getContentPane().add(jaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 40, 30));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Labyrinthe");
@@ -753,6 +798,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(false);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
+                                phrase1.setVisible(true);
+                                phrase2.setVisible(false);
+                                phrase3.setVisible(false);
+                                phrase4.setVisible(false);
+                                vert.setVisible(false);
+                                jaune.setVisible(false);
+                                rouge.setVisible(false);
+                                bleu.setVisible(true);
+                                
 				break;
 			case 2:
 				lbl_texteNbJoueurs.setText("2 joueurs joueront");
@@ -764,6 +818,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(false);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
+                                phrase1.setVisible(true);
+                                phrase2.setVisible(true);
+                                phrase3.setVisible(false);
+                                phrase4.setVisible(false);
+                                vert.setVisible(true);
+                                jaune.setVisible(false);
+                                rouge.setVisible(false);
+                                bleu.setVisible(true);
+                                
 				break;
 			case 3:
 				lbl_texteNbJoueurs.setText("3 joueurs joueront");
@@ -775,6 +838,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(true);
 				jLabel20.setVisible(false);
 				nom_joueur4_dia.setVisible(false);
+                                phrase1.setVisible(true);
+                                phrase2.setVisible(true);
+                                phrase3.setVisible(true);
+                                phrase4.setVisible(false);
+                                vert.setVisible(true);
+                                jaune.setVisible(true);
+                                rouge.setVisible(false);
+                                bleu.setVisible(true);
+                                
 				break;
 			case 4:
 				lbl_texteNbJoueurs.setText("4 joueurs joueront");
@@ -786,9 +858,26 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				nom_joueur3_dia.setVisible(true);
 				jLabel20.setVisible(true);
 				nom_joueur4_dia.setVisible(true);
+                                phrase1.setVisible(true);
+                                phrase2.setVisible(true);
+                                phrase3.setVisible(true);
+                                phrase4.setVisible(true);
+                                vert.setVisible(true);
+                                jaune.setVisible(true);
+                                rouge.setVisible(true);
+                                bleu.setVisible(true);
+                                
 				break;
 		}
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
+
+    private void nom_joueur1_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur1_diaActionPerformed
+
+    private void nom_joueur4_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur4_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueur4_diaActionPerformed
 
 	/**
 	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
@@ -904,6 +993,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
+    private javax.swing.JLabel bleu;
     private javax.swing.JButton btn_commencerTour;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_terminerTour;
@@ -922,6 +1012,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jaune;
     private javax.swing.JButton jouer_versbas_col2;
     private javax.swing.JButton jouer_versbas_col4;
     private javax.swing.JButton jouer_versbas_col6;
@@ -947,6 +1038,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel panel_joueur;
     private javax.swing.JPanel panel_tuilevolante;
     private javax.swing.JPanel panneauGrille;
+    private javax.swing.JLabel phrase1;
+    private javax.swing.JLabel phrase2;
+    private javax.swing.JLabel phrase3;
+    private javax.swing.JLabel phrase4;
+    private javax.swing.JLabel rouge;
     private javax.swing.JLabel texte_temps;
+    private javax.swing.JLabel vert;
     // End of variables declaration//GEN-END:variables
 }
