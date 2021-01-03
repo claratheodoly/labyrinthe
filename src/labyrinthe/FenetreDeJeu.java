@@ -90,7 +90,23 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
-               jLabel1.setVisible(false);
+                jLabel1.setVisible(false);
+                phrase2.setVisible(false);
+                phrase3.setVisible(false);
+                phrase4.setVisible(false);
+                // ajustement des couleurs de fond des jLabels et leur visibilité
+                bleu.setOpaque(true);
+                bleu.setBackground(new java.awt.Color(77, 132, 187));
+                vert.setVisible(false);
+                vert.setOpaque(true);
+                vert.setBackground(new java.awt.Color(58, 171, 83));
+                jaune.setVisible(false);
+                jaune.setOpaque(true);
+                jaune.setBackground(new java.awt.Color(252, 210, 29));
+                rouge.setVisible(false);
+                rouge.setOpaque(true);
+                rouge.setBackground(new java.awt.Color(214, 90, 57));
+                
                lbl_objectifCourantJCourant.setVisible(false);
                lbl_objectifRestantsJCourant.setVisible(false);
                btn_tournerTuileVolante.setEnabled(false);
@@ -110,6 +126,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
+                
 	}
 
 	/**
@@ -181,7 +198,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         dialogueJoueurs.setTitle("Création des joueurs");
         dialogueJoueurs.setMinimumSize(new java.awt.Dimension(500, 500));
         dialogueJoueurs.setModal(true);
-        dialogueJoueurs.setSize(new java.awt.Dimension(500, 500));
+        dialogueJoueurs.setSize(new java.awt.Dimension(675, 412));
         dialogueJoueurs.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nbJoueurs_dia.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
@@ -190,10 +207,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 nbJoueurs_diaStateChanged(evt);
             }
         });
-        dialogueJoueurs.getContentPane().add(nbJoueurs_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 60, -1));
+        dialogueJoueurs.getContentPane().add(nbJoueurs_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 60, -1));
 
         jLabel19.setText("Combien de personnes jouent ?");
-        dialogueJoueurs.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        dialogueJoueurs.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
         jLabel20.setText("Nom du joueur 4 :");
         dialogueJoueurs.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
@@ -229,11 +246,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 btn_startActionPerformed(evt);
             }
         });
-        dialogueJoueurs.getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
+        dialogueJoueurs.getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
 
         lbl_texteNbJoueurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_texteNbJoueurs.setText("1 joueur jouera");
-        dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         phrase4.setText("dont le pion sera de la couleur suivante");
         dialogueJoueurs.getContentPane().add(phrase4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 220, 20));
@@ -642,7 +659,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 jaune.setVisible(false);
                                 rouge.setVisible(false);
                                 bleu.setVisible(true);
-                                
 				break;
 			case 2:
 				lbl_texteNbJoueurs.setText("2 joueurs joueront");
