@@ -76,7 +76,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_vershaut_col4.setIcon(img_flecheh);
         jouer_vershaut_col6.setIcon(img_flecheh);
 
- /* Dialogue modal du nombre de joueurs */
+        /* Dialogue modal du nombre de joueurs */
         jLabel22.setVisible(false);
         nom_joueur2_dia.setVisible(false);
         jLabel23.setVisible(false);
