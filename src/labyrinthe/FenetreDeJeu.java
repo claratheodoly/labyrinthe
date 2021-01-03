@@ -117,6 +117,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne2.setEnabled(false);
 		jouer_versdroite_ligne6.setEnabled(false);
 
+		lbl_info_tuileNAccessible.setVisible(false);
+
 		gif.setVisible(false);
 		bravo.setVisible(false);
 
@@ -165,6 +167,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Infojeu = new javax.swing.JPanel();
         gif = new javax.swing.JLabel();
         bravo = new javax.swing.JLabel();
+        lbl_info_tuileNAccessible = new javax.swing.JLabel();
         panel_tuilevolante = new javax.swing.JPanel();
         btn_tournerTuileVolante = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -337,6 +340,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         bravo.setForeground(new java.awt.Color(0, 0, 0));
         bravo.setText("La partie est remportée ! BRAVO !");
         Infojeu.add(bravo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, -1));
+
+        lbl_info_tuileNAccessible.setText("Cette tuile n'est pas accessible");
+        Infojeu.add(lbl_info_tuileNAccessible, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, -1, -1));
 
         getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 210, 160));
 
@@ -551,6 +557,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// reactivation du btn commenecer le tour
 		compteur3 = 0;
 		btn_commencerTour.setEnabled(true);
+		lbl_info_tuileNAccessible.setVisible(false);
 		// si on clique une fois sur ce btn alors il se désactive
 		compteur2++;
 		if (compteur2 == 1) {
@@ -567,84 +574,84 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, true);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, false);
 		compteur++;
-		désactiverbouton();
+		desactiverBoutons();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
@@ -782,7 +789,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
-	private void désactiverbouton() {
+	/**
+	 * Désactive certains boutons selon certaines conditions
+	 */
+	private void desactiverBoutons() {
 		if (compteur == 1) {
 			jouer_vershaut_col2.setEnabled(false);
 			jouer_versbas_col6.setEnabled(false);
@@ -799,7 +809,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 			btn_tournerTuileVolante.setEnabled(false);
 		}
 	}
-	
+
 	/**
 	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
 	 * des joueurs (et de la partie).
@@ -854,11 +864,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 						int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
 						if (posPionJCourant != null) {
 							if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
+								lbl_info_tuileNAccessible.setVisible(false);
 								Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
 								partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
 								partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
+								pionActuel.propriétaire.nouvellePosition(tuileGraph.tuileAssociee);
 							} else {
-								System.err.println("Chemin impossible");
+								lbl_info_tuileNAccessible.setVisible(true);
 							}
 							actualiserAffichage();
 						}
@@ -964,6 +976,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_vershaut_col2;
     private javax.swing.JButton jouer_vershaut_col4;
     private javax.swing.JButton jouer_vershaut_col6;
+    private javax.swing.JLabel lbl_info_tuileNAccessible;
     private javax.swing.JLabel lbl_nomJCourant;
     private javax.swing.JLabel lbl_objectifCourantJCourant;
     private javax.swing.JLabel lbl_objectifRestantsJCourant;

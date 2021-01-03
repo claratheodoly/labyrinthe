@@ -86,6 +86,9 @@ public class Partie {
 		placerPionsDebut();
 	}
 
+	/**
+	 * Ajoute les pions des joueurs sur leur position de départ
+	 */
 	public void placerPionsDebut() {
 		for (int i = 0; i < listeJoueurs.length; i++) {
 			switch (i) {

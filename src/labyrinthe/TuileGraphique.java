@@ -44,16 +44,12 @@ public class TuileGraphique extends JButton {
 			Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		Graphics2D g = (Graphics2D) G;
-		/*
-		Cette méthode permet de ne pas tourner toute l'iamge du bouton, et donc
-		que les pions restent droits
-		 */
-		/*
-		Création d'une transformation affine de roation de l'angle indiqué autour
-		du centre de l'image
-		 */
+		/* Cette méthode permet de ne pas tourner toute l'iamge du bouton, et donc
+		que les pions restent droits */
+		/* Création d'une transformation affine de rotation de l'angle indiqué autour
+		du centre de l'image */
 		AffineTransform tx = AffineTransform.getRotateInstance(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);
-		/* Affichege de l'image tournée */
+		/* Affichage de l'image tournée */
 		g.drawImage(image, tx, null);
 		/* Rotation de l'image de l'angle indiqué autour de son centre */
 		//g.rotate(Math.toRadians(tuileAssociee.orientation), image.getWidth() / 2, image.getHeight() / 2);

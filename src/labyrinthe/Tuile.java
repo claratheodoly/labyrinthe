@@ -80,14 +80,14 @@ public class Tuile {
 		if (objet == null) {
 			return false;
 		}
-		pion_joueur.propriétaire.rammasserObjet(this);
+		pion_joueur.propriétaire.ramasserObjet(this);
 		objet = null;
 		return true;
 
 	}
 
 	public boolean presenceObjet() {
-		return !(objet == null);
+		return !(type.equals("droit") || type.equals("coin") || type.equals("departB") || type.equals("departV") || type.equals("departJ") || type.equals("departR"));
 	}
 
 	public boolean presencePion() {

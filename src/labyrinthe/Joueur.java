@@ -33,14 +33,29 @@ public class Joueur {
 	}
 
 	/**
+	 * Détermine quoi faire quand le pion du joueur arrive sur une nouvelle
+	 * tuile
+	 *
+	 * @param nouvelleTuile La nouvelle tuile sur laquelle le pion du joueur est
+	 */
+	public void nouvellePosition(Tuile nouvelleTuile) {
+		if (nouvelleTuile.presenceObjet()) {
+			if (listeCartes[indexCarteRetournee].nomObjet.equals(nouvelleTuile.type)) {
+				ramasserObjet(nouvelleTuile);
+				indexCarteRetournee++;
+			}
+		}
+	}
+
+	/**
 	 * Ajoute l'objet présent sur la tuile à la liste des objets possédés par le
 	 * joueur.
 	 *
 	 * @param tuile La tuile sur laquelle le joueur est
 	 * @return Succès de l'opération
 	 */
-	public boolean rammasserObjet(Tuile tuile) {
-		/* Si l'invetaire est plein, on ne peut pas ajouter d'objet
+	public boolean ramasserObjet(Tuile tuile) {
+		/* Si l'inventaire est plein, on ne peut pas ajouter d'objet
 		dedans. */
 		if (sacEstPlein()) {
 			return false;
