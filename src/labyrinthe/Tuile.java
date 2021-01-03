@@ -5,6 +5,8 @@
  */
 package labyrinthe;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lucas DELMOTTE, Clara THEODOLY et Émile ROYER
@@ -18,11 +20,12 @@ public class Tuile {
 	boolean porteEst;
 	boolean porteSud;
 	boolean porteOuest;
-	Pion[] pionsPresents;
+	ArrayList<Pion> pionsPresents;
 
 	Tuile(String type_donne) {
 		type = type_donne;
 		orientation = 0;
+		pionsPresents = new ArrayList<>();
 	}
 
 	public boolean tournerTuile(int degres) {
@@ -88,7 +91,7 @@ public class Tuile {
 	}
 
 	public boolean presencePion() {
-		return !(pionsPresents == null);
+		return !(pionsPresents.isEmpty() || pionsPresents == null);
 	}
 
 }

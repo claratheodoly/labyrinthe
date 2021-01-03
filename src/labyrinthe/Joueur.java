@@ -27,6 +27,11 @@ public class Joueur {
 		marqueur = new Pion(this);
 	}
 
+	public void attribuerCouleur(String couleurAttribuee) {
+		couleur = couleurAttribuee;
+		marqueur.coloration = couleurAttribuee;
+	}
+
 	/**
 	 * Ajoute l'objet présent sur la tuile à la liste des objets possédés par le
 	 * joueur.

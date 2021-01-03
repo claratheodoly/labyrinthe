@@ -23,9 +23,13 @@ public class TuileGraphique extends JButton {
 
 	// éléments qu'on va pouvoir afficher sur la fenêtre de jeu
 	Tuile tuileAssociee;
+	int posX;
+	int posY;
 
-	public TuileGraphique(Tuile laTuile) {
+	public TuileGraphique(Tuile laTuile, int x, int y) {
 		tuileAssociee = laTuile;
+		posX = x;
+		posY = y;
 	}
 
 	@Override
@@ -47,7 +51,7 @@ public class TuileGraphique extends JButton {
 			for (Pion pion : tuileAssociee.pionsPresents) {
 				BufferedImage imagePion = null;
 				try {
-					imagePion = ImageIO.read(new File("src/images/pion" + pion.couleur + ".png"));
+					imagePion = ImageIO.read(new File("src/images/pion" + pion.coloration + ".png"));
 				} catch (IOException ex) {
 					Logger.getLogger(TuileGraphique.class.getName()).log(Level.SEVERE, null, ex);
 				}

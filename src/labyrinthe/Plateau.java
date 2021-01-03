@@ -141,8 +141,6 @@ public class Plateau {
 					if (cheminPossible(coordsTuileListees.get(0), coordsTuileListees.get(1), x2, y2, tuilesCouloir)) {
 						return true;
 					}
-				} else {
-					tuilesPart.remove(coordsTuileListees);
 				}
 			}
 		}
@@ -269,7 +267,7 @@ public class Plateau {
 				 */
 				tuiles[num_lig][j] = tuileVolante;
 				tuiles[num_lig][j].pionsPresents = temp.pionsPresents;
-				temp.pionsPresents = null;
+				temp.pionsPresents.clear();
 				tuileVolante = temp;
 			} else {
 				tuiles[num_lig][j] = tuiles[num_lig][j + decalage];
@@ -298,10 +296,8 @@ public class Plateau {
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
 				if (tuiles[i][j].presencePion()) {
-					for (Pion pionPresent : tuiles[i][j].pionsPresents) {
-						if (pionPresent.propriétaire == proprietaireRecherche) {
-							return new int[]{i, j};
-						}
+					if (tuiles[i][j].pionsPresents.contains(proprietaireRecherche.marqueur)) {
+						return (new int[]{i, j});
 					}
 				}
 			}

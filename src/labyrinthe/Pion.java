@@ -13,7 +13,7 @@ package labyrinthe;
 public class Pion {
 
 	Joueur propriétaire;
-	String couleur;
+	String coloration;
 
 	/**
 	 * Crée un pion lié à un joueur
@@ -22,7 +22,6 @@ public class Pion {
 	 */
 	Pion(Joueur joueur) {
 		propriétaire = joueur;
-		couleur = joueur.couleur;
 	}
 
 }
