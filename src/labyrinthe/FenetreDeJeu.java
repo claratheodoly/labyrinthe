@@ -43,6 +43,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
     ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
 
+    
     public FenetreDeJeu() {
         initComponents();
 
@@ -116,7 +117,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jouer_versdroite_ligne2.setEnabled(false);
         jouer_versdroite_ligne6.setEnabled(false);
 
-
+        gif.setVisible(false);
+        bravo.setVisible(false);
+        
         /* On  affiche le panneau de création des joueurs */
         afficherDialogueCreationJoueurs();
 
@@ -161,8 +164,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         panneauGrille = new javax.swing.JPanel();
         Infojeu = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        gif = new javax.swing.JLabel();
+        bravo = new javax.swing.JLabel();
         panel_tuilevolante = new javax.swing.JPanel();
         btn_tournerTuileVolante = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -329,12 +332,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Infojeu.setBackground(new java.awt.Color(204, 204, 204));
         Infojeu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gif-bravo.gif"))); // NOI18N
-        Infojeu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 90));
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gif-bravo.gif"))); // NOI18N
+        Infojeu.add(gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 90));
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("La partie est remportée ! BRAVO !");
-        Infojeu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, -1));
+        bravo.setForeground(new java.awt.Color(0, 0, 0));
+        bravo.setText("La partie est remportée ! BRAVO !");
+        Infojeu.add(bravo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, -1));
 
         getContentPane().add(Infojeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 210, 160));
 
@@ -921,6 +924,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
     private javax.swing.JLabel bleu;
+    private javax.swing.JLabel bravo;
     private javax.swing.JButton btn_commencerTour;
     private javax.swing.JButton btn_fermer_les_infos;
     private javax.swing.JButton btn_ouvrir_les_infos;
@@ -929,19 +933,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton btn_tournerTuileVolante;
     private javax.swing.JDialog dialogueJoueurs;
     private javax.swing.JFrame fenetre_info_jeu;
+    private javax.swing.JLabel gif;
     private javax.swing.JLabel iconeTimer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
