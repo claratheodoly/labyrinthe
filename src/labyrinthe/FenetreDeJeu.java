@@ -19,6 +19,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	// variables utilisées pour le chrono
 	int nbSecondes = 0;
 	Timer monChrono;
+        // sera utilisé lorqu'on clic sur n'importe quel bouton permettant de placer une tuile
+        int compteur = 0;
+        // sera utilisé pour qu'on ne puisser terminer le tour qu'une seule fois
+        int compteur2 = 0;
+        // sera utilisé pour qu'on ne puisser commencer le tour qu'une seule fois
+        int compteur3 = 0;
 	Partie partieJeu;
 
 	TuileGraphique[][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
@@ -389,7 +395,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jLabel1.setVisible(true);
                 lbl_objectifCourantJCourant.setVisible(true);
                 lbl_objectifRestantsJCourant.setVisible(true);
-                // desactivation des divers boutons
+                // si on clique une fois sur ce btn alors il se désactive
+                compteur3 ++ ;
+                if (compteur3 == 1){
+                    btn_commencerTour.setEnabled(false);
+                }
+                // réactivation des divers boutons pour jouer dans les lignes et les colonnes
+                compteur = 0;
                 btn_tournerTuileVolante.setEnabled(true);
                 jouer_versbas_col6.setEnabled(true);
                 jouer_versbas_col2.setEnabled(true);
@@ -400,10 +412,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jouer_versgauche_ligne6.setEnabled(true);
                 jouer_versgauche_ligne4.setEnabled(true);
                 jouer_versgauche_ligne2.setEnabled(true);
-                jouer_versgauche_ligne4.setEnabled(true);
-                jouer_versgauche_ligne2.setEnabled(true);
-                jouer_versgauche_ligne6.setEnabled(true);
+                jouer_versdroite_ligne4.setEnabled(true);
+                jouer_versdroite_ligne2.setEnabled(true);
+                jouer_versdroite_ligne6.setEnabled(true);
+                // reactivation du btn terminer le tour
+                compteur2 = 0 ;
+                btn_terminerTour.setEnabled(true);
+                
                 actualiserAffichage();
+                
     }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
@@ -422,9 +439,17 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jouer_versgauche_ligne6.setEnabled(false);
                 jouer_versgauche_ligne4.setEnabled(false);
                 jouer_versgauche_ligne2.setEnabled(false);
-                jouer_versgauche_ligne4.setEnabled(false);
-                jouer_versgauche_ligne2.setEnabled(false);
-                jouer_versgauche_ligne6.setEnabled(false);
+                jouer_versdroite_ligne4.setEnabled(false);
+                jouer_versdroite_ligne2.setEnabled(false);
+                jouer_versdroite_ligne6.setEnabled(false);
+                // reactivation du btn commenecer le tour
+                compteur3 = 0 ;
+                btn_commencerTour.setEnabled(true);
+                // si on clique une fois sur ce btn alors il se désactive
+                compteur2 ++ ;
+                if (compteur2 == 1){
+                    btn_terminerTour.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
@@ -435,61 +460,251 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, true);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, true);
+                if(compteur == 1){
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, true);
+                if(compteur == 1){
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, true);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, true);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, true);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, false);
+                compteur ++;
+                if(compteur == 1){
+                    jouer_vershaut_col2.setEnabled(false);
+                    jouer_versbas_col6.setEnabled(false);
+                    jouer_versbas_col2.setEnabled(false);
+                    jouer_versbas_col4.setEnabled(false);
+                    jouer_vershaut_col4.setEnabled(false);
+                    jouer_vershaut_col6.setEnabled(false);
+                    jouer_versgauche_ligne6.setEnabled(false);
+                    jouer_versgauche_ligne4.setEnabled(false);
+                    jouer_versgauche_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne4.setEnabled(false);
+                    jouer_versdroite_ligne2.setEnabled(false);
+                    jouer_versdroite_ligne6.setEnabled(false);
+                    btn_tournerTuileVolante.setEnabled(false);
+                }
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
