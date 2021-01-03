@@ -773,22 +773,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
-	private void désactiverbouton() {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-	}
-	
 	/**
 	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
 	 * des joueurs (et de la partie).
