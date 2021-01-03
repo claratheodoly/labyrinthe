@@ -473,20 +473,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jLabel1.setVisible(false);
 		lbl_objectifCourantJCourant.setVisible(false);
 		lbl_objectifRestantsJCourant.setVisible(false);
-		// désactivation des boutons quand le tour est terminé
-		btn_tournerTuileVolante.setEnabled(false);
-		jouer_versbas_col6.setEnabled(false);
-		jouer_versbas_col2.setEnabled(false);
-		jouer_versbas_col4.setEnabled(false);
-		jouer_vershaut_col2.setEnabled(false);
-		jouer_vershaut_col4.setEnabled(false);
-		jouer_vershaut_col6.setEnabled(false);
-		jouer_versgauche_ligne6.setEnabled(false);
-		jouer_versgauche_ligne4.setEnabled(false);
-		jouer_versgauche_ligne2.setEnabled(false);
-		jouer_versdroite_ligne4.setEnabled(false);
-		jouer_versdroite_ligne2.setEnabled(false);
-		jouer_versdroite_ligne6.setEnabled(false);
 		// reactivation du btn commenecer le tour
 		compteur3 = 0;
 		btn_commencerTour.setEnabled(true);
