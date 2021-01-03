@@ -31,8 +31,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	ImageIcon img_flecheg = new javax.swing.ImageIcon(getClass().getResource("/images/flecheg.png"));
 	ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
 	ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
-        // insertion des images des pions
-        ImageIcon img_pionjaune = new javax.swing.ImageIcon(getClass().getResource("/images/pionjaune.png"));
+	// insertion des images des pions
+	ImageIcon img_pionjaune = new javax.swing.ImageIcon(getClass().getResource("/images/pionjaune.png"));
 	ImageIcon img_pionrouge = new javax.swing.ImageIcon(getClass().getResource("/images/pionrouge.png"));
 	ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
 	ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
@@ -84,10 +84,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		nom_joueur3_dia.setVisible(false);
 		jLabel20.setVisible(false);
 		nom_joueur4_dia.setVisible(false);
-               jLabel1.setVisible(false);
-               lbl_objectifCourantJCourant.setVisible(false);
-               lbl_objectifRestantsJCourant.setVisible(false);
-               
+		jLabel1.setVisible(false);
+		lbl_objectifCourantJCourant.setVisible(false);
+		lbl_objectifRestantsJCourant.setVisible(false);
+
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
@@ -374,15 +374,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_commencerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencerTourActionPerformed
 		jLabel1.setVisible(true);
-                lbl_objectifCourantJCourant.setVisible(true);
-                lbl_objectifRestantsJCourant.setVisible(true);
+		lbl_objectifCourantJCourant.setVisible(true);
+		lbl_objectifRestantsJCourant.setVisible(true);
     }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
 		partieJeu.joueurSuivant();
-                jLabel1.setVisible(false);
-                lbl_objectifCourantJCourant.setVisible(false);
-                lbl_objectifRestantsJCourant.setVisible(false);
+		jLabel1.setVisible(false);
+		lbl_objectifCourantJCourant.setVisible(false);
+		lbl_objectifRestantsJCourant.setVisible(false);
 		actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
@@ -579,12 +579,22 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				if (partieJeu.plateauJeu.tuiles[i][j] == null) {
 					break;
 				}
-				TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j]);
+				TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j], i, j);
 
 				/* On ajoute l'action à effectuer quand on clique sur la case */
 				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						Tuile t = tuileGraph.tuileAssociee;
+						int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
+						if (posPionJCourant != null) {
+							if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
+								Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
+								partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
+								partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
+							} else {
+								System.err.println("Chemin impossible");
+							}
+							actualiserAffichage();
+						}
 					}
 				});
 				panneauGrille.add(tuileGraph);
@@ -592,14 +602,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 			}
 		}
 		//javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
-		tuileGraphVol = new TuileGraphique(partieJeu.plateauJeu.tuileVolante);
+		tuileGraphVol = new TuileGraphique(partieJeu.plateauJeu.tuileVolante, 0, 0);
 		panel_tuilevolante.add(tuileGraphVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
 	}
 
 	/**
 	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au
 	 * plateau (c'est moche, mais c'est le mieux de ce à quoi j'ai pensé).
-	 * Niveau performances, je pense que cette méthode 
+	 * Niveau performances, je pense que cette méthode
 	 */
 	public void actualiserTuilesGraphiques() {
 		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
@@ -645,42 +655,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		});
 	}
 
-	/* public final void ajouterTuilesGraphiques() {
-        for (int i = 0; i < PlateauJeu.nb_lignes; i++) {
-            for (int j = 0; j < PlateauJeu.nb_colonnes; j++) {
-                ... A ADAPTER POUR LA CRATION DES TUILE GRAPHIQUE DU LAYOUT
-                CelluleGraphique cellGraph = new CelluleGraphique(grilleJeu.Cellules[i][j]); // création d'une nouvelle cellule graphique appelé cellGraph
-
-                cellGraph.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        Cellule c = cellGraph.celluleAssociee;
-                        if (c.jetonCourant == null) {
-                            texte_message.setText("");
-                            return;
-                        }
-                        if (c.jetonCourant.Couleur.equals(joueurCourant.Couleur)) {
-                            texte_message.setText(joueurCourant.Nom + " récupère un de ses jetons");
-                            Jeton j_recup = c.recupererJeton();
-                            c.supprimerJeton();
-                            joueurCourant.ajouterJeton(j_recup);
-                            joueurSuivant();
-                        } else {
-                            if (joueurCourant.nombreDesintegrateurs > 0) {
-                                texte_message.setText(joueurCourant.Nom + " désintègre un jeton adverse");
-                                c.supprimerJeton();
-                                joueurCourant.utiliserDesintegrateur();
-                                joueurSuivant();
-                            }
-                        }
-                        grilleJeu.tasserGrille();
-                        actualiserAffichage();
-                    }
-                });
-                panneau_grille.add(cellGraph); // on ajoute les éléments cellGraph à notre panneau de jeu
-            }
-        }
-    }
-	 */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
     private javax.swing.JButton btn_commencerTour;

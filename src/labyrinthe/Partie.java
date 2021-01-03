@@ -176,13 +176,13 @@ public class Partie {
 		}
 		switch (nombreJoueurs) {
 			case 4:
-				listeJoueurs[3].couleur = "rouge";
+				listeJoueurs[3].attribuerCouleur("rouge");
 			case 3:
-				listeJoueurs[2].couleur = "jaune";
+				listeJoueurs[2].attribuerCouleur("jaune");
 			case 2:
-				listeJoueurs[1].couleur = "vert";
+				listeJoueurs[1].attribuerCouleur("vert");
 			case 1:
-				listeJoueurs[0].couleur = "bleu";
+				listeJoueurs[0].attribuerCouleur("bleu");
 		}
 		return true;
 	}
