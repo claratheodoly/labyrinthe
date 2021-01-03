@@ -506,253 +506,103 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, true);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, true);
-		if (compteur == 1) {
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+                compteur++;
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(5, true);
-		if (compteur == 1) {
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+                compteur++;
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(1, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
 		partieJeu.plateauJeu.deplacerColonne(3, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(5, true);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, true);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, true);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(1, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
 		partieJeu.plateauJeu.deplacerLigne(3, false);
 		compteur++;
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
+		désactiverbouton();
 		actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
-
+    private void désactiverbouton (){
+        if (compteur == 1){
+        jouer_vershaut_col2.setEnabled(false);
+	jouer_versbas_col6.setEnabled(false);
+	jouer_versbas_col2.setEnabled(false);
+	jouer_versbas_col4.setEnabled(false);
+	jouer_vershaut_col4.setEnabled(false);
+	jouer_vershaut_col6.setEnabled(false);
+	jouer_versgauche_ligne6.setEnabled(false);
+	jouer_versgauche_ligne4.setEnabled(false);
+	jouer_versgauche_ligne2.setEnabled(false);
+	jouer_versdroite_ligne4.setEnabled(false);
+	jouer_versdroite_ligne2.setEnabled(false);
+	jouer_versdroite_ligne6.setEnabled(false);
+	btn_tournerTuileVolante.setEnabled(false);
+        }
+    }
 	private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
 		monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
 		int nb_joueurs = (int) nbJoueurs_dia.getValue();
