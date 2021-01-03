@@ -12,15 +12,15 @@ package labyrinthe;
  */
 public class Carte {
 
-    String nomObjet;
+	String nomObjet;
 
-    /**
-     * Crée une carte avec un objet à récupérer dessus.
-     *
-     * @param nom Le nom de l'objet sur la carte.
-     */
-    Carte(String nom) {
-        nomObjet = nom;
-    }
+	/**
+	 * Crée une carte avec un objet à récupérer dessus.
+	 *
+	 * @param nom Le nom de l'objet sur la carte.
+	 */
+	Carte(String nom) {
+		nomObjet = nom;
+	}
 
 }

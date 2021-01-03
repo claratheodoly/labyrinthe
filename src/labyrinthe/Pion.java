@@ -12,16 +12,16 @@ package labyrinthe;
  */
 public class Pion {
 
-    Joueur propriétaire;
-    String coloration;
+	Joueur propriétaire;
+	String coloration;
 
-    /**
-     * Crée un pion lié à un joueur
-     *
-     * @param joueur Le propriétaire du pion
-     */
-    Pion(Joueur joueur) {
-        propriétaire = joueur;
-    }
+	/**
+	 * Crée un pion lié à un joueur
+	 *
+	 * @param joueur Le propriétaire du pion
+	 */
+	Pion(Joueur joueur) {
+		propriétaire = joueur;
+	}
 
 }
