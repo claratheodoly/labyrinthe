@@ -16,67 +16,67 @@ import javax.swing.Timer;
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
 
-	// variables utilisées pour le chrono
-	int nbSecondes = 0;
-	Timer monChrono;
-	// sera utilisé lorqu'on clic sur n'importe quel bouton permettant de placer une tuile
-	int compteur = 0;
-	// sera utilisé pour qu'on ne puisser terminer le tour qu'une seule fois
-	int compteur2 = 0;
-	// sera utilisé pour qu'on ne puisser commencer le tour qu'une seule fois
-	int compteur3 = 0;
-	Partie partieJeu;
+    // variables utilisées pour le chrono
+    int nbSecondes = 0;
+    Timer monChrono;
+    // sera utilisé lorqu'on clic sur n'importe quel bouton permettant de placer une tuile
+    int compteur = 0;
+    // sera utilisé pour qu'on ne puisser terminer le tour qu'une seule fois
+    int compteur2 = 0;
+    // sera utilisé pour qu'on ne puisser commencer le tour qu'une seule fois
+    int compteur3 = 0;
+    Partie partieJeu;
 
-	TuileGraphique[][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
-	TuileGraphique tuileGraphVol;
+    TuileGraphique[][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
+    TuileGraphique tuileGraphVol;
 
-	// insertion de l'image pour notre chrono
-	ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png"));
-	// insertion de l'image pour les boutons de chaques cotés du plateau
-	ImageIcon img_fleched = new javax.swing.ImageIcon(getClass().getResource("/images/fleched.png"));
-	ImageIcon img_flecheg = new javax.swing.ImageIcon(getClass().getResource("/images/flecheg.png"));
-	ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
-	ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
-	// insertion des images des pions
-	ImageIcon img_pionjaune = new javax.swing.ImageIcon(getClass().getResource("/images/pionjaune.png"));
-	ImageIcon img_pionrouge = new javax.swing.ImageIcon(getClass().getResource("/images/pionrouge.png"));
-	ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
-	ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
+    // insertion de l'image pour notre chrono
+    ImageIcon img_iconetimer = new javax.swing.ImageIcon(getClass().getResource("/images/timer.png"));
+    // insertion de l'image pour les boutons de chaques cotés du plateau
+    ImageIcon img_fleched = new javax.swing.ImageIcon(getClass().getResource("/images/fleched.png"));
+    ImageIcon img_flecheg = new javax.swing.ImageIcon(getClass().getResource("/images/flecheg.png"));
+    ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
+    ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
+    // insertion des images des pions
+    ImageIcon img_pionjaune = new javax.swing.ImageIcon(getClass().getResource("/images/pionjaune.png"));
+    ImageIcon img_pionrouge = new javax.swing.ImageIcon(getClass().getResource("/images/pionrouge.png"));
+    ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
+    ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
 
-	public FenetreDeJeu() {
-		initComponents();
+    public FenetreDeJeu() {
+        initComponents();
 
-		// création du chrono
-		ActionListener tache_recurrente = new ActionListener() {
-			public void actionPerformed(ActionEvent e1) {
-				nbSecondes++; // incrémentation du nombres de seconde
-				texte_temps.setText(nbSecondes + "");
-			}
-		;
-		};
+        // création du chrono
+        ActionListener tache_recurrente = new ActionListener() {
+            public void actionPerformed(ActionEvent e1) {
+                nbSecondes++; // incrémentation du nombres de seconde
+                texte_temps.setText(nbSecondes + "");
+            }
+        ;
+        };
 
         /* Instanciation du timer */
 		monChrono = new Timer(1000, tache_recurrente);
-		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
+        iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
 
-		/* ajout des images aux divers boutons */
-		jouer_versdroite_ligne2.setIcon(img_fleched);
-		jouer_versdroite_ligne4.setIcon(img_fleched);
-		jouer_versdroite_ligne6.setIcon(img_fleched);
+        /* ajout des images aux divers boutons */
+        jouer_versdroite_ligne2.setIcon(img_fleched);
+        jouer_versdroite_ligne4.setIcon(img_fleched);
+        jouer_versdroite_ligne6.setIcon(img_fleched);
 
-		jouer_versgauche_ligne2.setIcon(img_flecheg);
-		jouer_versgauche_ligne4.setIcon(img_flecheg);
-		jouer_versgauche_ligne6.setIcon(img_flecheg);
+        jouer_versgauche_ligne2.setIcon(img_flecheg);
+        jouer_versgauche_ligne4.setIcon(img_flecheg);
+        jouer_versgauche_ligne6.setIcon(img_flecheg);
 
-		jouer_versbas_col2.setIcon(img_flecheb);
-		jouer_versbas_col4.setIcon(img_flecheb);
-		jouer_versbas_col6.setIcon(img_flecheb);
+        jouer_versbas_col2.setIcon(img_flecheb);
+        jouer_versbas_col4.setIcon(img_flecheb);
+        jouer_versbas_col6.setIcon(img_flecheb);
 
-		jouer_vershaut_col2.setIcon(img_flecheh);
-		jouer_vershaut_col4.setIcon(img_flecheh);
-		jouer_vershaut_col6.setIcon(img_flecheh);
+        jouer_vershaut_col2.setIcon(img_flecheh);
+        jouer_vershaut_col4.setIcon(img_flecheh);
+        jouer_vershaut_col6.setIcon(img_flecheh);
 
-		/* Pas besoin de ces instruction il semble, le paneau n'est pas encore affiché */
+        /* Pas besoin de ces instruction il semble, le paneau n'est pas encore affiché */
  /*Infojeu.setVisible(false);
 		panneauGrille.setVisible(true);
 		panel_tuilevolante.setVisible(false);
@@ -84,57 +84,57 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		panel_chrono.setVisible(false);*/
 
  /* Dialogue modal du nombre de joueurs */
-		jLabel22.setVisible(false);
-		nom_joueur2_dia.setVisible(false);
-		jLabel23.setVisible(false);
-		nom_joueur3_dia.setVisible(false);
-		jLabel20.setVisible(false);
-		nom_joueur4_dia.setVisible(false);
-                jLabel1.setVisible(false);
-                phrase2.setVisible(false);
-                phrase3.setVisible(false);
-                phrase4.setVisible(false);
-                // ajustement des couleurs de fond des jLabels et leur visibilité
-                bleu.setOpaque(true);
-                bleu.setBackground(new java.awt.Color(77, 132, 187));
-                vert.setVisible(false);
-                vert.setOpaque(true);
-                vert.setBackground(new java.awt.Color(58, 171, 83));
-                jaune.setVisible(false);
-                jaune.setOpaque(true);
-                jaune.setBackground(new java.awt.Color(252, 210, 29));
-                rouge.setVisible(false);
-                rouge.setOpaque(true);
-                rouge.setBackground(new java.awt.Color(214, 90, 57));
-                
-               lbl_objectifCourantJCourant.setVisible(false);
-               lbl_objectifRestantsJCourant.setVisible(false);
-               btn_tournerTuileVolante.setEnabled(false);
-               jouer_versbas_col6.setEnabled(false);
-               jouer_versbas_col2.setEnabled(false);
-               jouer_versbas_col4.setEnabled(false);
-               jouer_vershaut_col2.setEnabled(false);
-               jouer_vershaut_col4.setEnabled(false);
-               jouer_vershaut_col6.setEnabled(false);
-               jouer_versgauche_ligne6.setEnabled(false);
-               jouer_versgauche_ligne4.setEnabled(false);
-               jouer_versgauche_ligne2.setEnabled(false);
-               jouer_versdroite_ligne4.setEnabled(false);
-               jouer_versdroite_ligne2.setEnabled(false);
-               jouer_versdroite_ligne6.setEnabled(false);
-               
+        jLabel22.setVisible(false);
+        nom_joueur2_dia.setVisible(false);
+        jLabel23.setVisible(false);
+        nom_joueur3_dia.setVisible(false);
+        jLabel20.setVisible(false);
+        nom_joueur4_dia.setVisible(false);
+        jLabel1.setVisible(false);
+        phrase2.setVisible(false);
+        phrase3.setVisible(false);
+        phrase4.setVisible(false);
+        // ajustement des couleurs de fond des jLabels et leur visibilité
+        bleu.setOpaque(true);
+        bleu.setBackground(new java.awt.Color(77, 132, 187));
+        vert.setVisible(false);
+        vert.setOpaque(true);
+        vert.setBackground(new java.awt.Color(58, 171, 83));
+        jaune.setVisible(false);
+        jaune.setOpaque(true);
+        jaune.setBackground(new java.awt.Color(252, 210, 29));
+        rouge.setVisible(false);
+        rouge.setOpaque(true);
+        rouge.setBackground(new java.awt.Color(214, 90, 57));
 
-		/* On  affiche le panneau de création des joueurs */
-		afficherDialogueCreationJoueurs();
-                
-	}
+        lbl_objectifCourantJCourant.setVisible(false);
+        lbl_objectifRestantsJCourant.setVisible(false);
+        btn_tournerTuileVolante.setEnabled(false);
+        jouer_versbas_col6.setEnabled(false);
+        jouer_versbas_col2.setEnabled(false);
+        jouer_versbas_col4.setEnabled(false);
+        jouer_vershaut_col2.setEnabled(false);
+        jouer_vershaut_col4.setEnabled(false);
+        jouer_vershaut_col6.setEnabled(false);
+        jouer_versgauche_ligne6.setEnabled(false);
+        jouer_versgauche_ligne4.setEnabled(false);
+        jouer_versgauche_ligne2.setEnabled(false);
+        jouer_versdroite_ligne4.setEnabled(false);
+        jouer_versdroite_ligne2.setEnabled(false);
+        jouer_versdroite_ligne6.setEnabled(false);
 
-	/**
-	 * This method is called from within the constructor to initialize the form.
-	 * WARNING: Do NOT modify this code. The content of this method is always
-	 * regenerated by the Form Editor.
-	 */
-	@SuppressWarnings("unchecked")
+
+        /* On  affiche le panneau de création des joueurs */
+        afficherDialogueCreationJoueurs();
+
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -517,282 +517,279 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_commencerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencerTourActionPerformed
-		jLabel1.setVisible(true);
-		lbl_objectifCourantJCourant.setVisible(true);
-		lbl_objectifRestantsJCourant.setVisible(true);
-		// si on clique une fois sur ce btn alors il se désactive
-		compteur3++;
-		if (compteur3 == 1) {
-			btn_commencerTour.setEnabled(false);
-		}
-		// réactivation des divers boutons pour jouer dans les lignes et les colonnes
-		compteur = 0;
-		btn_tournerTuileVolante.setEnabled(true);
-		jouer_versbas_col6.setEnabled(true);
-		jouer_versbas_col2.setEnabled(true);
-		jouer_versbas_col4.setEnabled(true);
-		jouer_vershaut_col2.setEnabled(true);
-		jouer_vershaut_col4.setEnabled(true);
-		jouer_vershaut_col6.setEnabled(true);
-		jouer_versgauche_ligne6.setEnabled(true);
-		jouer_versgauche_ligne4.setEnabled(true);
-		jouer_versgauche_ligne2.setEnabled(true);
-		jouer_versdroite_ligne4.setEnabled(true);
-		jouer_versdroite_ligne2.setEnabled(true);
-		jouer_versdroite_ligne6.setEnabled(true);
-		// reactivation du btn terminer le tour
-		compteur2 = 0;
-		btn_terminerTour.setEnabled(true);
+        jLabel1.setVisible(true);
+        lbl_objectifCourantJCourant.setVisible(true);
+        lbl_objectifRestantsJCourant.setVisible(true);
+        // si on clique une fois sur ce btn alors il se désactive
+        compteur3++;
+        if (compteur3 == 1) {
+            btn_commencerTour.setEnabled(false);
+        }
+        // réactivation des divers boutons pour jouer dans les lignes et les colonnes
+        compteur = 0;
+        btn_tournerTuileVolante.setEnabled(true);
+        jouer_versbas_col6.setEnabled(true);
+        jouer_versbas_col2.setEnabled(true);
+        jouer_versbas_col4.setEnabled(true);
+        jouer_vershaut_col2.setEnabled(true);
+        jouer_vershaut_col4.setEnabled(true);
+        jouer_vershaut_col6.setEnabled(true);
+        jouer_versgauche_ligne6.setEnabled(true);
+        jouer_versgauche_ligne4.setEnabled(true);
+        jouer_versgauche_ligne2.setEnabled(true);
+        jouer_versdroite_ligne4.setEnabled(true);
+        jouer_versdroite_ligne2.setEnabled(true);
+        jouer_versdroite_ligne6.setEnabled(true);
+        // reactivation du btn terminer le tour
+        compteur2 = 0;
+        btn_terminerTour.setEnabled(true);
 
-		actualiserAffichage();
+        actualiserAffichage();
 
     }//GEN-LAST:event_btn_commencerTourActionPerformed
 
     private void btn_terminerTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_terminerTourActionPerformed
-		partieJeu.joueurSuivant();
-		jLabel1.setVisible(false);
-		lbl_objectifCourantJCourant.setVisible(false);
-		lbl_objectifRestantsJCourant.setVisible(false);
-		// reactivation du btn commenecer le tour
-		compteur3 = 0;
-		btn_commencerTour.setEnabled(true);
-		// si on clique une fois sur ce btn alors il se désactive
-		compteur2++;
-		if (compteur2 == 1) {
-			btn_terminerTour.setEnabled(false);
-		}
-		actualiserAffichage();
+        partieJeu.joueurSuivant();
+        jLabel1.setVisible(false);
+        lbl_objectifCourantJCourant.setVisible(false);
+        lbl_objectifRestantsJCourant.setVisible(false);
+        // reactivation du btn commenecer le tour
+        compteur3 = 0;
+        btn_commencerTour.setEnabled(true);
+        // si on clique une fois sur ce btn alors il se désactive
+        compteur2++;
+        if (compteur2 == 1) {
+            btn_terminerTour.setEnabled(false);
+        }
+        actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
     private void btn_tournerTuileVolanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tournerTuileVolanteActionPerformed
-		partieJeu.plateauJeu.tuileVolante.tournerTuile(90);
-		actualiserAffichage();
+        partieJeu.plateauJeu.tuileVolante.tournerTuile(90);
+        actualiserAffichage();
     }//GEN-LAST:event_btn_tournerTuileVolanteActionPerformed
 
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(5, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(5, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(1, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(1, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(3, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(3, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(5, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(5, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(1, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(1, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(3, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerColonne(3, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(5, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(5, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(5, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(5, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(3, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(3, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(1, true);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(1, true);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(1, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(1, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(3, false);
-		compteur++;
-		désactiverbouton();
-		actualiserAffichage();
+        partieJeu.plateauJeu.deplacerLigne(3, false);
+        compteur++;
+        désactiverbouton();
+        actualiserAffichage();
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
-	private void désactiverbouton() {
-		if (compteur == 1) {
-			jouer_vershaut_col2.setEnabled(false);
-			jouer_versbas_col6.setEnabled(false);
-			jouer_versbas_col2.setEnabled(false);
-			jouer_versbas_col4.setEnabled(false);
-			jouer_vershaut_col4.setEnabled(false);
-			jouer_vershaut_col6.setEnabled(false);
-			jouer_versgauche_ligne6.setEnabled(false);
-			jouer_versgauche_ligne4.setEnabled(false);
-			jouer_versgauche_ligne2.setEnabled(false);
-			jouer_versdroite_ligne4.setEnabled(false);
-			jouer_versdroite_ligne2.setEnabled(false);
-			jouer_versdroite_ligne6.setEnabled(false);
-			btn_tournerTuileVolante.setEnabled(false);
-		}
-	}
+    private void désactiverbouton() {
+        if (compteur == 1) {
+            jouer_vershaut_col2.setEnabled(false);
+            jouer_versbas_col6.setEnabled(false);
+            jouer_versbas_col2.setEnabled(false);
+            jouer_versbas_col4.setEnabled(false);
+            jouer_vershaut_col4.setEnabled(false);
+            jouer_vershaut_col6.setEnabled(false);
+            jouer_versgauche_ligne6.setEnabled(false);
+            jouer_versgauche_ligne4.setEnabled(false);
+            jouer_versgauche_ligne2.setEnabled(false);
+            jouer_versdroite_ligne4.setEnabled(false);
+            jouer_versdroite_ligne2.setEnabled(false);
+            jouer_versdroite_ligne6.setEnabled(false);
+            btn_tournerTuileVolante.setEnabled(false);
+        }
+    }
 
-	private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
-		monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
-		int nb_joueurs = (int) nbJoueurs_dia.getValue();
-		partieJeu = new Partie(nb_joueurs);
-		/*
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
+        monChrono.start(); // lorsqu'on appuie sur le bouton "démarrer partie" le chrono se lance
+        int nb_joueurs = (int) nbJoueurs_dia.getValue();
+        partieJeu = new Partie(nb_joueurs);
+        /*
 		 * Petit bidouillage : le programme commence la pile au cas le plus haut
 		 * qui lui correspond, c-à-d le nombre de joueurs.
 		 * Comme il n'y a pas de 'break', il exécute ensuite tous ceux qui sont
 		 * en-dessous.
-		 */
-		switch (nb_joueurs) {
-			case 4:
-				partieJeu.creerJoueur(3, nom_joueur4_dia.getText());
-			case 3:
-				partieJeu.creerJoueur(2, nom_joueur3_dia.getText());
-			case 2:
-				partieJeu.creerJoueur(1, nom_joueur2_dia.getText());
-			case 1:
-				partieJeu.creerJoueur(0, nom_joueur1_dia.getText());
-				break;
-		}
-		partieJeu.initialiserPartieGraphique();
-		dialogueJoueurs.dispose();
-		ajouterTuilesGraphiques();
-		Infojeu.setVisible(true);
-		panneauGrille.setVisible(true);
-		panel_tuilevolante.setVisible(true);
-		panel_joueur.setVisible(true);
-		panel_chrono.setVisible(true);
-		actualiserAffichage();
-	}
+         */
+        switch (nb_joueurs) {
+            case 4:
+                partieJeu.creerJoueur(3, nom_joueur4_dia.getText());
+            case 3:
+                partieJeu.creerJoueur(2, nom_joueur3_dia.getText());
+            case 2:
+                partieJeu.creerJoueur(1, nom_joueur2_dia.getText());
+            case 1:
+                partieJeu.creerJoueur(0, nom_joueur1_dia.getText());
+                break;
+        }
+        partieJeu.initialiserPartieGraphique();
+        dialogueJoueurs.dispose();
+        ajouterTuilesGraphiques();
+        Infojeu.setVisible(true);
+        panneauGrille.setVisible(true);
+        panel_tuilevolante.setVisible(true);
+        panel_joueur.setVisible(true);
+        panel_chrono.setVisible(true);
+        actualiserAffichage();
+    }
 
     private void nbJoueurs_diaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nbJoueurs_diaStateChanged
-		int nbJoueurs = (int) nbJoueurs_dia.getValue();
-		switch (nbJoueurs) {
-			case 1:
-				lbl_texteNbJoueurs.setText("1 joueur jouera");
-				jLabel21.setVisible(true);
-				nom_joueur1_dia.setVisible(true);
-				jLabel22.setVisible(false);
-				nom_joueur2_dia.setVisible(false);
-				jLabel23.setVisible(false);
-				nom_joueur3_dia.setVisible(false);
-				jLabel20.setVisible(false);
-				nom_joueur4_dia.setVisible(false);
-                                phrase1.setVisible(true);
-                                phrase2.setVisible(false);
-                                phrase3.setVisible(false);
-                                phrase4.setVisible(false);
-                                vert.setVisible(false);
-                                jaune.setVisible(false);
-                                rouge.setVisible(false);
-                                bleu.setVisible(true);
-				break;
-			case 2:
-				lbl_texteNbJoueurs.setText("2 joueurs joueront");
-				jLabel21.setVisible(true);
-				nom_joueur1_dia.setVisible(true);
-				jLabel22.setVisible(true);
-				nom_joueur2_dia.setVisible(true);
-				jLabel23.setVisible(false);
-				nom_joueur3_dia.setVisible(false);
-				jLabel20.setVisible(false);
-				nom_joueur4_dia.setVisible(false);
-				phrase1.setVisible(true);
-				phrase2.setVisible(true);
-				phrase3.setVisible(false);
-				phrase4.setVisible(false);
-				vert.setVisible(true);
-				jaune.setVisible(false);
-				rouge.setVisible(false);
-				bleu.setVisible(true);
-
-				break;
-			case 3:
-				lbl_texteNbJoueurs.setText("3 joueurs joueront");
-				jLabel21.setVisible(true);
-				nom_joueur1_dia.setVisible(true);
-				jLabel22.setVisible(true);
-				nom_joueur2_dia.setVisible(true);
-				jLabel23.setVisible(true);
-				nom_joueur3_dia.setVisible(true);
-				jLabel20.setVisible(false);
-				nom_joueur4_dia.setVisible(false);
-				phrase1.setVisible(true);
-				phrase2.setVisible(true);
-				phrase3.setVisible(true);
-				phrase4.setVisible(false);
-				vert.setVisible(true);
-				jaune.setVisible(true);
-				rouge.setVisible(false);
-				bleu.setVisible(true);
-
-				break;
-			case 4:
-				lbl_texteNbJoueurs.setText("4 joueurs joueront");
-				jLabel21.setVisible(true);
-				nom_joueur1_dia.setVisible(true);
-				jLabel22.setVisible(true);
-				nom_joueur2_dia.setVisible(true);
-				jLabel23.setVisible(true);
-				nom_joueur3_dia.setVisible(true);
-				jLabel20.setVisible(true);
-				nom_joueur4_dia.setVisible(true);
-				phrase1.setVisible(true);
-				phrase2.setVisible(true);
-				phrase3.setVisible(true);
-				phrase4.setVisible(true);
-				vert.setVisible(true);
-				jaune.setVisible(true);
-				rouge.setVisible(true);
-				bleu.setVisible(true);
-
-				break;
-		}
+        int nbJoueurs = (int) nbJoueurs_dia.getValue();
+        switch (nbJoueurs) {
+            case 1:
+                lbl_texteNbJoueurs.setText("1 joueur jouera");
+                jLabel21.setVisible(true);
+                nom_joueur1_dia.setVisible(true);
+                jLabel22.setVisible(false);
+                nom_joueur2_dia.setVisible(false);
+                jLabel23.setVisible(false);
+                nom_joueur3_dia.setVisible(false);
+                jLabel20.setVisible(false);
+                nom_joueur4_dia.setVisible(false);
+                phrase1.setVisible(true);
+                phrase2.setVisible(false);
+                phrase3.setVisible(false);
+                phrase4.setVisible(false);
+                vert.setVisible(false);
+                jaune.setVisible(false);
+                rouge.setVisible(false);
+                bleu.setVisible(true);
+                break;
+            case 2:
+                lbl_texteNbJoueurs.setText("2 joueurs joueront");
+                jLabel21.setVisible(true);
+                nom_joueur1_dia.setVisible(true);
+                jLabel22.setVisible(true);
+                nom_joueur2_dia.setVisible(true);
+                jLabel23.setVisible(false);
+                nom_joueur3_dia.setVisible(false);
+                jLabel20.setVisible(false);
+                nom_joueur4_dia.setVisible(false);
+                phrase1.setVisible(true);
+                phrase2.setVisible(true);
+                phrase3.setVisible(false);
+                phrase4.setVisible(false);
+                vert.setVisible(true);
+                jaune.setVisible(false);
+                rouge.setVisible(false);
+                bleu.setVisible(true);
+                break;
+            case 3:
+                lbl_texteNbJoueurs.setText("3 joueurs joueront");
+                jLabel21.setVisible(true);
+                nom_joueur1_dia.setVisible(true);
+                jLabel22.setVisible(true);
+                nom_joueur2_dia.setVisible(true);
+                jLabel23.setVisible(true);
+                nom_joueur3_dia.setVisible(true);
+                jLabel20.setVisible(false);
+                nom_joueur4_dia.setVisible(false);
+                phrase1.setVisible(true);
+                phrase2.setVisible(true);
+                phrase3.setVisible(true);
+                phrase4.setVisible(false);
+                vert.setVisible(true);
+                jaune.setVisible(true);
+                rouge.setVisible(false);
+                bleu.setVisible(true);
+                break;
+            case 4:
+                lbl_texteNbJoueurs.setText("4 joueurs joueront");
+                jLabel21.setVisible(true);
+                nom_joueur1_dia.setVisible(true);
+                jLabel22.setVisible(true);
+                nom_joueur2_dia.setVisible(true);
+                jLabel23.setVisible(true);
+                nom_joueur3_dia.setVisible(true);
+                jLabel20.setVisible(true);
+                nom_joueur4_dia.setVisible(true);
+                phrase1.setVisible(true);
+                phrase2.setVisible(true);
+                phrase3.setVisible(true);
+                phrase4.setVisible(true);
+                vert.setVisible(true);
+                jaune.setVisible(true);
+                rouge.setVisible(true);
+                bleu.setVisible(true);
+                break;
+        }
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
 
     private void nom_joueur1_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_diaActionPerformed
-		// TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_nom_joueur1_diaActionPerformed
 
     private void nom_joueur4_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur4_diaActionPerformed
-		// TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_nom_joueur4_diaActionPerformed
 
     private void btn_ouvrir_les_infosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ouvrir_les_infosActionPerformed
@@ -802,131 +799,131 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ouvrir_les_infosActionPerformed
 
     private void btn_fermer_les_infosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fermer_les_infosActionPerformed
-          // action lorqu'on clique sur le bouton fermer
+        // action lorqu'on clique sur le bouton fermer
         fenetre_info_jeu.setVisible(false); // fermeture de la fenêtre de légende
         btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
-	/**
-	 * Tout est dans le nom : la méthode affiche le dialogue modal de création
-	 * des joueurs (et de la partie).
-	 */
-	public final void afficherDialogueCreationJoueurs() {
-		dialogueJoueurs.setVisible(true);
-	}
+    /**
+     * Tout est dans le nom : la méthode affiche le dialogue modal de création
+     * des joueurs (et de la partie).
+     */
+    public final void afficherDialogueCreationJoueurs() {
+        dialogueJoueurs.setVisible(true);
+    }
 
-	/**
-	 * Actualise les textes et les tuiles graphiques
-	 */
-	public void actualiserAffichage() {
-		/* Pour faciliter l'écriture */
-		Joueur joueurCourant = partieJeu.listeJoueurs[partieJeu.joueurCourant];
-		/* Actualisation des affichages */
-		actualiserTuilesGraphiques();
-		panneauGrille.repaint();
-		panel_tuilevolante.repaint();
+    /**
+     * Actualise les textes et les tuiles graphiques
+     */
+    public void actualiserAffichage() {
+        /* Pour faciliter l'écriture */
+        Joueur joueurCourant = partieJeu.listeJoueurs[partieJeu.joueurCourant];
+        /* Actualisation des affichages */
+        actualiserTuilesGraphiques();
+        panneauGrille.repaint();
+        panel_tuilevolante.repaint();
 
-		/* On met à jour les labels d'information à partir des données de la partie */
-		lbl_nomJCourant.setText(joueurCourant.nom);
-		lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + joueurCourant.listeCartes[joueurCourant.indexCarteRetournee].nomObjet + ".png")));
-		int objReste = joueurCourant.listeCartes.length - 1 - joueurCourant.indexCarteRetournee;
-		/* Pour que le texte s'adapte au nombre restant */
-		switch (objReste) {
-			case 0:
-				lbl_objectifRestantsJCourant.setText("C'est le dernier !");
-				break;
-			case 1:
-				lbl_objectifRestantsJCourant.setText("Puis 1 autre");
-				break;
-			default:
-				lbl_objectifRestantsJCourant.setText("Puis " + objReste + " autres");
-				break;
-		}
-	}
+        /* On met à jour les labels d'information à partir des données de la partie */
+        lbl_nomJCourant.setText(joueurCourant.nom);
+        lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + joueurCourant.listeCartes[joueurCourant.indexCarteRetournee].nomObjet + ".png")));
+        int objReste = joueurCourant.listeCartes.length - 1 - joueurCourant.indexCarteRetournee;
+        /* Pour que le texte s'adapte au nombre restant */
+        switch (objReste) {
+            case 0:
+                lbl_objectifRestantsJCourant.setText("C'est le dernier !");
+                break;
+            case 1:
+                lbl_objectifRestantsJCourant.setText("Puis 1 autre");
+                break;
+            default:
+                lbl_objectifRestantsJCourant.setText("Puis " + objReste + " autres");
+                break;
+        }
+    }
 
-	/**
-	 * Crée une tuile pour chaque tuile de la grille
-	 */
-	public final void ajouterTuilesGraphiques() {
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
-				if (partieJeu.plateauJeu.tuiles[i][j] == null) {
-					break;
-				}
-				TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j], i, j);
+    /**
+     * Crée une tuile pour chaque tuile de la grille
+     */
+    public final void ajouterTuilesGraphiques() {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (partieJeu.plateauJeu.tuiles[i][j] == null) {
+                    break;
+                }
+                TuileGraphique tuileGraph = new TuileGraphique(partieJeu.plateauJeu.tuiles[i][j], i, j);
 
-				/* On ajoute l'action à effectuer quand on clique sur la case */
-				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
-					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
-						if (posPionJCourant != null) {
-							if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
-								Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
-								partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
-								partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
-							} else {
-								System.err.println("Chemin impossible");
-							}
-							actualiserAffichage();
-						}
-					}
-				});
-				panneauGrille.add(tuileGraph);
-				tabStockTuilesGraphiques[i][j] = tuileGraph;
-			}
-		}
-		//javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
-		tuileGraphVol = new TuileGraphique(partieJeu.plateauJeu.tuileVolante, 0, 0);
-		panel_tuilevolante.add(tuileGraphVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
-	}
+                /* On ajoute l'action à effectuer quand on clique sur la case */
+                tuileGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
+                        if (posPionJCourant != null) {
+                            if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
+                                Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
+                                partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
+                                partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
+                            } else {
+                                System.err.println("Chemin impossible");
+                            }
+                            actualiserAffichage();
+                        }
+                    }
+                });
+                panneauGrille.add(tuileGraph);
+                tabStockTuilesGraphiques[i][j] = tuileGraph;
+            }
+        }
+        //javax.swing.JButton btn_tuileVolante = new javax.swing.JButton();
+        tuileGraphVol = new TuileGraphique(partieJeu.plateauJeu.tuileVolante, 0, 0);
+        panel_tuilevolante.add(tuileGraphVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 80));
+    }
 
-	/**
-	 * Actualise la tuile associée à chaque tuile graphique pour correspondre au
-	 * plateau (c'est moche, mais c'est le mieux de ce à quoi j'ai pensé).
-	 */
-	public void actualiserTuilesGraphiques() {
-		tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
-				tabStockTuilesGraphiques[i][j].tuileAssociee = partieJeu.plateauJeu.tuiles[i][j];
-			}
-		}
-	}
+    /**
+     * Actualise la tuile associée à chaque tuile graphique pour correspondre au
+     * plateau (c'est moche, mais c'est le mieux de ce à quoi j'ai pensé).
+     */
+    public void actualiserTuilesGraphiques() {
+        tuileGraphVol.tuileAssociee = partieJeu.plateauJeu.tuileVolante;
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                tabStockTuilesGraphiques[i][j].tuileAssociee = partieJeu.plateauJeu.tuiles[i][j];
+            }
+        }
+    }
 
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-		/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		//</editor-fold>
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FenetreDeJeu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new FenetreDeJeu().setVisible(true);
-			}
-		});
-	}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FenetreDeJeu().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Infojeu;
