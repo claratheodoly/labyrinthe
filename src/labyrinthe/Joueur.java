@@ -47,15 +47,15 @@ public class Joueur {
 		}
 	}
 
-	/**
-	 * Ajoute l'objet présent sur la tuile à la liste des objets possédés par le
-	 * joueur.
-	 *
-	 * @param tuile La tuile sur laquelle le joueur est
-	 * @return Succès de l'opération
-	 */
-	public boolean ramasserObjet(Tuile tuile) {
-		/* Si l'inventaire est plein, on ne peut pas ajouter d'objet
+    /**
+     * Ajoute l'objet présent sur la tuile à la liste des objets possédés par le
+     * joueur.
+     *
+     * @param tuile La tuile sur laquelle le joueur est
+     * @return Succès de l'opération
+     */
+    public boolean rammasserObjet(Tuile tuile) {
+        /* Si l'invetaire est plein, on ne peut pas ajouter d'objet
 		dedans. */
         if (sacEstPlein()) {
             return false;
