@@ -41,7 +41,7 @@ public class Joueur {
 	public void nouvellePosition(Tuile nouvelleTuile) {
 		if (nouvelleTuile.presenceObjet()) {
 			if (listeCartes[indexCarteRetournee].nomObjet.equals(nouvelleTuile.type)) {
-				ramasserObjet(nouvelleTuile);
+				rammasserObjet(nouvelleTuile);
 				indexCarteRetournee++;
 			}
 		}
