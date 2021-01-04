@@ -80,7 +80,7 @@ public class Tuile {
         if (objet == null) {
             return false;
         }
-        pion_joueur.propriétaire.rammasserObjet(this);
+        pion_joueur.propriétaire.ramasserObjet(this);
         objet = null;
         return true;
 
