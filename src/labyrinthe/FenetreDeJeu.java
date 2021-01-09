@@ -94,6 +94,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		rouge.setVisible(false);
 		rouge.setOpaque(true);
 		rouge.setBackground(new java.awt.Color(214, 90, 57));
+		
 
 		lbl_objectifCourantJCourant.setVisible(false);
 		lbl_objectifRestantsJCourant.setVisible(false);
@@ -175,6 +176,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         btn_commencerTour = new javax.swing.JButton();
         btn_terminerTour = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        label_couleur = new javax.swing.JLabel();
         panel_chrono = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         texte_temps = new javax.swing.JLabel();
@@ -402,6 +404,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel1.setText("Votre objectif :");
         panel_joueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
 
+        label_couleur.setText("jLabel2");
+        panel_joueur.add(label_couleur, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
+
         getContentPane().add(panel_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 250, 330));
 
         panel_chrono.setBackground(new java.awt.Color(204, 204, 204));
@@ -525,6 +530,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		lbl_objectifRestantsJCourant.setVisible(true);
 		// si on clique une fois sur ce btn alors il se désactive
 		btn_commencerTour.setEnabled(false);
+		
 
 	/* réactivation des divers boutons pour jouer dans les lignes et les colonnes */
 		btn_tournerTuileVolante.setEnabled(true);
@@ -543,7 +549,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		
 	/* reactivation du btn terminer le tour */
 		btn_terminerTour.setEnabled(true);
-
+		
 		actualiserAffichage();
 
     }//GEN-LAST:event_btn_commencerTourActionPerformed
@@ -813,6 +819,22 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		/* On met à jour les labels d'information à partir des données de la partie */
 		lbl_nomJCourant.setText(joueurCourant.nom);
+		
+		label_couleur.setOpaque(true);
+		switch (joueurCourant.nom ) {
+			case "nom_joueur1_dia.getText() ":
+			    label_couleur.setBackground(new java.awt.Color(77, 132, 187));
+				
+			case "nom_joueur2_dia.getText()":
+				label_couleur.setBackground(new java.awt.Color(58, 171, 83));
+				
+			case "nom_joueur3_dia.getText()":
+				label_couleur.setBackground(new java.awt.Color(252, 210, 29));
+				
+			case "nom_joueur4_dia.getText()" :
+				label_couleur.setBackground(new java.awt.Color(214, 90, 57));
+				break;
+		}
 		lbl_objectifCourantJCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/" + joueurCourant.listeCartes[joueurCourant.indexCarteRetournee].nomObjet + ".png")));
 		int objReste = joueurCourant.listeCartes.length - 1 - joueurCourant.indexCarteRetournee;
 		/* Pour que le texte s'adapte au nombre restant */
@@ -977,6 +999,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_vershaut_col2;
     private javax.swing.JButton jouer_vershaut_col4;
     private javax.swing.JButton jouer_vershaut_col6;
+    private javax.swing.JLabel label_couleur;
     private javax.swing.JLabel lbl_info_tuileNAccessible;
     private javax.swing.JLabel lbl_infosTour;
     private javax.swing.JLabel lbl_nomJCourant;
