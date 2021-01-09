@@ -817,6 +817,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_recommencerActionPerformed
 
+	/**
+	 * Enlève toutes les tuiles graphiques du panneau de la grille
+	 */
 	private void supprimerTuilesGraphiques() {
 		panneauGrille.removeAll();
 	}
