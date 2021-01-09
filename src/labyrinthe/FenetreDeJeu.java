@@ -17,7 +17,6 @@ import javax.swing.Timer;
 public class FenetreDeJeu extends javax.swing.JFrame {
 
 	Partie partieJeu;
-	Plateau plateauJeu;
 	/* variables utilisées pour le chrono */
 	int nbSecondes = 0;
 	Timer monChrono;
@@ -115,7 +114,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		gif.setVisible(false);
 		bravo.setVisible(false);
-		btn_recommencer.setEnabled(false);
 
 		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
@@ -183,7 +181,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         iconeTimer = new javax.swing.JLabel();
         lbl_titre_infosTour = new javax.swing.JLabel();
         lbl_infosTour = new javax.swing.JLabel();
-        btn_recommencer = new javax.swing.JButton();
         jouer_versbas_col6 = new javax.swing.JButton();
         jouer_vershaut_col2 = new javax.swing.JButton();
         jouer_vershaut_col4 = new javax.swing.JButton();
@@ -414,14 +411,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         lbl_infosTour.setText("<html>1. Placer la tuile volante<br/>2. (optionnel) Déplacer le pion</html>");
         panel_chrono.add(lbl_infosTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 40));
 
-        btn_recommencer.setText("Recommencer une partie");
-        btn_recommencer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_recommencerActionPerformed(evt);
-            }
-        });
-        panel_chrono.add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 30));
-
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
         jouer_versbas_col6.addActionListener(new java.awt.event.ActionListener() {
@@ -545,7 +534,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne6.setEnabled(true);
 
 		/* reactivation du btn terminer le tour */
-	btn_recommencer.setEnabled(true);
+		btn_terminerTour.setEnabled(true);
 
 		actualiserAffichage();
 
@@ -798,39 +787,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
-    private void btn_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recommencerActionPerformed
-		plateauJeu = new Plateau ();
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
-			    partieJeu.plateauJeu.réinitialiserTuile(i,j);
-			}
-		}
-		supprimerTuilesGraphiques();
-		partieJeu.initialiserPartieGraphique();
-		//dialogueJoueurs.dispose();
-		ajouterTuilesGraphiques();
-		Infojeu.setVisible(true);
-		panneauGrille.setVisible(true);
-		panel_tuilevolante.setVisible(true);
-		panel_joueur.setVisible(true);
-		panel_chrono.setVisible(true);
-		actualiserAffichage();
-		// actualisation du chrono
-		nbSecondes = 0; // reinitialisation du chrono lorsqu'on qu'on recommence une nouvelle partie
-		texte_temps.setText(nbSecondes + "");
-		monChrono.start(); // le chrono est lancé
-		gif.setVisible(false); // on cache de nouveau le gif de victoire pour pouvoir le re-afficher uniquement en cas de victoire
-		btn_recommencer.setEnabled(false);
-
-    }//GEN-LAST:event_btn_recommencerActionPerformed
-
-	/**
-	 * Enlève toutes les tuiles graphiques du panneau de la grille
-	 */
-	private void supprimerTuilesGraphiques() {
-		panneauGrille.removeAll();
-	}
-
 	/**
 	 * Désactive certains boutons selon certaines conditions
 	 */
@@ -960,7 +916,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	 * @param joueurGagnant Le joueur qui a gangé
 	 */
 	public void partieTerminee(Joueur joueurGagnant) {
-	        plateauJeu = new Plateau();
 		desactiverBoutonsTuiles();
 		btn_commencerTour.setEnabled(false);
 		btn_terminerTour.setEnabled(false);
@@ -970,7 +925,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		bravo.setText(texteVictoire + joueurGagnant.nom);
 		bravo.setVisible(true);
 		monChrono.stop();
-		btn_recommencer.setEnabled(true);
 	}
 
 	/**
@@ -1015,7 +969,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton btn_commencerTour;
     private javax.swing.JButton btn_fermer_les_infos;
     private javax.swing.JButton btn_ouvrir_les_infos;
-    private javax.swing.JButton btn_recommencer;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_terminerTour;
     private javax.swing.JButton btn_tournerTuileVolante;
