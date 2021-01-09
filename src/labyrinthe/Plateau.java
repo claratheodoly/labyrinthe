@@ -278,16 +278,6 @@ public class Plateau {
 	}
 
 	/**
-	 *
-	 * @param num_col
-	 * @param dir
-	 * @return
-	 */
-	public boolean deplacerPion(int num_col, boolean dir) {
-		return false;
-	}
-
-	/**
 	 * Cherche le pion du joueur dans la grille et retourne sa position
 	 *
 	 * @param proprietaireRecherche Le propriétaire du pion
