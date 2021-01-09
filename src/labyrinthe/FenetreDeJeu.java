@@ -213,7 +213,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         dialogueJoueurs.getContentPane().add(nbJoueurs_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 60, -1));
 
         jLabel19.setText("Combien de personnes jouent ?");
-        dialogueJoueurs.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        dialogueJoueurs.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
         jLabel20.setText("Nom du joueur 4 :");
         dialogueJoueurs.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
@@ -249,36 +249,36 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 btn_startActionPerformed(evt);
             }
         });
-        dialogueJoueurs.getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        dialogueJoueurs.getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
 
         lbl_texteNbJoueurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_texteNbJoueurs.setText("1 joueur jouera");
-        dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        dialogueJoueurs.getContentPane().add(lbl_texteNbJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
 
-        phrase4.setText("dont le pion sera de la couleur suivante");
-        dialogueJoueurs.getContentPane().add(phrase4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 220, 20));
+        phrase4.setText("aura la couleur");
+        dialogueJoueurs.getContentPane().add(phrase4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
-        phrase1.setText("dont le pion sera de la couleur suivante");
-        dialogueJoueurs.getContentPane().add(phrase1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 220, 20));
+        phrase1.setText("aura la couleur");
+        dialogueJoueurs.getContentPane().add(phrase1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
-        phrase2.setText("dont le pion sera de la couleur suivante");
-        dialogueJoueurs.getContentPane().add(phrase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 220, 20));
+        phrase2.setText("aura la couleur");
+        dialogueJoueurs.getContentPane().add(phrase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, -1));
 
-        phrase3.setText("dont le pion sera de la couleur suivante");
-        dialogueJoueurs.getContentPane().add(phrase3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 220, 20));
+        phrase3.setText("aura la couleur");
+        dialogueJoueurs.getContentPane().add(phrase3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, -1));
 
         rouge.setBackground(new java.awt.Color(214, 90, 57));
-        dialogueJoueurs.getContentPane().add(rouge, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 40, 30));
+        dialogueJoueurs.getContentPane().add(rouge, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 40, 30));
 
         bleu.setBackground(new java.awt.Color(77, 132, 187));
         bleu.setForeground(new java.awt.Color(77, 132, 187));
-        dialogueJoueurs.getContentPane().add(bleu, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 40, 30));
+        dialogueJoueurs.getContentPane().add(bleu, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 40, 30));
 
         vert.setBackground(new java.awt.Color(58, 171, 83));
-        dialogueJoueurs.getContentPane().add(vert, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 40, 30));
+        dialogueJoueurs.getContentPane().add(vert, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 40, 30));
 
         jaune.setBackground(new java.awt.Color(252, 210, 29));
-        dialogueJoueurs.getContentPane().add(jaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 40, 30));
+        dialogueJoueurs.getContentPane().add(jaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 40, 30));
 
         fenetre_info_jeu.setTitle("Légende");
         fenetre_info_jeu.setAlwaysOnTop(true);
