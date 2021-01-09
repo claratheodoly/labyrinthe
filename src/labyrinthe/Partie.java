@@ -11,8 +11,6 @@ import java.nio.file.Path;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Implémente la partie, son initialisation et son déroulement
@@ -35,26 +33,6 @@ public class Partie {
 	}
 
 	/**
-	 * Crée le bon nombre de joueurs. Demande le nom à donner et attribue le bon
-	 * nombre de cartes
-	 *
-	 * @return Succès de la création des joueurs
-	 */
-	public boolean creerJoueurs() {
-		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < nombreJoueurs; i++) {
-			if (listeJoueurs[i] != null) {
-				System.err.println("Le joueur " + (i + 1) + " existe déjà");
-				return false;
-			}
-			System.out.print("Entrez le nom du joueur " + (i + 1) + " : ");
-			String nomJoueur = sc.nextLine();
-			creerJoueur(i, nomJoueur);
-		}
-		return true;
-	}
-
-	/**
 	 * Crée un joueur de la liste à parir de son numéro et de son nom.
 	 *
 	 * @param indice la position du joueur
@@ -72,13 +50,9 @@ public class Partie {
 		return true;
 	}
 
-	public void initialiserPartie() {
-		creerJoueurs();
-		attribuerCouleurs();
-		distribuerCartes();
-		placerTuiles();
-	}
-
+	/**
+	 * Initialise la partie dans un contexte graphique
+	 */
 	public void initialiserPartieGraphique() {
 		attribuerCouleurs();
 		distribuerCartes();
@@ -108,33 +82,12 @@ public class Partie {
 		}
 	}
 
-	public void debuterPartie() {
-		Random rnd = new Random();
-		boolean finDePartie = false;
-
-		initialiserPartie();
-
-		joueurCourant = rnd.nextInt(nombreJoueurs);
-
-		System.out.println("Le joueur " + listeJoueurs[joueurCourant] + " commence la partie !");
-		do {
-			finDePartie = tourDeJeu(joueurCourant);
-			joueurSuivant();
-		} while (!finDePartie);
-	}
-
 	/**
 	 * Incrémente l'indice correspondant au joueur courant, ce faisant passant
 	 * au joueur suivant.
 	 */
 	public void joueurSuivant() {
 		joueurCourant = ++joueurCourant % nombreJoueurs;
-	}
-
-	public boolean tourDeJeu(int joueur) {
-		boolean partieGagnee = false;
-		// TODO
-		return partieGagnee;
 	}
 
 	/**
