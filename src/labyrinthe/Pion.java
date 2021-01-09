@@ -14,7 +14,6 @@ public class Pion {
 
     Joueur propriétaire;
     String coloration;
-
     /**
      * Crée un pion lié à un joueur
      *
@@ -23,5 +22,4 @@ public class Pion {
     Pion(Joueur joueur) {
         propriétaire = joueur;
     }
-
 }

@@ -18,11 +18,9 @@ public class Plateau {
 	Tuile[][] tuiles;
 	/*
 	La tuile (0,0) se situe en bas à gauche du plateau.
-	Le premier niveau de tableau représente la postion verticale, et le deuxième
-	la position horizontale.
-	 */
+	Le premier niveau de tableau représente la postion verticale, et le deuxième la position horizontale.
+	*/
 	Tuile tuileVolante;
-
 	Plateau() {
 		tuiles = new Tuile[7][7];
 	}
@@ -42,6 +40,10 @@ public class Plateau {
 			tuiles[x][y] = tuileAPlacer;
 			return true;
 		}
+	}
+	
+	public void réinitialiserTuile (int x, int y){
+	    tuiles[x][y] = null ;
 	}
 
 	/**

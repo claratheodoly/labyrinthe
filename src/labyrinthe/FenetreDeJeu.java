@@ -950,6 +950,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	 * @param joueurGagnant Le joueur qui a gangé
 	 */
 	public void partieTerminee(Joueur joueurGagnant) {
+	        Plateau plateauJeu = new Plateau();
 		desactiverBoutonsTuiles();
 		btn_commencerTour.setEnabled(false);
 		btn_terminerTour.setEnabled(false);

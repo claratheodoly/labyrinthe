@@ -61,7 +61,7 @@ public class Partie {
 	}
 
 	/**
-	 * Ajoute les pions des joueurs sur leur position de départ
+	 * Ajoute les pions des joueurs sur leur position de départ aux 4 coins du plateau
 	 */
 	public void placerPionsDebut() {
 		for (int i = 0; i < listeJoueurs.length; i++) {
@@ -83,8 +83,7 @@ public class Partie {
 	}
 
 	/**
-	 * Incrémente l'indice correspondant au joueur courant, ce faisant passant
-	 * au joueur suivant.
+	 * Incrémente l'indice correspondant au joueur courant, ce faisant passant au joueur suivant.
 	 */
 	public void joueurSuivant() {
 		joueurCourant = ++joueurCourant % nombreJoueurs;

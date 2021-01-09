@@ -54,11 +54,11 @@ public class Joueur {
 	 * joueur.
 	 *
 	 * @param tuile La tuile sur laquelle le joueur est
+	 * 
 	 * @return Succès de l'opération
 	 */
 	public boolean ramasserObjet(Tuile tuile) {
-		/* Si l'inventaire est plein, on ne peut pas ajouter d'objet
-		dedans. */
+		/* Si l'inventaire est plein, on ne peut pas ajouter d'objet dedans. */
 		if (sacEstPlein()) {
 			return false;
 		}
@@ -98,8 +98,7 @@ public class Joueur {
 		}
 		for (Carte carte : listeCartes) {
 			/*
-			On retourne faux si l'objet d'une des cartes recherchées n'est pas
-		contenu dans listeObjets
+			On retourne faux si l'objet d'une des cartes recherchées n'est pas contenu dans listeObjets
 			 */
 			if (!Arrays.asList(listeObjets).contains(carte.nomObjet)) {
 				return false;
