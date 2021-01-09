@@ -98,7 +98,7 @@ public class Joueur {
 		}
 		for (Carte carte : listeCartes) {
 			/*
-			On retourne faux si l'objet d'une des cartes recherchées n'est pas	
+			On retourne faux si l'objet d'une des cartes recherchées n'est pas
 		contenu dans listeObjets
 			 */
 			if (!Arrays.asList(listeObjets).contains(carte.nomObjet)) {

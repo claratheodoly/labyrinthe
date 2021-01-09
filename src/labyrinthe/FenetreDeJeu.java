@@ -54,7 +54,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
 
-	/* ajout des images aux divers boutons */
+		/* ajout des images aux divers boutons */
 		jouer_versdroite_ligne2.setIcon(img_fleched);
 		jouer_versdroite_ligne4.setIcon(img_fleched);
 		jouer_versdroite_ligne6.setIcon(img_fleched);
@@ -71,7 +71,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_vershaut_col4.setIcon(img_flecheh);
 		jouer_vershaut_col6.setIcon(img_flecheh);
 
-	/* Dialogue modal du nombre de joueurs */
+		/* Dialogue modal du nombre de joueurs */
 		jLabel22.setVisible(false);
 		nom_joueur2_dia.setVisible(false);
 		jLabel23.setVisible(false);
@@ -82,7 +82,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		phrase2.setVisible(false);
 		phrase3.setVisible(false);
 		phrase4.setVisible(false);
-	/* ajustement des couleurs de fond des jLabels et leur visibilité */
+		/* ajustement des couleurs de fond des jLabels et leur visibilité */
 		bleu.setOpaque(true);
 		bleu.setBackground(new java.awt.Color(77, 132, 187));
 		vert.setVisible(false);
@@ -94,7 +94,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jaune.setVisible(false);
 		jaune.setOpaque(true);
 		jaune.setBackground(new java.awt.Color(252, 210, 29));
-		
 
 		lbl_objectifCourantJCourant.setVisible(false);
 		lbl_objectifRestantsJCourant.setVisible(false);
@@ -118,7 +117,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		bravo.setVisible(false);
 		btn_recommencer.setEnabled(false);
 
-	/* On  affiche le panneau de création des joueurs */
+		/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
 	}
 
@@ -405,9 +404,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         jLabel1.setText("Votre objectif :");
         panel_joueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
-
-        label_couleur.setText("jLabel2");
-        panel_joueur.add(label_couleur, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
+        panel_joueur.add(label_couleur, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 40, 30));
 
         getContentPane().add(panel_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 250, 330));
 
@@ -540,9 +537,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		lbl_objectifRestantsJCourant.setVisible(true);
 		// si on clique une fois sur ce btn alors il se désactive
 		btn_commencerTour.setEnabled(false);
-		
 
-	/* réactivation des divers boutons pour jouer dans les lignes et les colonnes */
+
+		/* réactivation des divers boutons pour jouer dans les lignes et les colonnes */
 		btn_tournerTuileVolante.setEnabled(true);
 		jouer_versbas_col6.setEnabled(true);
 		jouer_versbas_col2.setEnabled(true);
@@ -556,10 +553,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne4.setEnabled(true);
 		jouer_versdroite_ligne2.setEnabled(true);
 		jouer_versdroite_ligne6.setEnabled(true);
-		
-	/* reactivation du btn terminer le tour */
+
+		/* reactivation du btn terminer le tour */
 		btn_terminerTour.setEnabled(true);
-		
+
 		actualiserAffichage();
 
     }//GEN-LAST:event_btn_commencerTourActionPerformed
@@ -789,9 +786,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_ouvrir_les_infos.setEnabled(true); // on peut si on le souhaite re-ouvrir le tout en cliquant à nouveau sur le bouton légende
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
-    
     private void btn_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recommencerActionPerformed
-                supprimerTuilesGraphiques();                                       
+		supprimerTuilesGraphiques();
 		partieJeu.initialiserPartieGraphique();
 		//dialogueJoueurs.dispose();
 		ajouterTuilesGraphiques();
@@ -806,12 +802,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		texte_temps.setText(nbSecondes + "");
 		monChrono.start(); // le chrono est lancé
 		gif.setVisible(false); // on cache de nouveau le gif de victoire pour pouvoir le re-afficher uniquement en cas de victoire
-                btn_recommencer.setEnabled(false);
-	
+		btn_recommencer.setEnabled(false);
+
     }//GEN-LAST:event_btn_recommencerActionPerformed
- private void supprimerTuilesGraphiques() {
-        panneauGrille.removeAll();
-    }
+
+	private void supprimerTuilesGraphiques() {
+		panneauGrille.removeAll();
+	}
+
 	/**
 	 * Désactive certains boutons selon certaines conditions
 	 */
@@ -852,19 +850,22 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 		/* On met à jour les labels d'information à partir des données de la partie */
 		lbl_nomJCourant.setText(joueurCourant.nom);
-		
+
 		label_couleur.setOpaque(true);
-		switch (joueurCourant.nom ) {
-			case "nom_joueur1_dia.getText() ":
-			    label_couleur.setBackground(new java.awt.Color(77, 132, 187));
-				
-			case "nom_joueur2_dia.getText()":
+		switch (partieJeu.joueurCourant) {
+			case 0:
+				label_couleur.setBackground(new java.awt.Color(77, 132, 187));
+				break;
+
+			case 1:
 				label_couleur.setBackground(new java.awt.Color(58, 171, 83));
-				
-			case "nom_joueur3_dia.getText()":
+				break;
+
+			case 2:
 				label_couleur.setBackground(new java.awt.Color(214, 90, 57));
-				
-			case "nom_joueur4_dia.getText()" :
+				break;
+
+			case 3:
 				label_couleur.setBackground(new java.awt.Color(252, 210, 29));
 				break;
 		}
@@ -954,7 +955,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		monChrono.stop();
 		btn_recommencer.setEnabled(true);
 	}
-	
+
 	/**
 	 * @param args the command line arguments
 	 */
