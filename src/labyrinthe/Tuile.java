@@ -73,25 +73,6 @@ public class Tuile {
 		return true;
 	}
 
-	public boolean placerObjet(String objetAAjouter) {
-		if (presenceObjet()) {
-			return false;
-		} else {
-			type = objetAAjouter;
-			return true;
-		}
-	}
-
-	public boolean recupererObjet(Pion pion_joueur) {
-		if (!presenceObjet()) {
-			return false;
-		}
-		pion_joueur.propriétaire.ramasserObjet(this);
-		//objet = null;
-		return true;
-
-	}
-
 	public boolean presenceObjet() {
 		return !(type.equals("droit") || type.equals("coin") || type.equals("departB") || type.equals("departV") || type.equals("departJ") || type.equals("departR"));
 	}
