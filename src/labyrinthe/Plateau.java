@@ -27,6 +27,7 @@ public class Plateau {
 	 */
 	Plateau() {
 		tuiles = new Tuile[7][7];
+		tuileVolante=null;
 	}
 
 	/**
