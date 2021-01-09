@@ -21,6 +21,11 @@ public class Tuile {
 	boolean porteOuest;
 	ArrayList<Pion> pionsPresents;
 
+	/**
+	 * Crée un tuile vide du type donné, dans l'orientation de base
+	 *
+	 * @param type_donne Le type de la tuile
+	 */
 	Tuile(String type_donne) {
 		type = type_donne;
 		orientation = 0;
@@ -73,10 +78,21 @@ public class Tuile {
 		return true;
 	}
 
+	/**
+	 * Détermine si un objet est présent sur la tuile (c-à-d si la tuile n'est
+	 * pas une tuile de départ ou un tuile vide (type 'droit' ou 'coin'))
+	 *
+	 * @return Si la tuile a un objet
+	 */
 	public boolean presenceObjet() {
 		return !(type.equals("droit") || type.equals("coin") || type.equals("departB") || type.equals("departV") || type.equals("departJ") || type.equals("departR"));
 	}
 
+	/**
+	 * Détermine si des pions sont présents sur la tuile (ou un seul)
+	 *
+	 * @return Si la tuile a des pions
+	 */
 	public boolean presencePion() {
 		return !(pionsPresents == null || pionsPresents.isEmpty());
 	}

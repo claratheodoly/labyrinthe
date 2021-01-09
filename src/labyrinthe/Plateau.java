@@ -23,6 +23,9 @@ public class Plateau {
 	 */
 	Tuile tuileVolante;
 
+	/**
+	 * Crée un plateau de tuiles vide
+	 */
 	Plateau() {
 		tuiles = new Tuile[7][7];
 	}
