@@ -179,6 +179,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         texte_temps = new javax.swing.JLabel();
         iconeTimer = new javax.swing.JLabel();
+        lbl_titre_infosTour = new javax.swing.JLabel();
+        lbl_infosTour = new javax.swing.JLabel();
         jouer_versbas_col6 = new javax.swing.JButton();
         jouer_vershaut_col2 = new javax.swing.JButton();
         jouer_vershaut_col4 = new javax.swing.JButton();
@@ -413,6 +415,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         iconeTimer.setText("Label");
         panel_chrono.add(iconeTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 36, 40));
+
+        lbl_titre_infosTour.setText("<html><strong>Déroulement d'un tour</strong></html>");
+        panel_chrono.add(lbl_titre_infosTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        lbl_infosTour.setText("<html>1. Placer la tuile volante<br/>2. (optionnel) Déplacer le pion</html>");
+        panel_chrono.add(lbl_infosTour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 40));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
@@ -842,6 +850,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 								partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
 								partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
 								pionActuel.propriétaire.nouvellePosition(tuileGraph.tuileAssociee);
+								/* Si le joueur a fini, on termine la partie */
+								if (pionActuel.propriétaire.tousObjetsRamasses()) {
+									partieTerminee(pionActuel.propriétaire);
+								}
 							} else {
 								lbl_info_tuileNAccessible.setVisible(true);
 							}
@@ -871,6 +883,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		}
 	}
 
+	/**
+	 * Termine la partie, quand un joueur a gagné
+	 */
+	public void partieTerminee(Joueur joueurGagnant) {
+		desactiverBoutons();
+		btn_commencerTour.setEnabled(false);
+		btn_terminerTour.setEnabled(false);
+		btn_tournerTuileVolante.setEnabled(false);
+		gif.setVisible(true);
+		bravo.setVisible(true);
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */
@@ -950,10 +974,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton jouer_vershaut_col4;
     private javax.swing.JButton jouer_vershaut_col6;
     private javax.swing.JLabel lbl_info_tuileNAccessible;
+    private javax.swing.JLabel lbl_infosTour;
     private javax.swing.JLabel lbl_nomJCourant;
     private javax.swing.JLabel lbl_objectifCourantJCourant;
     private javax.swing.JLabel lbl_objectifRestantsJCourant;
     private javax.swing.JLabel lbl_texteNbJoueurs;
+    private javax.swing.JLabel lbl_titre_infosTour;
     private javax.swing.JSpinner nbJoueurs_dia;
     private javax.swing.JTextField nom_joueur1_dia;
     private javax.swing.JTextField nom_joueur2_dia;

@@ -136,7 +136,7 @@ public class Partie {
         // TODO
         return partieGagnee;
     }
-
+	
     /**
      * Crée la liste des tuiles à partir du fichier 'listeTuilesOrdonnees.txt',
      * et place les tuiles de la liste sur le plateau.
