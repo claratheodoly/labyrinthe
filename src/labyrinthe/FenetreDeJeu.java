@@ -32,11 +32,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	ImageIcon img_flecheg = new javax.swing.ImageIcon(getClass().getResource("/images/flecheg.png"));
 	ImageIcon img_flecheh = new javax.swing.ImageIcon(getClass().getResource("/images/flecheh.png"));
 	ImageIcon img_flecheb = new javax.swing.ImageIcon(getClass().getResource("/images/flecheb.png"));
-	// insertion des images des pions
-	ImageIcon img_pionjaune = new javax.swing.ImageIcon(getClass().getResource("/images/pionjaune.png"));
-	ImageIcon img_pionrouge = new javax.swing.ImageIcon(getClass().getResource("/images/pionrouge.png"));
-	ImageIcon img_pionvert = new javax.swing.ImageIcon(getClass().getResource("/images/pionvert.png"));
-	ImageIcon img_pionbleu = new javax.swing.ImageIcon(getClass().getResource("/images/pionbleu.png"));
+
+	/* Gestion des autorisations à déplacer les tuiles et le pion */
+	boolean autoriseDeplacerTuiles = false;
+	boolean autoriseDeplacerPion = false;
 
 	public FenetreDeJeu() {
 		initComponents();
@@ -229,19 +228,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         jLabel23.setText("Nom du joueur 3 :");
         dialogueJoueurs.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 130, -1));
-
-        nom_joueur4_dia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur4_diaActionPerformed(evt);
-            }
-        });
         dialogueJoueurs.getContentPane().add(nom_joueur4_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 120, -1));
-
-        nom_joueur1_dia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nom_joueur1_diaActionPerformed(evt);
-            }
-        });
         dialogueJoueurs.getContentPane().add(nom_joueur1_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 120, -1));
         dialogueJoueurs.getContentPane().add(nom_joueur2_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, -1));
         dialogueJoueurs.getContentPane().add(nom_joueur3_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 120, -1));
@@ -538,6 +525,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// si on clique une fois sur ce btn alors il se désactive
 		btn_commencerTour.setEnabled(false);
 
+		/* On autorise le joueur à déplacer les tuiles */
+		autoriseDeplacerTuiles = true;
 
 		/* réactivation des divers boutons pour jouer dans les lignes et les colonnes */
 		btn_tournerTuileVolante.setEnabled(true);
@@ -572,84 +561,114 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// si on clique une fois sur ce btn alors il se désactive
 		btn_terminerTour.setEnabled(false);
 
+		/* On révoque les autorisations de déplacement */
+		autoriseDeplacerPion = false;
+		autoriseDeplacerTuiles = false;
+
 		actualiserAffichage();
     }//GEN-LAST:event_btn_terminerTourActionPerformed
 
     private void btn_tournerTuileVolanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tournerTuileVolanteActionPerformed
-		partieJeu.plateauJeu.tuileVolante.tournerTuile(90);
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.tuileVolante.tournerTuile(90);
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_btn_tournerTuileVolanteActionPerformed
 
     private void jouer_versbas_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(5, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(5, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versbas_col6ActionPerformed
 
     private void jouer_vershaut_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(1, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(1, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_vershaut_col2ActionPerformed
 
     private void jouer_vershaut_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(3, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(3, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_vershaut_col4ActionPerformed
 
     private void jouer_vershaut_col6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_vershaut_col6ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(5, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(5, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_vershaut_col6ActionPerformed
 
     private void jouer_versbas_col2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col2ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(1, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(1, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versbas_col2ActionPerformed
 
     private void jouer_versbas_col4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versbas_col4ActionPerformed
-		partieJeu.plateauJeu.deplacerColonne(3, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerColonne(3, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versbas_col4ActionPerformed
 
     private void jouer_versgauche_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(5, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(5, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versgauche_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne6ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(5, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(5, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versdroite_ligne6ActionPerformed
 
     private void jouer_versdroite_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(3, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(3, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versdroite_ligne4ActionPerformed
 
     private void jouer_versdroite_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versdroite_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(1, true);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(1, true);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versdroite_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne2ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(1, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(1, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versgauche_ligne2ActionPerformed
 
     private void jouer_versgauche_ligne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jouer_versgauche_ligne4ActionPerformed
-		partieJeu.plateauJeu.deplacerLigne(3, false);
-		desactiverBoutons();
-		actualiserAffichage();
+		if (autoriseDeplacerTuiles) {
+			partieJeu.plateauJeu.deplacerLigne(3, false);
+			desactiverBoutonsTuiles();
+			actualiserAffichage();
+		}
     }//GEN-LAST:event_jouer_versgauche_ligne4ActionPerformed
 
 	private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {
@@ -766,14 +785,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_nbJoueurs_diaStateChanged
 
-    private void nom_joueur1_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur1_diaActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur1_diaActionPerformed
-
-    private void nom_joueur4_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueur4_diaActionPerformed
-		// TODO add your handling code here:
-    }//GEN-LAST:event_nom_joueur4_diaActionPerformed
-
     private void btn_ouvrir_les_infosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ouvrir_les_infosActionPerformed
 		// action lorqu'on clique sur le bouton légende
 		btn_ouvrir_les_infos.setEnabled(false); // on ne peut pas appuyer sur le bouton légende tant qu'on a pas fermer la fentere de légende
@@ -813,20 +824,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	/**
 	 * Désactive certains boutons selon certaines conditions
 	 */
-	private void desactiverBoutons() {
-		jouer_vershaut_col2.setEnabled(false);
-		jouer_versbas_col6.setEnabled(false);
-		jouer_versbas_col2.setEnabled(false);
-		jouer_versbas_col4.setEnabled(false);
-		jouer_vershaut_col4.setEnabled(false);
-		jouer_vershaut_col6.setEnabled(false);
-		jouer_versgauche_ligne6.setEnabled(false);
-		jouer_versgauche_ligne4.setEnabled(false);
-		jouer_versgauche_ligne2.setEnabled(false);
-		jouer_versdroite_ligne4.setEnabled(false);
-		jouer_versdroite_ligne2.setEnabled(false);
-		jouer_versdroite_ligne6.setEnabled(false);
-		btn_tournerTuileVolante.setEnabled(false);
+	private void desactiverBoutonsTuiles() {
+		autoriseDeplacerPion = true;
+		autoriseDeplacerTuiles = false;
 	}
 
 	/**
@@ -886,7 +886,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	}
 
 	/**
-	 * Crée une tuile pour chaque tuile de la grille
+	 * Crée une tuile pour chaque tuile du panneau et l'évènement qui va avec,
+	 * et la stocke
 	 */
 	public final void ajouterTuilesGraphiques() {
 		for (int i = 0; i < 7; i++) {
@@ -899,22 +900,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 				/* On ajoute l'action à effectuer quand on clique sur la case */
 				tuileGraph.addActionListener(new java.awt.event.ActionListener() {
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
-						if (posPionJCourant != null) {
-							if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
-								lbl_info_tuileNAccessible.setVisible(false);
-								Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
-								partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
-								partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
-								pionActuel.propriétaire.nouvellePosition(tuileGraph.tuileAssociee);
-								/* Si le joueur a fini, on termine la partie */
-								if (pionActuel.propriétaire.tousObjetsRamasses()) {
-									partieTerminee(pionActuel.propriétaire);
+						if (autoriseDeplacerPion) {
+							int[] posPionJCourant = partieJeu.plateauJeu.positionPion(partieJeu.listeJoueurs[partieJeu.joueurCourant]);
+							if (posPionJCourant != null) {
+								if (partieJeu.plateauJeu.cheminPossible(posPionJCourant[0], posPionJCourant[1], tuileGraph.posX, tuileGraph.posY, null)) {
+									lbl_info_tuileNAccessible.setVisible(false);
+									Pion pionActuel = partieJeu.listeJoueurs[partieJeu.joueurCourant].marqueur;
+									partieJeu.plateauJeu.tuiles[posPionJCourant[0]][posPionJCourant[1]].pionsPresents.remove(pionActuel);
+									partieJeu.plateauJeu.tuiles[tuileGraph.posX][tuileGraph.posY].pionsPresents.add(pionActuel);
+									pionActuel.propriétaire.nouvellePosition(tuileGraph.tuileAssociee);
+									/* Si le joueur a fini, on termine la partie */
+									if (pionActuel.propriétaire.tousObjetsRamasses()) {
+										partieTerminee(pionActuel.propriétaire);
+									}
+									autoriseDeplacerPion = false;
+								} else {
+									lbl_info_tuileNAccessible.setVisible(true);
 								}
-							} else {
-								lbl_info_tuileNAccessible.setVisible(true);
+								actualiserAffichage();
 							}
-							actualiserAffichage();
 						}
 					}
 				});
@@ -942,9 +946,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
 	/**
 	 * Termine la partie, quand un joueur a gagné
+	 *
+	 * @param joueurGagnant Le joueur qui a gangé
 	 */
 	public void partieTerminee(Joueur joueurGagnant) {
-		desactiverBoutons();
+		desactiverBoutonsTuiles();
 		btn_commencerTour.setEnabled(false);
 		btn_terminerTour.setEnabled(false);
 		btn_tournerTuileVolante.setEnabled(false);
