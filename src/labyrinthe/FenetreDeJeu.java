@@ -16,10 +16,11 @@ import javax.swing.Timer;
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
 
-	// variables utilisées pour le chrono
+	Partie partieJeu;
+	Plateau plateauJeu;
+	/* variables utilisées pour le chrono */
 	int nbSecondes = 0;
 	Timer monChrono;
-	Partie partieJeu;
 
 	/* Stockage des tuiles graphiques pour pouvoir effectuer des opérations dessus */
 	TuileGraphique[][] tabStockTuilesGraphiques = new TuileGraphique[7][7];
@@ -544,7 +545,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne6.setEnabled(true);
 
 		/* reactivation du btn terminer le tour */
-		btn_terminerTour.setEnabled(true);
+	btn_recommencer.setEnabled(true);
 
 		actualiserAffichage();
 
@@ -798,6 +799,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_fermer_les_infosActionPerformed
 
     private void btn_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recommencerActionPerformed
+		plateauJeu = new Plateau ();
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+			    partieJeu.plateauJeu.réinitialiserTuile(i,j);
+			}
+		}
 		supprimerTuilesGraphiques();
 		partieJeu.initialiserPartieGraphique();
 		//dialogueJoueurs.dispose();
@@ -953,7 +960,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	 * @param joueurGagnant Le joueur qui a gangé
 	 */
 	public void partieTerminee(Joueur joueurGagnant) {
-	        Plateau plateauJeu = new Plateau();
+	        plateauJeu = new Plateau();
 		desactiverBoutonsTuiles();
 		btn_commencerTour.setEnabled(false);
 		btn_terminerTour.setEnabled(false);
