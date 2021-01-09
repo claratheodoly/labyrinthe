@@ -54,7 +54,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		monChrono = new Timer(1000, tache_recurrente);
 		iconeTimer.setIcon(img_iconetimer); // création de la petite image avec le chrono
 
-		/* ajout des images aux divers boutons */
+	/* ajout des images aux divers boutons */
 		jouer_versdroite_ligne2.setIcon(img_fleched);
 		jouer_versdroite_ligne4.setIcon(img_fleched);
 		jouer_versdroite_ligne6.setIcon(img_fleched);
@@ -71,7 +71,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_vershaut_col4.setIcon(img_flecheh);
 		jouer_vershaut_col6.setIcon(img_flecheh);
 
-		/* Dialogue modal du nombre de joueurs */
+	/* Dialogue modal du nombre de joueurs */
 		jLabel22.setVisible(false);
 		nom_joueur2_dia.setVisible(false);
 		jLabel23.setVisible(false);
@@ -82,7 +82,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		phrase2.setVisible(false);
 		phrase3.setVisible(false);
 		phrase4.setVisible(false);
-		// ajustement des couleurs de fond des jLabels et leur visibilité
+	/* ajustement des couleurs de fond des jLabels et leur visibilité */
 		bleu.setOpaque(true);
 		bleu.setBackground(new java.awt.Color(77, 132, 187));
 		vert.setVisible(false);
@@ -116,7 +116,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		gif.setVisible(false);
 		bravo.setVisible(false);
 
-		/* On  affiche le panneau de création des joueurs */
+	/* On  affiche le panneau de création des joueurs */
 		afficherDialogueCreationJoueurs();
 	}
 
@@ -526,7 +526,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		// si on clique une fois sur ce btn alors il se désactive
 		btn_commencerTour.setEnabled(false);
 
-		// réactivation des divers boutons pour jouer dans les lignes et les colonnes
+	/* réactivation des divers boutons pour jouer dans les lignes et les colonnes */
 		btn_tournerTuileVolante.setEnabled(true);
 		jouer_versbas_col6.setEnabled(true);
 		jouer_versbas_col2.setEnabled(true);
@@ -540,7 +540,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		jouer_versdroite_ligne4.setEnabled(true);
 		jouer_versdroite_ligne2.setEnabled(true);
 		jouer_versdroite_ligne6.setEnabled(true);
-		// reactivation du btn terminer le tour
+		
+	/* reactivation du btn terminer le tour */
 		btn_terminerTour.setEnabled(true);
 
 		actualiserAffichage();
@@ -893,6 +894,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_tournerTuileVolante.setEnabled(false);
 		gif.setVisible(true);
 		bravo.setVisible(true);
+		monChrono.stop();
 	}
 	
 	/**
