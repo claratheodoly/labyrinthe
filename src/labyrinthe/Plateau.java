@@ -325,7 +325,7 @@ public class Plateau {
 		tuiles[x1][y1] = tmp;
 
 		/* On mélange aléatoirement les tuiles du plateau */
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 30; i++) {
 			do {
 				x1 = rnd.nextInt(6);
 				y1 = rnd.nextInt(6);
