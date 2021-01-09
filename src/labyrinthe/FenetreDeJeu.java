@@ -334,8 +334,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Infojeu.add(gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 90));
 
         bravo.setForeground(new java.awt.Color(0, 0, 0));
-        bravo.setText("La partie est remportée ! BRAVO !");
-        Infojeu.add(bravo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, -1));
+        bravo.setText("<html>La partie est remportée !<br>Bravo à <html>");
+        Infojeu.add(bravo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, 30));
 
         lbl_info_tuileNAccessible.setText("Cette tuile n'est pas accessible");
         Infojeu.add(lbl_info_tuileNAccessible, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, -1, -1));
@@ -892,6 +892,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 		btn_terminerTour.setEnabled(false);
 		btn_tournerTuileVolante.setEnabled(false);
 		gif.setVisible(true);
+		String texteVictoire = bravo.getText();
+		bravo.setText(texteVictoire + joueurGagnant.nom);
 		bravo.setVisible(true);
 	}
 	

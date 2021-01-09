@@ -421,11 +421,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="La partie est remport&#xe9;e ! BRAVO !"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;La partie est remport&#xe9;e !&lt;br&gt;Bravo &#xe0; &lt;html&gt;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="120" width="190" height="-1"/>
+              <AbsoluteConstraints x="10" y="120" width="190" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
