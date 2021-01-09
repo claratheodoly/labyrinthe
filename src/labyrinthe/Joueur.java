@@ -71,26 +71,6 @@ public class Joueur {
 	}
 
 	/**
-	 * Ajoute la carte en paramètre à la main du joueur
-	 *
-	 * @param carte La carte à ajouter
-	 * @return Succès de l'opération
-	 */
-	public boolean ajouterCarte(Carte carte) {
-		/* Si la main est pleine, on ne peut pas ajouter d'objet
-		dedans. */
-		if (mainEstPleine()) {
-			return false;
-		}
-		int i = 0;
-		while (listeCartes[i] != null) {
-			i++;
-		}
-		listeCartes[i] = carte;
-		return true;
-	}
-
-	/**
 	 * Vérifie si le sac du joueur (son attribut 'listeObjets') est plein.
 	 *
 	 * @return Le remplissage du sac
@@ -98,20 +78,6 @@ public class Joueur {
 	public boolean sacEstPlein() {
 		for (int i = 0; i < listeObjets.length; i++) {
 			if (listeObjets[i] == null) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * Vérifie si la main du joueur (son attribut 'listeCartes') est pleine.
-	 *
-	 * @return Le remplissage de la main
-	 */
-	public boolean mainEstPleine() {
-		for (int i = 0; i < listeCartes.length; i++) {
-			if (listeCartes[i] == null) {
 				return false;
 			}
 		}
