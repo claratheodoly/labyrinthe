@@ -419,7 +419,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 btn_recommencerActionPerformed(evt);
             }
         });
-        panel_chrono.add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, 30));
+        panel_chrono.add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 30));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
