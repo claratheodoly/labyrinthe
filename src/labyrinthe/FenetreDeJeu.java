@@ -419,7 +419,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 btn_recommencerActionPerformed(evt);
             }
         });
-        panel_chrono.add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, 30));
+        panel_chrono.add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 30));
 
         getContentPane().add(panel_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 250, 210));
 
@@ -817,6 +817,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_recommencerActionPerformed
 
+	/**
+	 * Enlève toutes les tuiles graphiques du panneau de la grille
+	 */
 	private void supprimerTuilesGraphiques() {
 		panneauGrille.removeAll();
 	}

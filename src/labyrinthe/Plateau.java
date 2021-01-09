@@ -21,6 +21,10 @@ public class Plateau {
 	Le premier niveau de tableau représente la postion verticale, et le deuxième la position horizontale.
 	*/
 	Tuile tuileVolante;
+
+	/**
+	 * Crée un plateau de tuiles vide
+	 */
 	Plateau() {
 		tuiles = new Tuile[7][7];
 	}
@@ -36,10 +40,9 @@ public class Plateau {
 	public boolean placerTuile(int x, int y, Tuile tuileAPlacer) {
 		if (tuiles[x][y] != null) {
 			return false;
-		} else {
-			tuiles[x][y] = tuileAPlacer;
-			return true;
 		}
+		tuiles[x][y] = tuileAPlacer;
+		return true;
 	}
 	
 	public void réinitialiserTuile (int x, int y){
