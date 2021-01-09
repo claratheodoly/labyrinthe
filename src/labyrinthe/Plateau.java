@@ -38,10 +38,9 @@ public class Plateau {
 	public boolean placerTuile(int x, int y, Tuile tuileAPlacer) {
 		if (tuiles[x][y] != null) {
 			return false;
-		} else {
-			tuiles[x][y] = tuileAPlacer;
-			return true;
 		}
+		tuiles[x][y] = tuileAPlacer;
+		return true;
 	}
 
 	/**
